@@ -1,0 +1,2602 @@
+; Mon, 22 Aug 2011, 10:47:12
+
+name = pimprils
+popt = RI6
+nloc = 865
+nind = 83
+
+25476-1              ; 1
+ aabaa aabaa aabba bbaab ababa aabba bbaaa aabab baaab aabbb
+ ababb bbaba babaa baaba baaaa baabb bab
+420640-1             ; 2
+ aabaa aabaa aabba bbaab ababa aabaa bbaaa aabab baaab ahbbb
+ ababb bbaba babaa baaba aaaaa baabb bab
+678023-1             ; 3
+ aabaa aabaa aabba bbaab bbaba aabaa bbaaa baaab baaab ahbbb
+ ababb bbaba babaa baaba aaaaa aaabb bab
+809610-1             ; 4
+ aabaa aabaa aabba baaab bbaba aabaa bbaaa baaab baaab aabbb
+ ababb bbaba babaa baaba aaaaa aaabb bab
+1074498-1            ; 5
+ aabaa aabaa aabba baaab bbbba babaa bbaaa baaaa baaab aabbb
+ ababb bbaba bbbaa baaba aaaaa aaabb bab
+1197094-1            ; 6
+ aabaa aabaa aabba baaab bbbba babaa bbaaa baaab baaab aabbb
+ ababb bbaba bbaaa baabb aaaaa ababb baa
+1450599-1            ; 7
+ aabaa aabaa aabba baaaa bbbba babaa bbaaa baaab baaab aabbb
+ bbabb bbaba bbaaa baabb -aaaa ababb bba
+1603751-1            ; 8
+ abbaa aabaa aabba baaba bbbba babaa baaaa baaab aaaab aabbb
+ bbabb bbaba bbbaa baabb baaba ababb bba
+1654424-1            ; 9
+ abbaa aabaa aabba baaba bbbha babaa baaaa baaab aaaab aabbb
+ bbabb bbaba bbbaa baabb baaba ababb bba
+1801610-1            ; 10
+ abbaa aabaa aabba baaba bbbha babaa baaaa baaab aaaab aabbb
+ bbabb ababa bbbaa baabb baaba ababb bba
+2287972-1            ; 11
+ abbaa aabaa aabbb baaba bbaha babaa baaaa haaab aabaa aabbb
+ bbabb ababa bbbaa bbbbh baaba ababb bba
+2173367-1            ; 12
+ abbaa aabaa aabbb baaba bbaha babaa babaa haaab aabaa aabbb
+ bbabb ababa bbbaa bbbbh baaba ababb bba
+2446466-1            ; 13
+ abbaa aabaa aabbb baaba bbaha babaa baaaa haaab aabaa aabbb
+ bbaab ababa bbbaa bbbbh baaba ababb bba
+2714114-1            ; 14
+ abbaa aabaa aabbb baaba bbaaa babaa baaab baaab aabaa aabbb
+ bbaab aaaba bbbaa bbbbb baaba aaaba baa
+2746777-1            ; 15
+ abbaa aabaa aabbb baaba bbhaa babaa baaab bbaab aabaa aabbb
+ bbaab aaaba bbbaa bbbbb baaba aaaba baa
+2766897-1            ; 16
+ abbaa aabaa aabbb baaaa bbhaa babaa baaab bbaab aabaa aabhb
+ bbahb aaaba bbbaa bbbbb baaba aaaba baa
+3172702-1            ; 17
+ abbaa aabba aabbb baaha bbhaa babaa baaab abaab aabaa aabhb
+ bbahb aaaba bbbaa bbbbb baaba aaaba baa
+3233738-1            ; 18
+ abbaa aabbb aabbb baaha bbhaa babaa baaab abaab aabaa aabhb
+ bbahb aaaba bbbaa bbbbb baaba aaaba baa
+3337469-1            ; 19
+ abbaa aabbb aabbb baaha bbhaa babaa baaab abaab aabaa aabhb
+ bbahb aabba bbbaa bbbab baaba aaaba baa
+3620833-1            ; 20
+ abbba aabbb aaabh baaha bbhaa babaa baaab abaab aabaa aabhb
+ bbahb aabba bbbaa abbab baaba aaaba aaa
+3676870-1            ; 21
+ abbba aabbb aaabh baaha bhhaa aabaa baabb aaaaa aabaa aabhb
+ bbabb habaa bbbaa abbab baaba aaaba aaa
+4205429-1            ; 22
+ abbba aabbb aaabh baaha bhhaa aabaa baabb aaaaa aabaa aabhb
+ bbbab habab bbbaa abbab baaba aabba aaa
+4454250-1            ; 23
+ abbba aabbb aaabh baaha bhhaa aabba baabb aaaaa aabaa aabhh
+ bbbab habab bbbaa abbab baaaa aabba aaa
+7044030-1            ; 24
+ abbba ababb aaabh bbaba bahaa aabba baaaa aaaaa abbba aabbh
+ bbbab babbb bbbab abaah babaa aabaa aaa
+67512672-1           ; 25
+ abbba ababb aaabh baaba bahaa aabba baaaa aaaaa abbba aabbh
+ bbbab babba bbbab abaah babaa aaaaa aaa
+69227784-1           ; 26
+ abbba ababb aaabh baabb baaaa aabaa baaaa aaaaa bbbba aabbh
+ bbbab baaba bbbab abaah babaa aaaaa aaa
+69430752-1           ; 27
+ abbba ababb aaabh baabb baaaa aabaa baaaa aaaaa bbbba aabbb
+ bbbab baaaa bbbab abaah babaa aaaaa aaa
+83491840-1           ; 28
+ abbaa baaab baaab bbbba babaa baabb abbaa bahaa babab aaabb
+ abaab ababb baabb aabba ababb baaaa aba
+83444784-1           ; 29
+ abbaa baaab baaab bbbba babaa baabb abaaa bahaa babab aaabb
+ abaab ababb baabb aabba ababb baaaa aba
+83852784-1           ; 30
+ abbaa baaab baaab bbbba aabaa baabb abaaa bahaa babab aaabb
+ abaab ababb baabb aabba ababb baaaa aba
+83886296-1           ; 31
+ abbaa baaab baaab bbbba aabaa baabb abaaa bahaa babab aaabb
+ abaab ababa baabb aabba ababb baaaa aba
+84030632-1           ; 32
+ abbaa baaab baaab bbbba aabaa baabb abbaa bahaa babab aaabb
+ abaab ababa baabb aabba ababb baaaa aba
+84453240-1           ; 33
+ abbaa baaab baahb bbbba aabaa baabb abbaa bahaa babab aaabb
+ abaab ababa baabb aabba ababb baaaa aba
+84791600-1           ; 34
+ abbaa baaab baahb bbbba aabaa baabb abbaa bahaa bahab aaabb
+ abaab ababa baabb aabba ababb baaaa aba
+85091408-1           ; 35
+ abbaa baaab baabb bbbba aabab baabb abbaa bahaa bahab aaabb
+ abaab ababa baabb aabba ababb baaaa aba
+85115608-1           ; 36
+ abbaa baaab baabb bbbba aabab baabb abbaa bahaa bbhab aaabb
+ abaab ababa baabb aabba ababb baaaa aba
+85349656-1           ; 37
+ abbaa baaab baabb bbbba aabab baabb abbaa bahaa bbhab aaaba
+ abaab ababa baabb aabba ababb baaaa aba
+85528584-1           ; 38
+ abbaa baabb baabb bbbba babab baabb abbaa bahaa bbhab aaaba
+ abaab ababa baaab aabba ababb baaaa aba
+85589200-1           ; 39
+ abaaa baabb baabb bbbba babab baabb abbaa bahaa bbhab aaaba
+ abaab ababa baaab aabba ababb baaaa aba
+85880176-1           ; 40
+ abaaa baabb baabb bbbba babab baabb abbaa bahaa bbbab aaaba
+ abaab ababa baaab aabba ababb baaaa aba
+86094056-1           ; 41
+ abaaa baabb baabb bbbba babab baabb abbaa bahaa bbbab aaaba
+ abaab ababa baabb aabba ababb baaaa aba
+86171344-1           ; 42
+ abaaa baabb baabb bbbba babab baabb abbaa bahaa bbbab aaaba
+ abaab ababa bbabb aabba ababb baaaa aba
+86467672-1           ; 43
+ abaaa baabb baabb bbbba babab baabb abbaa bahaa bbbab aaaba
+ abaab ahaba bbabb aabba ababb baaaa aba
+86636792-1           ; 44
+ abaaa baabb baabb bbbba babab baabb abbaa bahaa bbbab aaaba
+ abaab ahaba bbbhb aabba bbabb baaaa aba
+86652296-1           ; 45
+ abaaa baabb baabb bbbba babab babbb abbaa bahah bbbab aaaba
+ abaab ahaba bbbhb aabba bbabb baaaa aba
+86750072-1           ; 46
+ abaaa baabb baabb bbbba aabab babbb abbaa bahah bbbaa aaaba
+ abaab ahaba bbbab aabba bbabb baaaa aba
+86770448-1           ; 47
+ abaaa baabb baabb bbbba aabab babbb abbaa bahah bbbaa aaaba
+ abaab ababa bbbab aabba bbabb baaaa aba
+86867568-1           ; 48
+ abaaa baabb baabb bbbba aabab babbb abbaa bahah bbbaa aaaba
+ abaab ababa bbbab aabba bbabb baaaa abb
+86946640-1           ; 49
+ abaaa baabb baabb bbbba aabab babbb abbaa bahah bbbaa aaaba
+ abaab hbaba bbbab aabba bbabb baaaa abb
+87007552-1           ; 50
+ abaaa baabb baabb bbbbb aabab babbb abbaa bahah bbbaa aaaba
+ abaab hbaba bbbab aabba bbabb baaaa abb
+87316104-1           ; 51
+ ababa baabb baabb bbbbb aabab babbb abbaa bahah bbbaa aaaba
+ abaab hbbba bbbab aabba bbabb baaaa abb
+87424624-1           ; 52
+ ababa baabb baabb bbbbb aabab babbb abbaa bahah bbbaa aaaba
+ abaab hbbba bbbbb aabba bbabb baaaa abb
+87466808-1           ; 53
+ ababa baabb baabb bbbbb aabab babbb abbaa bahah bbbaa aaaba
+ abaab abbba bbbbb aabba bbabb baaaa abb
+87515296-1           ; 54
+ ababa baabb baabh bbbbb aabab babbb abbaa bahah bbbaa aaaba
+ abaab abbba bbbbb aabba bbabb baaaa abb
+87626952-1           ; 55
+ ababa baabb baabh bbbbb aabab babbb abbaa baaah bbbaa aaaba
+ abaab abbba bbbbb aabba bbabb baaaa abb
+87876712-1           ; 56
+ ababa baabb baabh bbbbb aabab babbb abbab baaah bbbaa aaaba
+ abaab abbba bbbbb aabba bbabb baaaa abb
+88133200-1           ; 57
+ ababa baabb baaba bbbbb aabab babbb abbab baaah bbbaa aaaba
+ abaab abbba bbbbb aabba bbabb baaaa abb
+88208824-1           ; 58
+ ababa baabb aaaba bbbbb aabab babbb abbab baaah bbbaa aaaba
+ abaab abbba bbbbb aabba bbabb baaaa abb
+88485608-1           ; 59
+ ababa bbabb aaaba bbbbb aabab babbb abbab baaah bbbaa ababa
+ abaab abbbb bbbbb aabba bbabb baaaa abb
+88779712-1           ; 60
+ aaaba bbabb aaaba bbbbb aabab babbb abbab baaah bbbba ababa
+ abaab abbbb bbbbb aabba bbabb baaaa abb
+89170840-1           ; 61
+ aaaba bbabb aaaaa abbbb aaaab babbb abbab baaah bbbba ababa
+ abaab hbbbb bbbbb aabba bbabb baaaa abb
+89263336-1           ; 62
+ aaaba bbabb aaaaa hbbbb aaaab babbb abbab baaah bbbba ababa
+ abaab hbbbb bbbbb aabba bbabb baaaa abb
+89516752-1           ; 63
+ aaaba bbabb aa-aa hbbbb aaaab babbb abbbb baaah bbbba ababa
+ abaab hbbbb bbbbb aabba bbabb baaaa abb
+89692224-1           ; 64
+ aaaba bbabb aabaa hbbbb aaaab babbb abbbb baaah bbbba ababa
+ abaab hbbbb bbbbb aabba bbabb baaaa bbb
+28520428-2           ; 65
+ aaaab bbbbb aabaa bbaab aabbb bbbab baabb babba bbaba abbbb
+ bbbab ahbab abbab babbb bbbbb bbaab bab
+4408969-2            ; 66
+ aaaab bbbbb aabaa bbaab aabbb bbbab baabb babba bbaba abbba
+ babab abbab abbab babbb bbbbb bbaab bab
+31348124-2           ; 67
+ aabaa bbbbb -bbaa bbaaa aabbb bbbbb babbb babba abbba abbba
+ abbbb bbbab abbab babbb bbbab bhaab baa
+33752308-2           ; 68
+ aabbb bbbbb bbbab bbbbb abbbb bbbbb babbb bbbbb abbba abbba
+ abbbb bbbab abbab bhbbb bbbab ahaab baa
+34230860-2           ; 69
+ aabbb bbbbb bbbab bbbbb abbbb bbbbb bbbbb bbbbb abbba abbba
+ abbbb bbbbb bbbab bhbbb bbbab aaaab baa
+34688580-2           ; 70
+ aabbb bbbbb bbbab bbbbb abbbb bbbbb bbbbb bbbbb abbba bbbba
+ abbbb bbbbb bbbbb bbbbb bbbab aaaab baa
+34914156-2           ; 71
+ abbbb bbbbb bbbab bbbbb abbbb bbbbb bbbab hbbbb abbba bbbba
+ abbbb bbbbb bbbbb bbbbb bbbab aaaab baa
+35154512-2           ; 72
+ abbbb bbbbb bbbab bbbbb abbbb bbbbb bbbab hbbbb abbb- bbbba
+ abbbb bbbbb bbbbb bbbbb bbbab aaaab baa
+36411532-2           ; 73
+ aabba bbbhb babab bbbbb abbbb bbbab bbbab babbb abbbb bbbba
+ abbbb bbbba bbbbb babbb bbbbb aaaaa bab
+36572328-2           ; 74
+ aabba bbbhb babab bbbbb abbbb bbbab bbbab babbb abbbb bbbba
+ abbbb bbbba bbbab babbb bbbbb aaaaa bab
+36842440-2           ; 75
+ aabba bbbhb babab bbbbb abbbb bbbab bbbab aabbb abbbb bbbba
+ abbbb bbbba bbbab babbb bbbbb aaaaa bab
+36952364-2           ; 76
+ aabba bbbhb babab bbbbb abbbb bbbab bbbab aabbb abbba bbbba
+ abbbb bbbba bbbab babbb bbbbb aabaa bab
+37383252-2           ; 77
+ aabba bbbhb babab bbbbb abbbb bbbab bbbab aabbb abbba bbbba
+ abbbb bbbba bbbab aabbb bbbbb aabaa bab
+37722740-2           ; 78
+ aabba bbahb bbbab bbbbb abbbb bbbab bbbab aabab abbba bbbba
+ abbbb bbbba bbbab aabbb bbbbb aabaa bab
+37910600-2           ; 79
+ aabaa bbahb bbbbb bbbbb abbbb bbbab bbbab aabab abbba bbbba
+ abbbb bbbba bbbab babbb bbbbb aabaa bab
+37964824-2           ; 80
+ aabaa bbabb bbbbb bbbbb abbbb bbbab bbbab aabab abbba bbbba
+ abbbb bbbba bbbab babbb bbbbb aabaa bab
+38097048-2           ; 81
+ aabaa bbabb bbbbb bbbbb abbbb bbbab bbbab aabab abbba bbbba
+ abbba bbbba bbbab babbb bbbbb aabaa bab
+38263888-2           ; 82
+ aabaa bbabb bbbba bbbbb abbbb bbbab bbbab aabab abbba bbbba
+ abbba bbbba bbbab babbb bbbbb aabaa bab
+38420188-2           ; 83
+ aabaa bbabb bbbba bbbbb abbbb bbbab bbbab aabab abbba bbbba
+ abbba bbbha bbbab babbb bbbbb aabaa bab
+38633512-2           ; 84
+ aaaaa bbabb bbbba bbbbb abbbb bbbab bbbab aabab abbba bbbba
+ abbba bbbha bbbab babbb bbbbb aabaa bab
+38921120-2           ; 85
+ aaaaa bbabb bbbba bbbbb abbbb bbbab bbbab aabab abbba bbbba
+ abbba bbbaa bbbab babbb bbbbb aabaa bab
+39021568-2           ; 86
+ aaaaa bbabb bbbba bbbbb abbbb bbbab bbbab aabab abbba bbbba
+ abbba bbbaa bbbab babbb bbbbb aabaa hab
+39279344-2           ; 87
+ aaaaa bbabb bbbba bbbbb abbbb bbbab bbbab aabab abbba bbbaa
+ abbba bbbaa bbbab babbb bbbbb aabaa hab
+39337268-2           ; 88
+ aaaaa bbabb bbbba bbbbb abbbb bbbab bbbab aabab abbba bbbaa
+ abbba bbbaa babab babbb bbbbb aabaa hab
+39610104-2           ; 89
+ aaaaa bbabb bbbba babba abbbb bbbab bbbab aabab abbba bbbaa
+ abbba bbbaa babab babbb bbbbb aabaa hab
+39840344-2           ; 90
+ aaaaa bbabb bbbba babba abbbb bbbab bbbab aabab abbba bbaaa
+ abbba bbbaa babab babbb bbbbb aabab hab
+39990428-2           ; 91
+ aaaaa bbabb bb-ba babba abbbb bbbab bbbab aabab abbba bbaaa
+ abbba bbbaa babab babbb bbbbb aabab aab
+40330288-2           ; 92
+ aaaaa bbabb bb-ba babba abbbb bbbab bbbab aabab abbba bbaaa
+ abbba bbbaa babab babbb bbbbb aabab abb
+40402624-2           ; 93
+ aaaaa baabb bb-ba babba abbbb bbbab bbbab aabab abbba bbaaa
+ abbba bbbaa babab babbb bbbbb aabab abb
+40903680-2           ; 94
+ aaaaa baabb bb-ba baaba abbbb bbbab bbbab aabab abbba bbaaa
+ abbba bbbaa babab babbb bbbbb aabab abb
+41198364-2           ; 95
+ aaaaa baabb bb-ba bhaba aabbb bbbab bbbab aabab bbbba bbaaa
+ abbba bbbaa babab babbb bbbbb aabaa abb
+41438892-2           ; 96
+ aaaaa baabb bb-ba bhaba aabbb bbbab bbbab aabab bbbba bbhaa
+ abbba bbbaa babab babbb bbbbb aabaa abb
+41701704-2           ; 97
+ aaaaa baabb bb-ba ahaba aabbb bbbab bbbab aabab bbbba bbhaa
+ abbba bbbaa babab babbb bbbbb aabaa abb
+42038064-2           ; 98
+ aaaaa baabb bb-ba ahaba aabbb bbbab bbbab aabab bbbba bbhaa
+ abbba bbbaa babab bbbbb bbbbb aabaa abb
+42396856-2           ; 99
+ aabaa baabb bb-ba ahaba aabbb bbbab abbab aabab bbbba bbhaa
+ abbba bbbaa babab bbbbb bbbbb aabaa hbb
+42549116-2           ; 100
+ aabaa baabb bb-ba bhaba aabbb bbbab abbab aabab bbbba bbhaa
+ abbba bbbaa babab bbbbb bbbbb aabaa hba
+42818872-2           ; 101
+ aabaa baabb bb-ba bhaba aabbb bbbbb abbab aabab bbbba bbhaa
+ abbba bbbaa babab bbbbb bbbbb aabaa hba
+42835060-2           ; 102
+ aabaa baabb bb-ba bhaba aabbb bbbbb hbbab aabab bbbba bbhaa
+ abbba bbbaa babab bbbbb bbbbb aabaa hba
+43008392-2           ; 103
+ aabaa baabb bb-ba bhabb babbb bbbbb hbbab aabab bbbba bbhaa
+ abbba bbbaa babab bbbbb bbbbb habaa hba
+43635344-2           ; 104
+ aabaa baabb bb-aa bhabb babbb bbbbb hbbab aabab bbbba hbbaa
+ abbba bbbaa babab bbbbb bbbbb habaa hba
+46519432-2           ; 105
+ abbaa baabb bb-ab aaaab babbb bbbbb abaab abbab babaa hbbaa
+ abbba bbaab babbb bbbbb babab babab aba
+46799456-2           ; 106
+ bbbaa baabb bb-ab aaaab babbb bbbbb abaab abbab babaa hbbaa
+ abbaa bbaaa babbb bbbbb babab babab aba
+47094976-2           ; 107
+ bbbaa baabb bb-ab aaaab babbb bbbbb abaab abbab babaa bbbaa
+ abbaa bbaaa babbb bbbbb babab babab aba
+47298644-2           ; 108
+ bbbaa baabb bb-ab aaaab babbb bbbbb abaab aabab habaa bbbaa
+ abbaa bbaaa babbb bbbbb babab babab aba
+47423768-2           ; 109
+ bbbaa baabb bb-ab aaaab babbb bbbbb abaab aabab babaa bbbaa
+ abbaa bbaaa babbb bbbbb babab babab aba
+48055028-2           ; 110
+ bbbaa aaabb bb-ab aaaab babbb bbbbb abaab aabab babaa bbbaa
+ abbaa bbaaa babbb bbbbb babab babab aba
+48115992-2           ; 111
+ bbbaa aaabb bb-ab aaaab babbb bbbbb abaab aabab babaa bbbah
+ abbaa bbaaa babbb bbbbb babab babab aba
+48203320-2           ; 112
+ bbbaa aaabb bbaab aaaab babab bbbbb abaab aabab babaa bbbah
+ abbaa bbaaa babbb bbbbb babab babab aba
+48333328-2           ; 113
+ bbbaa aaabb bbaab aaaab babab bbbbb abaab aabab babaa bbbah
+ bbbaa bbaaa babbb bbbbb babab babab aba
+48349332-2           ; 114
+ bbbaa aaabb bbaab aaaab babab bbhbb abaab aabab babaa bbbah
+ bbbaa bbaaa babbb bbbbb babab babab aba
+48410544-2           ; 115
+ bbbaa aaabb bbaab aabab babab bbhbb abaab aabab babaa bbbah
+ bbbaa bbaaa babbb bbbbb babab babab aba
+48499768-2           ; 116
+ bbbba ababb bbaab aabab babab bbhbb abaab aabab babaa bbbah
+ bbbaa bbaaa babbb bbbbb babab babab aba
+48535588-2           ; 117
+ bbbba ababb bbaab aabab babab bbhbb abahb aabab babaa bbbah
+ bbbaa bbaaa babhb bbbbb babab babab aba
+48902712-2           ; 118
+ bbbba ababb bbaab aabab babab bahbb abahb aabab babaa bbbah
+ bbbaa bbaaa babhb bbbbb babab babab aba
+49271872-2           ; 119
+ bbbba ababb bbaab aabab babab baabb abahb aabab babaa bbbah
+ bbbaa bbaaa babhb bbbbb babab babab aba
+49456228-2           ; 120
+ bbbba ababb bbaab aaaab babab baabb ababb aabab babaa bbbah
+ bbbaa bbaaa babhb bbbbb babab babab aba
+49817176-2           ; 121
+ bbbba ababb bbaab aaaab babab baabb ababb aabab babaa bbbah
+ bbbaa bbaaa babab bbbbb babab babab aba
+61685-3              ; 122
+ abaab bbbbb bbbab aabaa aabbb ababa aaaba baaab aaaaa aabhb
+ abbba bbbaa bbbab babbb abaah baaab bba
+143690-3             ; 123
+ abaab bbbbb bbbab aabaa aabbb ababa aaaba baaab aaaaa aabab
+ abbba bbbaa bbbab babbb abaah baaab bba
+466104-3             ; 124
+ abaab bbbbb bbbab aabaa aabbb ababa aaabb baaab aaaaa aabab
+ abbba bbbaa bbbab babbb abaah baaab bba
+791973-3             ; 125
+ abaab bbbbb bbbab aabaa aabba ababa bbabb baaab aaaaa aabab
+ aabba bbaaa bbbab bbbbb abaah bhaab bba
+867789-3             ; 126
+ bbaab bbbbb bbbab aabaa aabba ababa bbabb baaab aaaaa aabab
+ aabba bbaaa bbbab bbbbb abaah bhaab bba
+931641-3             ; 127
+ bbaab bbbbb bbbab aabaa abbba ababa bbabb baaab aaaaa aabab
+ aabba bbaab bbbab bbbbb abaah bhaab bba
+1198055-3            ; 128
+ bbaab bbbbb bbbab aabaa abbba ababa bbabb baaab aaaaa aabab
+ aabba bbaab bbbab bbbbb abaah baaab bba
+1251411-3            ; 129
+ bbaab bbbbb bbbab aabaa abbba ababa bbabb baaab aaaaa aabab
+ aabaa bbaab bbbab bbbbb abaah baaab bba
+1410013-3            ; 130
+ bbaab bbbab bbbab aabaa abbbh bbaba bbabb baaab aaaaa aabab
+ aabaa baaab bbbab bhbbb abaah aaaab bba
+1542964-3            ; 131
+ abaab bbbab bbbab babaa bbbbh bbaaa hbabb baaab aaaaa aabab
+ aabaa baaaa bbbab ahbbb abaah aaaab bba
+1676785-3            ; 132
+ abaab bbbab bbbab babaa bbbbh bbaaa hbabb baaab aaaaa babab
+ aabaa baaba bbbab ahbbb abaah aaaab bba
+1812322-3            ; 133
+ abaaa bbbab bbbab babaa bbabh bbaaa hbabb baaab aaaaa babab
+ aabaa haaba bbbah ahaba abaah aaaab bba
+4744191-3            ; 134
+ bbbaa bbbab ab-ab babab bbaba abaaa bbaab aaaab ababa aabaa
+ babaa bbbbb bbbab aaaba babaa haaab abb
+45597764-3           ; 135
+ bbbaa bbbab ab-ab babab bbaba abhaa bbaab aaaab ababa aabaa
+ babaa bbbbb bbbab aaaba babaa haaab abb
+56643724-3           ; 136
+ bbbab baaab aa-ab bbbab bbbbb abhaa bbbab baabb aabba babaa
+ abbab bbbab bbbab aaaba bbbaa bbaab aba
+57499392-3           ; 137
+ bbbab bbaab aa-ab bbbab abbbb abaaa bbbab baahb babba babaa
+ aabab bbbab bbbab aaaba bbbaa bbaaa aba
+57539428-3           ; 138
+ bbbab bbaab aa-ab bbbab abbbb abaaa bbbab baahb babba babaa
+ aabab bbbab bbbbb aaaba bbbaa bbaaa aba
+57704708-3           ; 139
+ bbbab bbabb aa-ab bbbab abbbb abaaa bbbab baahb babba babaa
+ aabab bbbab bbbbb aaaba bbbaa bbaaa aba
+57730768-3           ; 140
+ bbbab bbabb aa-ab bbbab abbbb abaaa bbbab baahb babba babaa
+ aabab babab bbbbb aaaba bbbaa bbaaa aba
+58200284-3           ; 141
+ bbbab bbabb ab-ab bbbab abbbb abaaa bbbab baahb babba babaa
+ aabab babab bbbbb aaaba bbbaa bbaaa aba
+58802824-3           ; 142
+ bbbab bbabb ab-ab abbaa abbbb abaaa bbbab babbb babba babaa
+ aabab babab bbbbb aaaba bbbaa bbaaa aba
+61126104-3           ; 143
+ bbaab bbabb ab-ab aabhb abbbb abaab bbbab baabb babba babaa
+ abaab bbbab bbbbb aaaba babab bbaaa aba
+61455904-3           ; 144
+ bbaab bbbbb ab-ab abbhb abbbb abaab bbbab baabb babba babaa
+ abaab bbbab bbbbb aaaba babbb bbaaa aba
+61881752-3           ; 145
+ bbaab bbbab ab-ab aabhb abbbb abaab bbbab bbaba babba babaa
+ abaab bbbab bbbbb ahaba babbb bbbaa aba
+62083224-3           ; 146
+ bbaab bbbab ab-ab aabhb abbbb abbab bbbab bbaba babba babaa
+ abaab babab bbbbb ahaba babbb bbbaa aba
+30398-4              ; 147
+ babbb bbbaa aaaaa ababa hbaab abbab abaaa ababb abbaa aabab
+ aabba bhbbb babaa bbbbb aaaaa aaaab aba
+346562-4             ; 148
+ babbb bbbaa aaaaa ababb abaab abbab abaaa ababb abbaa aabab
+ aabba bhbbb babaa bbbbb aaaaa aaaab aba
+452399-4             ; 149
+ babbb bbbaa aaaaa ababb abaab abbab abaaa ababb hbbaa aabab
+ aabba bhbbb babaa bbbbb aaaaa aaaab aba
+516464-4             ; 150
+ babbb bbbaa aaaaa ababb abaaa abbab abaaa ababb hbbaa aabab
+ aabba bhbbb babaa bbbbb aaaaa aaaab aba
+1767382-4            ; 151
+ babbb babbb ababa ababb abaab abbbb abbaa baaab bbaaa aabab
+ bbbba bhbbb babaa baabb abbba aaabb aba
+1896090-4            ; 152
+ babbb babbb ababa ababb abaab abbbb abbaa baaab bbaaa aabab
+ bbbba bhbba babaa baabb abbba aaabb aba
+1975671-4            ; 153
+ babbb babbb ababa ababb abaab abbbb abbaa baaab bbaaa aabab
+ bbbba bhbba babaa aaabb abbba aaabb aba
+2079250-4            ; 154
+ aabbb babbb ababa ababb ahaab abbbb abbaa baaab bbaaa aabab
+ bbbbb bbbba babaa aaabb abbba aaabb aba
+2196052-4            ; 155
+ aabbb babbb ababa ababb abaab abbbb abbaa baaab bbaaa aabab
+ bbbbb bbbba babaa aaabb abbba baabb aba
+2281524-4            ; 156
+ aabbb babbb ababa ababb abaab abbbb abbaa baaab bbaaa aabab
+ bbbbb bbbba babaa aaabb bbbba baabb aba
+2414171-4            ; 157
+ aabbb babbb ababa ababb abaab abbbb abbaa baaab bbaaa aabab
+ bbbbb abbba babaa aaabb bbbba baabb aba
+2573216-4            ; 158
+ aabbb babbb ababa ababb abaab abbbb abbaa baaab bbaaa babab
+ abbbh abbba babaa aaabb bbbba baabb aba
+2593949-4            ; 159
+ aabbb babbb ababa ababb abaab abbbb abbaa baaab bbbaa babab
+ abbbh abbba babaa aaabb bbbba baabb aba
+2739043-4            ; 160
+ aabbb babbb ababa ababb abaab abbbb abbba baahb bbbaa babhb
+ abbbh abbba aabaa aaabb bbbba baabb aba
+2773173-4            ; 161
+ aabbb babbb abaaa ababb abaab abbbb abbba baahb bbbaa babhb
+ abbbh abbba aabaa aaabb bbbba baabb aba
+3143637-4            ; 162
+ aabbb babbb abaaa ababb abaab abbba abbbb baabb bbbaa bhbhb
+ abbbh aabba aabaa aaabb bbbba baabb aba
+3154196-4            ; 163
+ aabbb babbb abaaa ababb abaab abbba abbbb haabb bbbaa bhbhb
+ abbbh aabba aabaa aaabb bbbba baabb aba
+3400281-4            ; 164
+ aabbb babab abaaa ababb abaab abbba abbbb haabb bbbaa bhbhb
+ abbah aabba aabaa ahabb bbbba baabb aba
+3622896-4            ; 165
+ aabbb babab abaaa ababb abaab abbba -bbbb haabb bbbaa bhbha
+ abbah aabba aabaa ahabb bbbba baabb aba
+3902301-4            ; 166
+ aabbb babab abaaa ababb abaab abbba bbbbb haabb bbbaa ahbha
+ abbah aabba aabaa ahabb bbbba baabb aba
+4053163-4            ; 167
+ aabbb babab abaaa ababb abaab abbba bbbbb haabb bbbaa ahaha
+ abbah aabba aabaa ahabb bbbba baabb aba
+4116668-4            ; 168
+ aabbb babab abaaa ababb abaab abbba bbbbb haabb bbbaa aha-a
+ abbah aabba aabaa ahabb bbbba baabb aba
+4374960-4            ; 169
+ aabbb babab bbaaa ababb abaab abbba bbbbb aaabb bbbaa ahaaa
+ abbah aabba aabaa ahabb bbbba baabb aba
+4388080-4            ; 170
+ aabbb babab bbaaa ababb abaab abbba bbbbb aaabb bbbaa ahaaa
+ abbah aabba aabaa ababb bbbba baabb aba
+4654114-4            ; 171
+ aabbb babab bbaaa abbbb abaab abbba bbbbb aaabb bbbaa ahaaa
+ abbab aabba aabaa ababb bbbba baabb aba
+4711015-4            ; 172
+ aabbb babab bbaaa abbbb abaab abbba bbbbb aaabb bbbaa ahaaa
+ abbab aabba aabba ababb bbbba baabb aba
+4935940-4            ; 173
+ aabbb babab bbbaa abbbb abaab abbba bbbbb aaabb bbbaa ahaaa
+ abbbb aabba aabba ababb bbbba baabb bba
+4942410-4            ; 174
+ aabbb babab bbbaa abbbb abaab abbba bbbbb aaabb bbbaa aaaaa
+ abbbb aabba aabba ababb bbbba baabb bba
+5459783-4            ; 175
+ abbbb babab bbbaa abbbb abaab abbba bbbbb aaabb bbbaa abaaa
+ abbbb aabba aabba ababb babba baabb bba
+5520254-4            ; 176
+ abbbb babab bbbaa abbba abaab abbba bbbbb aaabb bbbaa abaaa
+ abbbb aabba aabba ababb babba baabb bba
+5548614-4            ; 177
+ abbbb babab bbbaa bbbba abaab abbba bbbbb aaabb bbbaa abaaa
+ abbbb aabba aabba ababb babba baabb bba
+5825567-4            ; 178
+ abbbb babab bbbaa bbbba abaab aab-a bbbbb aaabb bbbaa abaaa
+ abbbb aabba aabba ababb babba baabb bba
+6185900-4            ; 179
+ abbbb babab bbbab bbbba abaab aabab bbbbb aabbb abbaa abaaa
+ abbbb aabba aabba ababb babba bbabb bba
+6219294-4            ; 180
+ abbbb babab bbbab bbbba abaab aabab bbbbb aabbb abbaa ababa
+ abbbb aabba aabba ababb babba bbabb bba
+9498101-0            ; 181
+ abbbb babab bb-ab bbbba abaab aabab bbbbb aabbb abbaa ababa
+ abbbb aabba aabba ababb babba bbabb bba
+6909007-4            ; 182
+ abbbb babab bbbab bbbba abaaa aabab bbbbb aabbb abbaa ababa
+ abbbb aabba aabba ababb babba bbabb bba
+22462318-4           ; 183
+ abbbb babab bbbab bbbba abaab aabab bbhbb aabbb abbaa ababa
+ abbbb aabba aabba ababb babba bbabb bba
+51438196-4           ; 184
+ abbbb babab bbbab bbbba abaab aabab bbabb aabbb abbaa ababa
+ abbbb aabba aabba ababb babba bbabb bba
+51677496-4           ; 185
+ abbbb babab bbbab bbbba abaab aabab bbabb aabab abbaa abbba
+ abbbb aabba aabaa ababb babba bbabb bba
+52251560-4           ; 186
+ abbbb babab bbbaa bbbba abaab aabab bbabb aabab abbaa abbba
+ abbbb aabba aabaa ababb babba bbabb bba
+52475488-4           ; 187
+ abbbb babab bbbaa bbbba abaab aabab bbabb aabab abbaa abbba
+ aabbb aabba aabaa ababb babba bbabb bba
+53407496-4           ; 188
+ abbbb babab bbbaa abbba abaab aabab bbabb aabaa abbaa abbba
+ aabbb aabbb aabaa ababb babba bbabb bba
+53676408-4           ; 189
+ abbbb babab bbbaa abbbb abaab aabab bbabb aabaa abbaa abbba
+ aabbb aabbb aabaa ababb babba bbabb bba
+53710784-4           ; 190
+ abbbb babab bbbaa abbbb abaab aabab bbabb aabaa abbaa abbba
+ aabbb aabbb aabaa ababb baaba bbabb bba
+54158444-4           ; 191
+ abbba babab bbbaa abbbb abaab babab bbabb aabaa abbaa abbba
+ aabbb aabbb aabaa ababb baaba bbabb bba
+54340544-4           ; 192
+ abbba babab bbbaa abbbb abaab babab bbabb habaa abbaa abbba
+ abbbb aabbb aabaa ababb baaba bbabb bba
+54503564-4           ; 193
+ abbba aabab bbbaa abbbb abaab babaa bbabb habaa abbaa abbba
+ abbbb aabbb aabaa aaabb baaba bbabb bba
+54541392-4           ; 194
+ abbba aabab bbbaa abbbb abaab babaa bbabb habaa abbaa ababa
+ abbbb aabbb aabaa aaabb baaba bbabb bba
+54844960-4           ; 195
+ aabba aabab bbbaa abbbb abaab babaa bbabb habaa abbaa ababa
+ abbbb aabbb aabaa aaabb baaba bbabb bba
+54942332-4           ; 196
+ aabba aabab bbbaa abbbb abaab babaa bbabb habah abbaa ababa
+ abbbb aabbb aabaa aaabb baaba bbabb bba
+55014580-4           ; 197
+ aabba aabab abbaa abbbb abaab babaa bbabb habah abbaa ababa
+ abbbb aabbb aabaa aaabb baaba bbabb bba
+55076292-4           ; 198
+ aabba aabab abbaa abbbb abaab babaa bbhbb habah abbaa ababa
+ abbbb aabbb aabaa aaabb baaba bbabb bba
+55204028-4           ; 199
+ aabba aabab abbaa abbbb abaab babaa bbhbb habah abbaa abaaa
+ abbbb aabbb aabaa aaabb baaba bbabb bba
+55509224-4           ; 200
+ aabba aabab abbaa abbbb abaab babaa bbhbb habah abbab abaaa
+ abbbb aabbb aabaa aaabb baaba bbabb bba
+55746300-4           ; 201
+ aabba aabab abbaa abbbb bbaaa babaa bbhbb habah abbab ababa
+ abbbb aabbb aabaa aaabb baabb bbabb bba
+55936272-4           ; 202
+ aabba aabab abbaa abbbb bbaaa babaa bbhbb habah abbab ababa
+ abbbb aabbb aabaa aaabb baabb bbaba bba
+56475308-4           ; 203
+ aabba aabab abbba abbbb bbaaa babaa bbhbb habab abbab ababa
+ abbbb babbb aaaaa aaabb aabbb bbaba bba
+56570524-4           ; 204
+ aabba aabab abbba abbbb bbaaa babaa bbhbb habab abbab ababa
+ abbbb babbb aaaba aaabb aabbb bbaba bba
+8777285-0            ; 205
+ aabba aabab ab-ba abbbb bbaaa babaa bbhbb -abab abbab ababa
+ abbbb babbb aaaba aaabb aabbb bbaba -ba
+8765816-0            ; 206
+ aabba aabab ab-ba abbbb bbaaa babaa bbhbb habab abbab ababa
+ abbbb babbb aaaba aaabb aabbb bbaba bba
+56773424-4           ; 207
+ aabba habab abbba abbbb bbaaa babaa bbhbb habab abbab ababa
+ abbbb babbb aaaba aaabb aabbb bbaba bba
+56837776-4           ; 208
+ aabba habab abbba abbbb bbaaa babaa bb-bb habab abbab ababa
+ abbbb babbb aaaba aaabb aabbb bbaba bba
+57013608-4           ; 209
+ aabba habab abbba abbbb bbaaa babaa bbbbb habab abbab ababa
+ abbbb babba aaaba aaabb aabbb bbaba bba
+57036624-4           ; 210
+ aabba -abab abbba abbbb bbaaa babaa bbbbb habab abbab ababa
+ abbbb babba aaaba aaabb aabbb bbaba bba
+57161780-4           ; 211
+ aabba aabab abbba abbbb bbbaa babaa bbbbb habab abbab ababa
+ abbbb babba aaaba aaabb babbb bbaba bba
+57403088-4           ; 212
+ aabba aabab abbba abbbb bbbaa babaa bbbbb habab abbab ababa
+ abbbb babaa aaab- aaabb aabbb bbaba bba
+57834340-4           ; 213
+ aabba babab abbba abbbb bbbab babaa bbbbb babab abbaa ababa
+ abbbb babaa aaabb aaabb aabbb bbaba bba
+57862904-4           ; 214
+ aabba babab abbba abbbb bbbab babaa bbhbb babab abbaa ababa
+ abbbb babaa aaabb aaabb aabbb bbaba bba
+58083420-4           ; 215
+ aabba babab abbba abbbb bbbab babba bbhbb babbb abbaa ababa
+ abbbb babaa aaabb aaabb aabbb bbaaa bba
+58174884-4           ; 216
+ aabba babab abbba abbbb bbbab babba bb-bb babbb abbaa ababa
+ abbbb babaa aaabb aaabb aabbb bbaaa bba
+58081284-4           ; 217
+ aabba babab abbba abbbb bbbab babba bbbbb babbb abbaa ababa
+ abbbb babaa aaabb aaabb aabbb bbaaa bba
+58210212-4           ; 218
+ aabba babab abbba bbbbb bbbab babba bbhbb babbb abbaa ababa
+ abbbb babaa aaabb aaabb aabbb bbaaa bba
+58340636-4           ; 219
+ aabba babab abbba bbbbb bbbab babba bb-bb babbb abbaa ababa
+ abbbb babaa aaabb aaabb aaabb bbaaa bba
+58435664-4           ; 220
+ aabba babab abbba bbbbb bbbab babba bbbab babbb abbaa ababa
+ abbbb babba aaabb aaabb aaaab bbaaa bba
+58656968-4           ; 221
+ aabba babab abbba bbbab bbbab baaba bb-ab babbb abbaa ababa
+ abbbb babaa aaabb aaabb aaaab bbaaa bba
+58719164-4           ; 222
+ aabba babab abbba bbbab bbbab baaba bbhaa babbb abbba ababa
+ abbbb babaa aaabb aaabb aaaab bbaaa bba
+58778208-4           ; 223
+ aabba babab abbba bbbab bbbab baaba bbhaa babbb abbba ababa
+ abbbb babaa aaabb aaabb aaaab hbaaa bba
+58807888-4           ; 224
+ aabba babab abbba bbbab bbbab baaba bb-aa babbb abbbb ababa
+ abbbb babaa aaabb aaabb aaaab hbaaa bba
+58808024-4           ; 225
+ aabba babab abbba bbbab bbbab baaba bbbaa babbb abbbb ababa
+ abbbb babaa aaabb aaabb aaaab hbaaa bba
+59389096-4           ; 226
+ aabba babab aabba bbbab bbbab baaba bbhaa babbb abbbb ababa
+ abbbb babaa aaabb aaabb aaaab hbaaa bba
+59678612-4           ; 227
+ aabba babab aabaa bbbab bbbab baabh bbhaa babbb abbbb ababa
+ abbbb babaa aaabb aaaab aaaab hbaaa bba
+59835632-4           ; 228
+ aabba babab abbaa bbbab bbbab baabh bbhaa babbb abbbb bbaba
+ abbbb babaa aaabb aaaab aaaab hbaaa bba
+60153208-4           ; 229
+ aabba babab abbaa bbbab bbbab baabh bbhaa babba abbbb bbaba
+ abbbb babaa aaabb aaaab aaaab hbaaa bba
+60507024-4           ; 230
+ aabba babab abbaa babab bbbab baabh bbhaa babba abbbb bbabb
+ aabbb babaa ababb aahab abaab abaaa bba
+60746928-4           ; 231
+ abbba babab abbaa babab bbbab baabh bbhaa babba abbbb bbabb
+ aabbb bbbaa ababb aahab abaab abaaa bba
+60825784-4           ; 232
+ abbba babab abbba babab bbbbb baabh bbhaa babba abbbb bbabb
+ aabbb bbbaa ababb aahab abaab abaaa bba
+60982124-4           ; 233
+ abbba babab abbba babab bbbbb baabh bbhaa babba abbbb bbabb
+ aabbb bbbaa bbabb aahbb abaab abaaa bba
+61082176-4           ; 234
+ abbba babab abbba babab bbbbb baabh bbhaa babba abbbb bbabb
+ aabbb bbbaa bbabb aahbb abaab abaaa bbh
+61413112-4           ; 235
+ abbbb babab abbba babab bbbbb baabh bbhaa babba abbab babba
+ aabbb bbbab bbabb aahbb abaab bbaaa bbh
+61681720-4           ; 236
+ abbbb babab abbba babab bbbbb baabh bbhaa bbbba abbab babba
+ aabbb bbbab bbabb aahbb abaaa bbaaa bbh
+61843192-4           ; 237
+ abbbb babab abbba babab bbbbb baabh bbhaa babba abbab babba
+ aabbb bbbab bbabb aahbb abaaa bbaaa bbh
+61886216-4           ; 238
+ abbbb babab abbba babab bbbbb baabh bbbaa babba abbab -abba
+ aabbb bbbab bbabb aahbb abaaa bbaaa bbh
+61931832-4           ; 239
+ abbbb babab abbba babab bbbbb baabh bbhaa babba abbab habba
+ aabbb bbbab bbabb aahbb abaaa bbaaa bbb
+62306320-4           ; 240
+ abbbb babab abbaa babab bbbbb bbabh bbhaa babba abbab habba
+ aabba bbbab bbabh aa-bb abaaa bbaaa bbb
+62437420-4           ; 241
+ abbbb babab abbaa babab bbbbb bbabh bbhaa babba abbbb habaa
+ aabba bbbab ababh aabbb abaaa baaaa bbb
+62740132-4           ; 242
+ abbbb babab abbaa babab bbbbb bbabh bbhaa babba abbbb hahaa
+ aabaa bbbab ababh aabbb abaaa baaaa bbb
+62765772-4           ; 243
+ abbbb babab abbaa babab babbb bbabh bbhaa babba abbbb hahaa
+ aabaa bbbab ababh aabbb abaaa baaaa bbb
+62953112-4           ; 244
+ abbbb babab abbaa babab babbb bbabh bbhaa babba abbbb aahaa
+ aabaa bbbab abaah aabbb abaaa baaaa bbb
+62987788-4           ; 245
+ abbbb babab abbaa babab babbb bbabh bbhaa babba abbbb aahaa
+ aabaa bbbab abaah aabbb abaaa aaaaa bbb
+63201160-4           ; 246
+ abbbb babab abbaa babab babbb bbabh bbhaa babba abbbb bahaa
+ aabaa bbbab abaah aabbb abaaa aaaaa bbb
+63396492-4           ; 247
+ abbbb babab abbaa babab babbb bbabh bbbaa babba abbbb bahab
+ aaaaa bbbab abaah aabbb abaaa aaaaa bbb
+63487356-4           ; 248
+ abbba baaab abbaa babab babbb bbabh bbbaa babba abbbb bahab
+ aaaaa bbbab abaah aabbb abaaa aaaaa bbb
+63661368-4           ; 249
+ abbba baaab abbaa aabab babbb bbabh bbbaa babba abbbb bahab
+ aaaaa bbbab abaah aabbb abaaa aaaaa bbb
+63821548-4           ; 250
+ abbba baaab abbaa aabab babbb bbabh bbbaa babba abbbb bahab
+ aaaaa babab abaah aabbb abaaa aaaaa bbb
+63890920-4           ; 251
+ abbba baaab abbaa aabab babbb bbabh bbbaa babba abbbb bahab
+ abaaa babab abaah aabbb abaaa aaaaa bbb
+266290-5             ; 252
+ aaaaa aaaba aaaba bbaab bbaaa abaaa bbbab bbaba babha bahab
+ bbahb bbbab aabab baabb bbbbb ababb abb
+416766-5             ; 253
+ aaaaa aaaba aaaba bbaab bbaaa abaaa bbbab bbaba babha bahab
+ bbahb bbbab aabab baabb bbbbb aaabb abb
+1860303-5            ; 254
+ aabah abbba bbabb babhb bbaab ahaha bbbaa bbaba abbba babbb
+ baabb bbbab aabaa bbbbb bbhab aaaab abb
+2166131-5            ; 255
+ aabah abbba bbabb babhb bbaab ahaha bbbba bbbba abbaa babbb
+ baahb babab aabaa bbbbb bbhab aaaab abb
+2237607-5            ; 256
+ aabah abbba bbabb babhb bbaab ahaha bbbba bbbba abaaa babbb
+ baahb babab aabaa bbbbb bbhab aaaab abb
+2355505-5            ; 257
+ aabah abbba ababb babhb bbaab ahaba bbbba bbbba abaaa babbb
+ baahb babab aabaa bbbbb bbhab aaaab abb
+2448081-5            ; 258
+ aabah abbba ababb babhb bbaab ahbba bbbba bbbba abaaa babbb
+ baahb babab aabaa bbbbb bbhab aaaab abb
+2515287-5            ; 259
+ aabab abbba ababb babhb bbaab aabba bbbba bbbba abaab babbb
+ baahb babab aabaa bbbbb bbhaa aaaab abb
+2532174-5            ; 260
+ aabab abbba ababb babhb bbaab aab-a bbbba bbbba abaab baabb
+ baahb babab aabaa bbbbb bbhaa aaaab abb
+2654431-5            ; 261
+ aabab abbba ababb babhb bbaab aabaa bbbba bbbba abaab baabb
+ baahb babab aabaa bbbbb bbhaa aaaab abb
+2708007-5            ; 262
+ aabab abbba ababb babhb bbabb abbaa bhbba bbbba abaab baabb
+ baahb babab aabaa bbbbb bbhaa aaaab abb
+2732240-5            ; 263
+ aabab abbba ababb babhb bbabb abbaa bhbba bbbba abaab baahb
+ baahb babab aabaa bbbbb bbhaa aaaab abb
+2830123-5            ; 264
+ aabab abbba ababb babhb bbabb abbaa bhbba bbbba abaab baahb
+ baaab babab aabaa babbb bbhaa aaaab abb
+2986566-5            ; 265
+ aabab abbba ababb babhb bbaab abbaa bhbba bbbba abaab baahb
+ baaab babab aabaa babbb bbhaa aaaab abb
+3036158-5            ; 266
+ aabaa abbba ababb babhb bbaab abbaa bhbba bbbba abaab baahb
+ baaab babab aabaa babbb bbhaa aaaab abb
+3225278-5            ; 267
+ aabaa abbba ababb aabhb bbaab abbaa babba bbbba abaab baahb
+ baaab bhbab aabaa babbb bbaaa aaabb abb
+3184781-5            ; 268
+ aabaa abbba ababb aabhb bbaab abbaa babba bbbba abaab baahb
+ baaab babab aabaa babbb bbaaa aaabb abb
+3353307-5            ; 269
+ aabaa abbba ababb aabhb bbaab abbaa babba bbbba abaab baabb
+ baaab babab aabaa babbb bbaaa aaabb abb
+3478334-5            ; 270
+ aabaa abbba ababb aabbb baaab abbaa babba bbbba abaab baabb
+ baaab babab aabaa babbb bbaaa aaabb abb
+3786287-5            ; 271
+ aabaa abbba abbbb aabbb baaab abbaa babba abbba abaab baabb
+ baaab babab aabaa babbb bbaaa aaabb bbb
+4037025-5            ; 272
+ aabaa abbba abbbb abbbb baaab abbaa babba abbba abaab baabb
+ baaab babab aabba babbb bbaaa aaabb bbb
+4135221-5            ; 273
+ aabaa abbba abbbb abbbb baaab abbaa babba abbaa abaab baabb
+ baaab babab aabba babbb bbaaa aaabb bbb
+4313620-5            ; 274
+ aabaa abbba abbbb abbbb baaab abbaa habba abbab abaab baabb
+ baaab babab aabba babbb bbaaa aaabb bbb
+16719719-0           ; 275
+ aabaa abbba ab-bb abbbb baaab abbaa habba abbab abaab baabb
+ baaaa babab aabba babbb bbaba aaabb bbb
+4710181-5            ; 276
+ aabaa abbba abbbb abbbb baaab abbaa habba abbab abaab baabb
+ baaaa bbbab aabba babbb bbaba aaabb bbb
+4419295-5            ; 277
+ aabaa abbba abbbb abbbb baaab abbaa habba abbab abaab baabb
+ baaaa babab aabba babbb bbaba aaabb bbb
+5015999-5            ; 278
+ aabaa abaaa abbbb abbbb baaab abbaa habba abbab abaab baabb
+ baaaa babab aabaa babbb bbaba aaabb bbb
+5155594-5            ; 279
+ aabaa abaaa abbbb abbbb baaab abbaa habba abbab abaab baabb
+ baaaa babab aaaaa babbb ababa aaabb bbb
+5328934-5            ; 280
+ aabaa abaaa abbbb abbbb baaab abbaa babba abbab abaab baabb
+ baaaa babab aaaaa aabbb ababa aaabb bbb
+5457423-5            ; 281
+ aabaa abbaa abbbb abbbb baaab abbaa babba abbab abaab baabb
+ baaaa babab aaaaa aabbb ababa aaabb bbb
+5826500-5            ; 282
+ aabba abbaa abbbb abbba baaab abbaa babba abbab abaab aaabb
+ bbaaa babab abaaa aabbb hbaba aaabb bbb
+5763520-5            ; 283
+ aabba abbaa abbbb abbba baaab abbaa babba abbab abaab aaabb
+ bbaaa babab abaaa aabbb bbaba aaabb bbb
+6145847-5            ; 284
+ aabba abbaa abbbb abbba baaab abbaa aabba abbab abaab aaabb
+ bbaaa babab abaaa aabbb abaaa aaabb bbb
+6502506-5            ; 285
+ aabba abbaa bbbbb abbba baaab abbaa aabba abbab abaab aaabb
+ bbaaa babab abaah aabbb abaaa aaabb bbb
+6711122-5            ; 286
+ aabba abbaa bbbbb abbba baaab abbaa aabba abbab abaab aaabb
+ bbaaa babaa abaah aabbb abaaa aabbb bbb
+6814273-5            ; 287
+ aabba abbaa bbbbb abbba baaab abbaa aabba abbab abaab aaabb
+ bbbaa babaa abaah aabbb abaaa aabbb bbb
+7031078-5            ; 288
+ aabba abbaa bbbbb abbba baaab abbaa aabba abbab abaab aaabb
+ bbbaa babaa abaab aabbb abaaa aabbb bbb
+7487604-5            ; 289
+ aabba abbaa bbbbb abbba baaab abbaa aabba abbab abaab aaabb
+ bbbaa babaa abaab aabab abaaa aabbb bba
+18036868-0           ; 290
+ aabba abbaa bb-bb abbba baaab abbaa aabba bbbab abaab aaabb
+ bbbaa babaa abaab aabab abaaa aabbb -ba
+7533961-5            ; 291
+ aabba abbaa bbbbb abbba baaab abbaa aabba bbbab abaab aaabb
+ bbbaa babaa abaab aabab abaaa aabbb bba
+58292936-5           ; 292
+ aabba abbaa bbbbb abbba bbaab abbaa aabba b-bab abaab aabbb
+ bbbaa babaa abaab aabab abaaa aabbb bba
+58485952-5           ; 293
+ aabbb abbaa bbbbb abbba bbaab abbaa aabba bhbab abaab aabbb
+ bbbaa babaa abaab aabab abaaa aabbb bba
+59633772-5           ; 294
+ aabbb abbaa bbbab abbba bbaab abbaa aabba bhbab abaab aabbb
+ bbbaa babaa abaab aabab abaaa aabbb bba
+59785860-5           ; 295
+ aabbb abbaa bbbab abbba bbaab abbaa aabba bhbab abaab aabbb
+ bbbaa babaa abaab aabab bbaaa aabbb bba
+60341672-5           ; 296
+ aabbb abbaa bbbab aabba bbaab abbaa aabba bhbab abaab abbbb
+ bbaba bhbaa abaab aabab bbaaa aabbb bba
+60421640-5           ; 297
+ aabbb abbaa bbbab aabba bbaab abbaa aabba bhbab abaab ahbbb
+ bbaba babaa abaab aabab bbaaa aabbb bba
+60618536-5           ; 298
+ aabbb abbaa bbbbb aabba bbaab abbaa aabba bhbab ababb ahbbb
+ bbaba babaa abaab aabab bbaaa aabbb bba
+60979960-5           ; 299
+ aabbb abbaa hbbbb aabba bbaab abbaa aabba bhbab ababb ahbba
+ bbaba babaa abbab aabab bbaaa aabbb bba
+13370377-0           ; 300
+ aabbb abbaa hb-bb aabba abaab abbaa aabba bhbab ababb ahbba
+ bbaba babaa abbab aabab bbaaa aabbb bba
+62100796-5           ; 301
+ babbb abbaa hbbbb ababb abahb abbaa babab ahbab ababb abbha
+ baaba babaa abbbb aabba aaaaa aaaba bba
+62307404-5           ; 302
+ babbb abbaa hbbhb ababb abahb abaaa babab ahbab abbbb abbha
+ baaba babab abbbb aabba aaaha aaaba bba
+62321504-5           ; 303
+ babbb abbaa hbbhb ababb abahb abaaa babab ahbab abbbb abbha
+ baaba babab aabbb aabba aaaha aaaba bba
+62370104-5           ; 304
+ babbb abbaa hbbhb ababb abahb ababa babab ahbab ababb abbha
+ baaba babab aabbb aabba aaaha aaaba bba
+62455284-5           ; 305
+ babbb abbaa hbbhb ababb abahb ababa babab ahbab ababb abbha
+ baaba babab aabbb aabba aaaaa aaaba bba
+62569464-5           ; 306
+ babbb abbaa hbbhb ababb abahb abbha babab ahbab aaabb abbha
+ baaba habab aabbb aabba aaaaa aaaba bba
+62806428-5           ; 307
+ babbb abbaa hbbhb aaabb abahb abbha babab abbab aaabb abbha
+ baabb habab aabab aabba aaaaa aaaba bba
+874292-6             ; 308
+ bbbab aabaa aaaab haaab bbbaa bbhbb ababh baaab baabb baaba
+ aaaaa aabab bbaab baabb abbab ababb aab
+951929-6             ; 309
+ bbbab aabaa aaaab haaab bbbaa bbhbb ababh baaab baabb baaba
+ aaaaa aabab bbaab baabb abbab ababb aab
+933801-6             ; 310
+ bbbab aabaa aaaab haaab bbbaa bbhbb ababh baaab baabb baaba
+ aaaaa aabab bbaab baabb abbab ababb aab
+1178196-6            ; 311
+ bbbab aabab aaaab haaab babaa bhhbb ababh baaab aabbb baaba
+ aaaaa aabab babab baabb bbbab ababb aab
+1339261-6            ; 312
+ bbbab babab aaaab haaab babaa bhhbb ababh baaab aabbb baaba
+ aaaab aabab babab baabb bbbab ababb aab
+1625550-6            ; 313
+ bbbab babab aaaab haaab babaa bhbbb ababh baaab aabbb bbaba
+ aaaab aabab babab baabb bbbab ababb aab
+1855315-6            ; 314
+ bbbab babab aaaab haabb babaa bhbbb ababh baaab aabbb bbaba
+ aaaab aabab babab baabb bbbab ababb aab
+2010270-6            ; 315
+ bbbab babab aaaab baabb babab bhbbb ababh baaab aaabb bbaba
+ aaaab aabab babab bahbb bbbab ababb aab
+2058636-6            ; 316
+ bbbab babab aaaab baabb babab bhbbb ababh baaab aaabb bbaba
+ aaaab aabab babab bahbb bbbab ababb aab
+2043071-6            ; 317
+ bbbab babab aaaab baabb babab bhbbb ababh baaab aaabb bbaba
+ aaaab aabab babab bahbb bbbab ababb aab
+2054681-6            ; 318
+ bbbab babab aaaab baabb babab bhbbb ababh baaab aaabb bbaba
+ aaaab aabab babab bahbb bbbab ababb aab
+2056239-6            ; 319
+ bbbab babab aaaab baabb babab bhbbb ababh baaab aaabb bbaba
+ aaaab aabab babab bahbb bbbab ababb aab
+2087819-6            ; 320
+ bbbab babab aaaab baabb babab bhbbb ababh baaab aaabb bbaba
+ aaaab aabab babab bahbb bbbab ababb aab
+2983558-6            ; 321
+ bbbab bbbab aaaab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabab babab bahbb bbbaa ababb aab
+2983761-6            ; 322
+ bbbab bbbab aaaab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabab babab bahbb bbbaa ababb aab
+3502989-6            ; 323
+ bbbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabab babab bbhbb bbbaa ababb bab
+3634283-6            ; 324
+ bbbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbhbb bbbaa ababb bab
+22607036-6           ; 325
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbhbb bbbaa ababb bab
+18115840-6           ; 326
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbhbb bbbaa ababb bab
+22118992-6           ; 327
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbhbb bbbaa ababb bab
+4306578-6            ; 328
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbhbb bbbaa ababb bab
+12321654-6           ; 329
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aab-b babab bb-bb bbbaa ababb bab
+20202772-6           ; 330
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bb-bb bbbaa ababb bab
+7405885-6            ; 331
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bb-bb bbbaa ababb bab
+26239142-6           ; 332
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbabb bbbaa ababb bab
+9261870-6            ; 333
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aab-b babab bb-bb bbbaa ababb bab
+17526444-6           ; 334
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aab-b babab bb-bb bbbaa ababb bab
+6605632-6            ; 335
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bb-bb bbbaa ababb bab
+20393000-6           ; 336
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbhbb bbbaa ababb bab
+19586888-6           ; 337
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bb-bb bbbaa ababb bab
+22135088-6           ; 338
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bb-bb bbbaa ababb bab
+20906008-6           ; 339
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbabb bbbaa ababb bab
+23757904-6           ; 340
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bb-bb bbbaa ababb bab
+13438816-6           ; 341
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbhbb bbbaa ababb bab
+19032832-6           ; 342
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bb-bb bbbaa ababb bab
+17980296-6           ; 343
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bb-bb bbbaa ababb bab
+17909350-6           ; 344
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbhbb bbbaa ababb bab
+4920349-6            ; 345
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbhbb bbbaa ababb bab
+24701896-6           ; 346
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbhbb bbbaa ababb bab
+23120264-6           ; 347
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbhbb bbbaa ababb bab
+15536161-6           ; 348
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbhbb bbbaa ababb bab
+4486913-6            ; 349
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbhbb bbbaa ababb bab
+12983698-6           ; 350
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbhbb bbbaa ababb bab
+5391851-0            ; 351
+ bhbab bbbab aa-ab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbhbb bbbaa ababb bab
+13419477-6           ; 352
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbhbb bbbaa ababb bab
+16052973-6           ; 353
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbhbb bbbaa ababb bab
+19499390-6           ; 354
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bb-bb bbbaa ababb bab
+10704956-6           ; 355
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbhbb bbbaa ababb bab
+12373053-6           ; 356
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbhbb bbbaa ababb bab
+9328473-6            ; 357
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aab-b babab bb-bb bbbaa ababb bab
+15586939-6           ; 358
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabab babab bbabb bbbaa ababb bab
+5188063-6            ; 359
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabab babab bbabb bbbaa ababb bab
+6197140-6            ; 360
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabab babab bb-bb bbbaa ababb bab
+9032558-6            ; 361
+ bhbab bbbab aabab babbb babab bhbbb ababa baaab aaaba bbaba
+ aaaab aabab babab bbabb bbbaa ababb bab
+5720909-0            ; 362
+ b-bab bbbab aa-ab babbb babab babbb ababa baaab aaaba bbaba
+ aaaab aabab babab bbabb bbbaa ababb bab
+16050750-0           ; 363
+ -aba- --ba- aa-a- ba--b baba- bab-- aba-a baaab aaa-a b-aba
+ aaaab aa-a- ba-ab bbabb bbbaa ababb bab
+9855815-0            ; 364
+ b-bab bbbab aa-ab babbb babab b-bbb abab- baaab aaaba bbaba
+ aaaab aabab babab bbabb bbbaa ababb bab
+9388697-6            ; 365
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabab babab bbabb bbbaa ababb bab
+5853182-6            ; 366
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabab babab bbabb bbbaa ababb bab
+10051492-6           ; 367
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabab babab bbabb bbbaa ababb bab
+16131852-6           ; 368
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabab babab bbabb bbbaa ababb bab
+7651488-6            ; 369
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aab-b babab bb-bb bbbaa ababb bab
+23163610-6           ; 370
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbhbb bbbaa ababb bab
+4792183-6            ; 371
+ bhbab bbbab aabab babbb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbhbb bbbaa ababb bab
+28105056-6           ; 372
+ bhbab bbbab aabab baabb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bb-bb bbbaa ababb bab
+28256720-6           ; 373
+ babab bbbab aabab baabb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbabb bbbaa ababb bab
+28852308-6           ; 374
+ babab bbbab aabab baabb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbabb bbbaa ababb bab
+28599118-6           ; 375
+ babab bbbab aabab baabb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbabb bbbaa ababb bab
+28759156-6           ; 376
+ babab bbbab aabab baabb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bb-bb bbbaa ababb bab
+28712732-6           ; 377
+ babab bbbab aabab baabb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbhbb bbbaa ababb bab
+29163198-6           ; 378
+ baaab bbbab aabab baabb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbhbb bbbaa ababb bab
+29257252-6           ; 379
+ baaab bbbab aabab baabb babab bhbbb ababh baaab aaaba bbaba
+ aaaab aabhb babab bbhbb bbbaa ababb bab
+29453832-6           ; 380
+ baaab bbbab aabab baabb babab bhbbb ababh ba-ab aaaba bbaba
+ aaaab aabhb babab bbbbb bbbaa ababb bab
+29683438-6           ; 381
+ baaab bbbab aabab baabb babab bhbbb ababh bahab aaaba bbaba
+ aaaab aabhb babab bbbbb bbbaa ababb bab
+29985152-6           ; 382
+ baaab bbbab aabab baabb babab bhbbb ababh bahab aaaba bbaba
+ aaaab aabhb babab bbbbb bbbaa ababb bab
+29767188-6           ; 383
+ baaab bbbab aabab baabb babab bhbbb ababh bahab aaaba bbaba
+ aaaab aabhb babab bbbbb bbbaa ababb bab
+29685112-6           ; 384
+ baaab bbbab aabab baabb babab bhbbb ababh bahab aaaba bbaba
+ aaaab aabhb babab bbbbb bbbaa ababb bab
+30151876-6           ; 385
+ baaab bbbab aa-ab baabb babab bhbbb aba-h bahab aaaba bbaba
+ aaaab aabhb babab bbbbb bbbaa ababb -ab
+31255358-6           ; 386
+ baaab bbbab aa-ab -aabb babab bhbba abahb bhhab aaaba bbaba
+ aaaab aabhb babab bbbbb bbbaa ababb hab
+31468886-6           ; 387
+ baaab bbbab aa-ab haabb babab bhbba abahb bhhab aaaba bbaba
+ aaaab aabhb babab bbbbb bbbaa ababb hab
+31570410-6           ; 388
+ baaab bbbaa aa-ab haabb babab bhbba abahb bhhab aaaba bbaba
+ aaaab aabhb babab bbbbb bbbaa ababb hab
+31973016-6           ; 389
+ baaab bbbaa aa-ab haabb babab bhbba abahb bhaab aaaba bbaba
+ aaaab aabhb babab bbbbb bbbaa ababb hab
+32089880-6           ; 390
+ baaab bbbaa aa-ab habbb babab bhbba ababb bhaab aaaba bbaba
+ aaaab abahb babab bbbbb bbaaa ababb hab
+32202456-6           ; 391
+ baaab bbbaa aaaab habbb babab bhbba ababb bhaab aaaba bbaba
+ aaaab abahb babab bbbbb bbaaa ababb aab
+33795096-6           ; 392
+ baaab bhbaa aaaab habab baaab bbbbb bbabb bhaab aaab- bbaaa
+ aaabb abbba ababa bbbba ababa ababb aaa
+33847420-6           ; 393
+ baaab bhbaa aaaab habab baaab bbbbb bbabb bhaab aaab- bbaaa
+ aaabb abbba ababa bbbba ababa ababb aaa
+33676216-6           ; 394
+ baaab bhbaa aaaab habab baaab bbbbb bbabb bhaab aaab- bbaaa
+ aaabb abbba ababa bbbba ababa ababb aaa
+33817920-6           ; 395
+ baaab bhbaa aaaab habab baaab bbbbb bbabb bhaab aaab- bbaaa
+ aaabb abbba ababa bbbba ababa ababb aaa
+33875940-6           ; 396
+ baaab bhbaa aaaab habab baaab bbbbb bbabb bhaab aaabb bbaaa
+ aaabb abbba ababa bbbba ababa ababb aaa
+33993440-6           ; 397
+ baaab bhbaa abaab aabab baaab bbbbb bbabb ahaab aaabb bbaaa
+ aaabb abbba ababa bbbba ababa ababb aaa
+33947012-6           ; 398
+ baaab bhbaa abaab aabab baaab bbbbb bbabb ahaab aaab- bbaaa
+ aaabb abbba ababa bbbba ababa ababb aaa
+34100828-6           ; 399
+ baaab bhbaa abaab aabab baaab bbbbb bbabb aaabb aaabh bbaaa
+ aaabb abbba ababa bbbba ababa ababb aaa
+34172364-6           ; 400
+ baaab bbbaa abaab aabab baaab bbbbb bbabb aaabb aaab- bbaaa
+ aaabb abbba ababa bbbba ababa ababb aaa
+34306000-6           ; 401
+ baaab bbbaa abaab aabab baaab bbbbb bbabb aaabb aaabb bbaaa
+ aaabb abbba ababa bbbba aaaba ababb aaa
+34364820-6           ; 402
+ baaab bbbaa abaab aabab baaab bbbbb bbabb aaabb aaabb bbaaa
+ aaabb abbba ababa bbbba aaaba ababb aaa
+34264392-6           ; 403
+ baaab bbbaa abaab aabab baaab bbbbb bbabb aaabb aaabb bbaaa
+ aaabb abbba ababa bbbba aaaba ababb aaa
+34803180-6           ; 404
+ baaab bbbaa abaab aabab baaab bbbbb bbaab aaabb aaabb bbaaa
+ aaabb abbba ababa bbaba aaaba ababa aaa
+34712240-6           ; 405
+ baaab bbbaa abaab aabab baaab bbbbb bbaab aaabb aaabb bbaaa
+ aaabb abbba ababa bbaba aaaba ababa aaa
+34684360-6           ; 406
+ baaab bbbaa abaab aabab baaab bbbbb bbaab aaabb aaabb bbaaa
+ aaabb abbba ababa bbaba aaaba ababa aaa
+34766972-6           ; 407
+ baaab bbbaa abaab aabab baaab bbbbb bbaab aaabb aaabb bbaaa
+ aaabb abbba ababa bbaba aaaba ababa aaa
+34700072-6           ; 408
+ baaab bbbaa abaab aabab baaab bbbbb bbaab aaabb aaabb bbaaa
+ aaabb abbba ababa bbaba aaaba ababa aaa
+34801892-6           ; 409
+ baaab bbbaa abaab aabab baaab bbbbb bbaab aaabb aaabb bbaaa
+ aaabb abbba ababa bbaba aaaba ababa aaa
+34929168-6           ; 410
+ baaab bbbaa abaab aabab baaab bbbbb bbaab aabbb aaabb bbaaa
+ aaabb abbba ababa bbaba aaaba ababa aaa
+35082972-6           ; 411
+ baaab bbbaa abaab aabab baaab bbbbb bbaab aabbb aaabb bbaaa
+ aaabb abbba ababa bbaba aaaba ababa aaa
+35096952-6           ; 412
+ baaab bbbaa abaab aabab baaab bbbbb bbaab aabbb aaabb bbaaa
+ aaabb abbba ababa bbaba aaaba ababa aaa
+35002652-6           ; 413
+ baaab bbbaa abaab aabab baaab bbbbb bbaab aabbb aaabb bbaaa
+ aaabb abbba ababa bbaba aaaba ababa aaa
+34955856-6           ; 414
+ baaab bbbaa abaab aabab baaab bbbbb bbaab aabbb aaabb bbaaa
+ aaabb abbba ababa bbaba aaaba ababa aaa
+34983652-6           ; 415
+ baaab bbbaa abaab aabab baaab bbbbb bbaab aabbb aaabb bbaaa
+ aaabb abbba ababa bbaba aaaba ababa aaa
+34819080-6           ; 416
+ baaab bbbaa abaab aabab baaab bbbbb bbaab aabbb aaabb bbaaa
+ aaabb abbba ababa bbaba aaaba ababa aaa
+35101604-6           ; 417
+ baaab bbbaa abaab aabab baaab bbbbb bbaab aabbb aaabb bbaaa
+ aaabb abbba ababa bbaba aaaba ababa aaa
+34965040-6           ; 418
+ baaab bbbaa abaab aabab baaab bbbbb bbaab aabbb aaabb bbaaa
+ aaabb abbba ababa bbaba aaaba ababa aaa
+35127304-6           ; 419
+ baaab bbbaa abaab aabab baaab bbbba bbaab aabbb aaabb bbaaa
+ aaabb abbba ababa bbaba aaaba ababa aaa
+35203600-6           ; 420
+ baaab bhbaa abaab aabab baaab bbbba bbaab aabbb aaabb bbaaa
+ aaabb abbba ababa bbaba aaaba ababa aaa
+35241012-6           ; 421
+ baaab bhbaa abaab aabab baaab bbbba bbaab aabbb aaabb bbaaa
+ aaabb abbba ababa bbaba aaaba ababa aaa
+35282416-6           ; 422
+ baaab bhbaa abaab aabab baaab bbbba bbaab aabbb aaabb bbaaa
+ aaabb abbba ababa bbaba aaaba ababa aaa
+35283248-6           ; 423
+ baaab bhbaa abaab aabab baaab bbbba bbaab aabbb aaabb bbaaa
+ aaabb abbba ababa bbaba aaaba ababa aaa
+35193912-6           ; 424
+ baaab bhbaa abaab aabab baaab bbbba bbaab aabbb aaabb bbaaa
+ aaabb abbba ababa bbaba aaaba ababa aaa
+35229312-6           ; 425
+ baaab bhbaa abaab aabab baaab bbbba bbaab aabbb aaabb bbaaa
+ aaabb abbba ababa bbaba aaaba ababa aaa
+35330856-6           ; 426
+ baaab bhbaa abaab aabab baaab bbbba bbaab aabbb aaabb bbaaa
+ aaabb abbba ababa bbbba aaaba ababa aaa
+35359732-6           ; 427
+ baaab bhbaa abaab aabab baaab bbbba bbaab aabbb aaabb bbaaa
+ aaabb abbba ababa bbbba aaaba ababa aaa
+35353744-6           ; 428
+ baaab bhbaa abaab aabab baaab bbbba bbaab aabbb aaabb bbaaa
+ aaabb abbba ababa bbbba aaaba ababa aaa
+35310496-6           ; 429
+ baaab bhbaa abaab aabab baaab bbbba bbaab aabbb aaabb bbaaa
+ aaabb abbba ababa bbbba aaaba ababa aaa
+35310312-6           ; 430
+ baaab bhbaa abaab aabab baaab bbbba bbaab aabbb aaabb bbaaa
+ aaabb abbba ababa bbbba aaaba ababa aaa
+35555348-6           ; 431
+ baaab bhbaa abaab babab baaab bbbba bbaab aaabb aaabb bbaaa
+ aaabb abbba ababa bbbba aaaba ababa aaa
+35636840-6           ; 432
+ baaab bhbaa abaab babab baaab bbbba bhaab aaabb aaaab bbaaa
+ aaabb abbba ababa bbbba aaaba ababa aaa
+35809648-6           ; 433
+ baaab bhbaa abaab babab baaab bbbba bhaab aaabb aaaab bbaaa
+ aaabb abbbb ababa bbbba aaaba ababa aaa
+35747752-6           ; 434
+ baaab bhbaa abaab babab baaab bbbba bhaab aaabb aaaab bbaaa
+ aaabb abbbb ababa bbbba aaaba ababa aaa
+35841096-6           ; 435
+ baaab bhbaa abaab babab baaab bbbba bhaab aaabb aaaab bbaaa
+ aaabb abbbb ababa bbbba aaaba ababa aaa
+35982072-6           ; 436
+ baaab bhbaa abaab babab baaab bbbba bhaab aaabb aaaab bbaaa
+ aaabb abbbb ababa bbbba aaaba ababa aaa
+35951416-6           ; 437
+ baaab bhbaa abaab babab baaab bbbba bhaab aaabb aaaab bbaaa
+ aaabb abbbb ababa bbbba aaaba ababa aaa
+35828528-6           ; 438
+ baaab bhbaa abaab babab baaab bbbba bhaab aaabb aaaab bbaaa
+ aaabb abbbb ababa bbbba aaaba ababa aaa
+35897120-6           ; 439
+ baaab bhbaa abaab babab baaab bbbba bhaab aaabb aaaab bbaaa
+ aaabb abbbb ababa bbbba aaaba ababa aaa
+35979196-6           ; 440
+ baaab bhbaa abaab babab baaab bbbba bhaab aaabb aaaab bbaaa
+ aaabb abbbb ababa bbbba aaaba ababa aaa
+35860744-6           ; 441
+ baaab bhbaa abaab babab baaab bbbba bhaab aaabb aaaab bbaaa
+ aaabb abbbb ababa bbbba aaaba ababa aaa
+36052144-6           ; 442
+ baaab bhbaa abaab babab aaaab bbbba bhaab aabbb aaaab bbaaa
+ aaabb abbbb ababa bbbba aaaba ababa aaa
+36036284-6           ; 443
+ baaab bhbaa abaab babab aaaab bbbba bhaab aabbb aaaab bbaaa
+ aaabb abbbb ababa bbbba aaaba ababa aaa
+36132804-6           ; 444
+ baaab bhbaa abaab babab aaaab bbbba bhaab aabbb aaaab bbaaa
+ aaabb abbbb ababa bbbba aaaba ababa aaa
+36171752-6           ; 445
+ baaab bhbaa abaab babab aaaab bbbba baaab aabbb aaaab bbaaa
+ aaabb abbbb ababa bbbba aaaba ababa aaa
+36194300-6           ; 446
+ baaab bhbaa abaab babab aaaab bbbba baaab aabbb aaaab bbaaa
+ aaabb abbbb ababa bbbba aaaba ababa aaa
+36278024-6           ; 447
+ baaab bhbaa abaab babab aaaab bbbba baaab aabbb aaaab bbaaa
+ aaabb abbba ababa bbbba aaaba ababa aaa
+36342432-6           ; 448
+ baaab bhbaa abaab babab aaaab bbbba baaab habbb aaaab bbaaa
+ aaabb abbba ababa bbbba aaaba ababa aaa
+36335736-6           ; 449
+ baaab bhbaa abaab babab aaaab bbbba baaab habbb aaaab bbaaa
+ aaabb abbba ababa bbbba aaaba ababa aaa
+36355096-6           ; 450
+ baaab bhbaa ab-ab babab aaaab bbbba baaab habbb aaaab bbaaa
+ aaabb abbba ababa bbbba aaaba ababa haa
+36509396-6           ; 451
+ baaab bhbaa ab-ab babab aaaab bbbba baaab habbb aaaab bbaaa
+ aaabb abbba ababa bbbba aaaba ababa haa
+36583000-6           ; 452
+ baaab bhbaa ab-ab babab aaaab bbbba baaab habbb aaaab bbaaa
+ aaabb abbba ababa bbbba aaaba ababa haa
+36530952-6           ; 453
+ baaab bhbaa ab-ab babab aaaab bbbba baaab habbb aaaab bbaaa
+ aaabb abbba ababa bbbba aaaba ababa haa
+36537988-6           ; 454
+ baaab bhbaa ab-ab babab aaaab bbbba baaab habbb aaaab bbaaa
+ aaabb abbba ababa bbbba aaaba ababa haa
+36485776-6           ; 455
+ baaab bhbaa ab-ab babab aaaab bbbba baaab habbb aaaab bbaaa
+ aaabb abbba ababa bbbba aaaba ababa haa
+36618860-6           ; 456
+ baaaa bhbaa ab-ab babab aaaab bbbba baaab habbb aaaab bbaaa
+ aaabb abbba ababa bbbba aaaba ababa haa
+36770960-6           ; 457
+ baaaa bhbaa ab-ab babab abaab bbbba baaab habbb aaaab bbaaa
+ aaabb abbba ababa bbbba aaaba ababa haa
+36818756-6           ; 458
+ baaaa bhbaa ab-ab babab abaab bbbba baaab habbb aaaab bbaaa
+ aaabb abbba ababa bbbba aaaba ababa haa
+37781720-6           ; 459
+ baaaa bbbaa ab-aa babab abaab bhbba baaab ahbbb aaaab bbaaa
+ aaabb abbba ababa abbba haaba ababa haa
+37874180-6           ; 460
+ baaaa bbbaa ab-aa babab abaab bhbba baaab ahbbb aaaab bbaaa
+ aaabb abbba ababa abbba haaba ababb -aa
+38863588-6           ; 461
+ baaaa bb-aa aa-aa bbbab abaab bbbha baaab abbbb abaab bbaaa
+ aaabb abbba ababa abbba haaba ababb baa
+38883368-6           ; 462
+ baaaa bbaaa aa-aa bbbab abaab bbbha baaab abbbb abaab bbaaa
+ aaabb abbba ababa abbba haaba ababb -aa
+39010000-6           ; 463
+ baaaa bbaaa aa-aa bbbaa abaab bbbha baaab abbbb abaab bbaaa
+ aaabb abbba ababa abbba haaba ababb baa
+39026016-6           ; 464
+ baaaa bbaaa aa-aa bbbaa abaab bbbha baaab abbbb abaab bbaaa
+ aaabb abbba ababa abbba haaba ababb -aa
+38996208-6           ; 465
+ baaaa bbaaa aa-aa bbbaa abaab bbbha baaab abbbb abaab bbaaa
+ aaabb abbba ababa abbba haaba ababb haa
+39025472-6           ; 466
+ baaaa bbaaa aa-aa bbbaa abaab bbbha baaab abbbb abaab bbaaa
+ aaabb abbba ababa abbba haaba ababb haa
+38949704-6           ; 467
+ baaaa bbaaa aa-aa bbbaa abaab bbbha baaab abbbb abaab bbaaa
+ aaabb abbba ababa abbba haaba ababb haa
+38935456-6           ; 468
+ baaaa bbaaa aa-aa bbbaa abaab bbbha baaab abbbb abaab bbaaa
+ aaabb abbba ababa abbba haaba ababb haa
+38960060-6           ; 469
+ baaaa bbaaa aa-aa bbbaa abaab bbbha baaab abbbb abaab bbaaa
+ aaabb abbba ababa abbba haaba ababb haa
+39115432-6           ; 470
+ baaaa bbaaa aa-aa bbbaa abaab bbbha baaab abbbb abaab bbaaa
+ aaabb abbba ababa abbba habba ababb haa
+39172848-6           ; 471
+ baaaa bbaaa aa-aa bbbaa abaab bbbha baaab abbbb abaab bbaaa
+ aaabb abbba ababa abbba habba ababb -aa
+39112588-6           ; 472
+ baaaa bbaaa aa-aa bbbaa abaab bbbha baaab abbbb abaab bbaaa
+ aaabb abbba ababa abbba habba ababb -aa
+39044048-6           ; 473
+ baaaa bbaaa aa-aa bbbaa abaab bbbha baaab abbbb abaab bbaaa
+ aaabb abbba ababa abbba habba ababb haa
+39180864-6           ; 474
+ baaaa bbaaa aa-aa bbbaa abaab bbbha baaab abbbb abaab bbaaa
+ baabb abbba ababa abbba habba ababb haa
+39229044-6           ; 475
+ baaaa bbaaa aa-aa bbbaa abaab bbbha baaab abbbb abaab bbaaa
+ baabb abbba ababa abbba habba ababb -aa
+39198664-6           ; 476
+ baaaa bbaaa aa-aa bbbaa abaab bbbha baaab abbbb abaab bbaaa
+ baabb abbba ababa abbba habba ababb baa
+39215836-6           ; 477
+ baaaa bbaaa aa-aa bbbaa abaab bbbha baaab abbbb abaab bbaaa
+ baabb abbba ababa abbba habba ababb baa
+39178188-6           ; 478
+ baaaa bbaaa aa-aa bbbaa abaab bbbha baaab abbbb abaab bbaaa
+ baabb abbba ababa abbba habba ababb -aa
+39204168-6           ; 479
+ baaaa bbaaa aa-aa bbbaa abaab bbbha baaab abbbb abaab bbaaa
+ baabb abbba ababa abbba habba ababb haa
+39264344-6           ; 480
+ baaaa bbaaa aa-aa bbbaa abaab bbbha baaab abbbb abbab bbaaa
+ baabb abbba ababa abbba habba ababb haa
+39560860-6           ; 481
+ aaaaa hbaaa aa-aa bbbaa abaab bbbha baaab abbbb abbab bbaaa
+ baabb abbba bbaba abbba habba ababb haa
+39497912-6           ; 482
+ aaaaa hbaaa aa-aa bbbaa abaab bbbha baaab abbbb abbab bbaaa
+ baabb abbba bbaba abbba habba ababb haa
+39515056-6           ; 483
+ aaaaa hbaaa aa-aa bbbaa abaab bbbha baaab abbbb abbab bbaaa
+ baabb abbba bbaba abbba habba ababb haa
+39560292-6           ; 484
+ aaaaa hbaaa aa-aa bbbaa abaab bbbha baaab abbbb abbab bbaaa
+ baabb abbba bbaba abbba habba ababb haa
+39520712-6           ; 485
+ aaaaa hbaaa aa-aa bbbaa abaab bbbha baaab abbbb abbab bbaaa
+ baabb abbba bbaba abbba habba ababb haa
+39585680-6           ; 486
+ aaaaa hbaaa aa-aa bbbaa abaab bbbha babab abbbb abbab bbaaa
+ baabb abbba bbaba abbba habba ababb haa
+39631312-6           ; 487
+ aaaaa hbaaa aa-aa bbbaa abaab bbbha babab abbbb abbab bbaaa
+ baabb abbba bbaba abbba habba abahb haa
+39702072-6           ; 488
+ aaaaa hbaaa aa-aa bbbaa abaab bbbha babab abbbb abbab bbaaa
+ baabb abbba bbaba abbba habba abahb -aa
+39720168-6           ; 489
+ aaaaa hbaaa aa-aa bbbaa abaab bbbha babab bbbbb abbab bbaaa
+ babbb abbba bbaba abbba habba abahb baa
+39720968-6           ; 490
+ aaaaa hbaaa aa-aa bbbaa abaab bbbha babab bbbbb abbab bbaaa
+ babbb abbba bbaba abbba habba abahb baa
+40011792-6           ; 491
+ aaaaa haaaa aabaa bbbaa abhab bbbha babab bbbbb abbab bbaaa
+ babbb abbbb bbbba abbba habba ababb baa
+40025376-6           ; 492
+ aaaaa haaaa aabaa bbbaa abhab bbbha babab bbbbb abbab bbaaa
+ babbb abbbb bbbba abbba habba ababb baa
+40010168-6           ; 493
+ aaaaa haaaa aa-aa bbbaa abhab bbbha babab bbbbb abbab bbaaa
+ babbb abbbb bbbba abbba habba ababb baa
+40160648-6           ; 494
+ aaaaa haaaa aabaa bbbaa abhab bbbha babab bbbbb bbbab bbaaa
+ babbb abbbb bbbba abbba habba ababb baa
+40184664-6           ; 495
+ aaaaa haaaa aabaa bbbaa abhab bbbha babab bbbbb bbbab bbaab
+ babbb abbbb bbbba abbba habba ababb baa
+40243656-6           ; 496
+ aaaaa haaaa aabaa bbbaa abhab bbbha babab bbbbb bbbab bbaab
+ babbb abbbb bbbba abbba habba ababb baa
+40190880-6           ; 497
+ aaaaa haaaa aabaa bbbaa abhab bbbha babab bbbbb bbbab bbaab
+ babbb abbbb bbbba abbba habba ababb baa
+40307720-6           ; 498
+ aabaa haaaa aabaa bbbaa abhab bbbha babab bbbbb bbbab bbaab
+ babbb abbbb bbbba abbba habba ababb baa
+40596644-6           ; 499
+ aabaa haaba aabaa bbbaa abhab bbbha babab bbbbb bbbab bbaab
+ babbb abbbb abbbb bbbba habba abaab baa
+41166592-6           ; 500
+ aabaa haaba aaaaa bbbab abhab bbbba babab bbbbb bbbab bbaab
+ babbb abbbb abbbb abbba habba abaab aaa
+41155136-6           ; 501
+ aabaa haaba aaaaa bbbab abhab bbbba babab bbbbb bbbab bbaab
+ babbb abbbb abbbb abbba habba abaab aaa
+41147432-6           ; 502
+ aabaa haaba aaaaa bbbab abhab bbbba babab bbbbb bbbab bbaab
+ babbb abbbb abbbb abbba habba abaab aaa
+41224432-6           ; 503
+ aabaa haaba aaaaa bbbab abhab bbbba babab bbbbb bbbab bbaab
+ babbb abbab abbbb abbba habba abaab aaa
+41243768-6           ; 504
+ aabaa haaba aaaaa bbbab abhab bbbba babab bbbbb bbbab bbaab
+ bahbb abbab abbbb abbba habba abaab aaa
+41224584-6           ; 505
+ aabaa haaba aaaaa bbbab abhab bbbba babab bbbbb bbbab bbaab
+ bahbb abbab abbbb abbba habba abaab aaa
+41722288-6           ; 506
+ aabaa haaba haaaa bbbab abhab bbbba babbb bbbbb bbbab bbaab
+ bahbb abbab abbhb abbaa habba abaab aaa
+41524004-6           ; 507
+ aabaa haaba haaaa bbbab abhab bbbba babbb bbbbb bbbab bbaab
+ bahbb abbab abbhb abbaa habba abaab aaa
+41672688-6           ; 508
+ aabaa haaba haaaa bbbab abhab bbbba babbb bbbbb bbbab bbaab
+ bahbb abbab abbhb abbaa habba abaab aaa
+41388540-6           ; 509
+ aabaa haaba haaaa bbbab abhab bbbba babbb bbbbb bbbab bbaab
+ bahbb abbab abbhb abbaa habba abaab aaa
+41505624-6           ; 510
+ aabaa haaba haaaa bbbab abhab bbbba babbb bbbbb bbbab bbaab
+ bahbb abbab abbhb abbaa habba abaab aaa
+41442728-6           ; 511
+ aabaa haaba haaaa bbbab abhab bbbba babbb bbbbb bbbab bbaab
+ bahbb abbab abbhb abbaa habba abaab aaa
+41665888-6           ; 512
+ aabaa haaba haaaa bbbab abhab bbbba babbb bbbbb bbbab bbaab
+ bahbb abbab abbhb abbaa habba abaab aaa
+41813144-6           ; 513
+ aabaa haaba haaaa bbbab abhab bbbba babbb bbbbb bbbab bbaab
+ bahbb abbhb abbhb abbaa habba abaab aaa
+41812268-6           ; 514
+ aabaa haaba haaaa bbbab abhab bbbba babbb bbbbb bbbab bbaab
+ bahbb abbhb abbhb abbaa habba abaab aaa
+41855120-6           ; 515
+ aabaa haaba haaaa bbbab abhab bbbba babbb bbbbb bbbab bbaab
+ bahbb abbhb abbhb bbbaa habba abaab aaa
+41953192-6           ; 516
+ aabaa haaba haaaa bbbab abhab bbbba babbb bbbbb bbbab bbaab
+ bahbb abbhb abbhb bbbaa habba abaab aaa
+42004696-6           ; 517
+ aabaa haaba haaaa bbbab abhab bbaba babbb bbbbb bbbab bbaab
+ bahbb abahb abbhb bbbaa habba abaab aaa
+42113752-6           ; 518
+ aabaa haaba haaaa bbbab abhab bbaba babbb bbbbb bbbab bbaab
+ bahbb abahb abbhb bbbaa babba abaab aaa
+42083664-6           ; 519
+ aabaa haaba haaaa bbbab abhab bbaba babbb bbbbb bbbab bbaab
+ bahbb abahb abbhb bbbaa babba abaab aaa
+42471128-6           ; 520
+ aabaa haaba haaaa bbbab abhab ababa babbb abbbb bbbab bbabb
+ bahbb abahb abbhb bbbaa babba abaab aaa
+42299156-6           ; 521
+ aabaa haaba haaaa bbbab abhab ababa babbb abbbb bbbab bbabb
+ bahbb abahb abbhb bbbaa babba abaab aaa
+42345260-6           ; 522
+ aabaa haaba haaaa bbbab abhab ababa babbb abbbb bbbab bbabb
+ bahbb abahb abbhb bbbaa babba abaab aaa
+42593544-6           ; 523
+ aabaa haaba haaaa bbbab abhab ababa babbb abbbb bbbab bbabb
+ bahbb abbhb abbhb babaa babba abaab aaa
+42601300-6           ; 524
+ aabaa haaba haaaa bbbab abhab ababa babbb abbbb bbbab bbabb
+ bahbb abbhb abbhb babaa babba abaab aaa
+42596000-6           ; 525
+ aabaa haaba haaaa bbbab abhab ababa babbb abbbb bbbab bbabb
+ bahbb abbhb abbhb babaa babba abaab aaa
+42794000-6           ; 526
+ aabaa haaba haaaa bbbab abhab ababa babbb abbbb bbbab bbabb
+ bahbb abbhb abbhb babaa babba abaab aaa
+42601048-6           ; 527
+ aabaa haaba haaaa bbbab abhab ababa babbb abbbb bbbab bbabb
+ bahbb abbhb abbhb babaa babba abaab aaa
+42712640-6           ; 528
+ aabaa haaba haaaa bbbab abhab ababa babbb abbbb bbbab bbabb
+ bahbb abbhb abbhb babaa babba abaab aaa
+42740712-6           ; 529
+ aabaa haaba haaaa bbbab abhab ababa babbb abbbb bbbab bbabb
+ bahbb abbhb abbhb babaa babba abaab aaa
+42863540-6           ; 530
+ aabaa haaba haaaa bbbab abhab ababa babbb abbbb bbbah bbabb
+ bahbb abbhb abbhb babaa babba abaab aaa
+43046416-6           ; 531
+ aabaa haaba haaaa bbbab abhab ababa babbb abbbb bbbah bbabb
+ bahbb abbhb aabab babaa babba abaab aaa
+43023484-6           ; 532
+ aabaa haaba haaaa bbbab abhab ababa babbb abbbb bbbah bbabb
+ bahbb abbhb aabab babaa babba abaab aaa
+43003896-6           ; 533
+ aabaa haaba haaaa bbbab abhab ababa babbb abbbb bbbah bbabb
+ bahbb abbhb aabab babaa babba abaab aaa
+43301744-6           ; 534
+ aabaa haaba haaaa bbbab abhab ababa babbb abbbb bbbab bbabb
+ bahbb abbhb aabab babaa babba abaab aaa
+43431568-6           ; 535
+ aabaa aaaba haaaa bbbab abhab ababa babbb abbbb bbbab bbabb
+ bahbb abbhb aabab babaa babba abaab aaa
+43431840-6           ; 536
+ aabaa aaaba haaaa bbbab abhab ababa babbb abbbb bbbab bbabb
+ bahbb abbhb aabab babaa babba abaab aaa
+43702064-6           ; 537
+ aabaa aaaba haaaa bbbab abhab ababa babbb abbbb bbbbb bbabb
+ baabb abbhb aabab babab babba abaab aaa
+43602884-6           ; 538
+ aabaa aaaba haaaa bbbab abhab ababa babbb abbbb bbbbb bbabb
+ baabb abbhb aabab babab babba abaab aaa
+43582592-6           ; 539
+ aabaa aaaba haaaa bbbab abhab ababa babbb abbbb bbbbb bbabb
+ baabb abbhb aabab babab babba abaab aaa
+43763060-6           ; 540
+ aabaa aaaba haaaa bbbab abhab ababa babbb abbbb bbbbb bbabb
+ baabb abbhb aabab babab babba abaab aaa
+44674784-6           ; 541
+ aabba aaabb haaaa bbbaa abbab bbaaa babbb abbbb bbbbb bbabb
+ babbb bbbbb aabab babab babba abaab aaa
+44905196-6           ; 542
+ aabba aaabb haaaa bbaaa abbab abaaa babbb abbbb bbbbb baabb
+ babbb bbbbb aabab babab bbbba abaab aaa
+44920964-6           ; 543
+ aabba aaabb haaaa bbaaa abbab abaaa babbb abbbb bbbbb baabb
+ babbb bbbbb aabab babab bbbba abaab aaa
+428378-7             ; 544
+ bbaab aaaab haaba bahbb baaba aaaaa bbbaa haaaa babba aaaba
+ bbaba aaabb bbbaa baabb habab bbabb abb
+1559291-7            ; 545
+ bbhba abaab aaaba baabb baaba aaaaa bbbab abhba baaba ababa
+ bbbba aabab bbbab bbaab habab bbaab abb
+1815047-7            ; 546
+ bbhba abaab ababa baabb babba haaaa bbbab ababa baaba bbaaa
+ bbbba aab-b bbbab bhaab habab bbaab abb
+1887352-7            ; 547
+ bbhba abaab ababa baabb babba haaaa bbbab ababa baaba bbaaa
+ bbbba aabhb bbbab bhabb habab bbaab abb
+1927407-7            ; 548
+ bbhba abaab ababa baabb babba haaah bbbab ababa baaba bbaaa
+ bbbba aabhb bbbab bhabb habab bbaab abb
+2090621-7            ; 549
+ abhba abaab hbaba babbb babba baaab bbbab ababa baaba bbaaa
+ bbbba aabhb bbbab bhabb haaab bbaab abb
+2858020-7            ; 550
+ abbba bbaab hbaba babbb babba baaab bbbab ababa baaba baaaa
+ bbbba abbab bbaab bhaba haaab abbaa abb
+3317484-7            ; 551
+ abbba bbaaa bbaba bbbbb babaa aaaab abbab bbaba baaba baaaa
+ bbbba abb-b bbaba bhaba abaab abbaa aab
+28075704-7           ; 552
+ ababa abbaa bbabb bbbbb bbbaa aaaab abaab bbaba babba aaaaa
+ babba bbbab bbaba abbba abaab abbaa aab
+55243744-7           ; 553
+ ababa aabaa bbaba bbbbb bbbaa aaaab ababb bbaba babba aabaa
+ babba bbbbb bbaba abbba abaaa abbaa aab
+55235216-7           ; 554
+ ababa aabaa bbaba bbbbb bbbaa aaaab ababb bbaba babba aabaa
+ babba bbbbb bbaba abbba abaaa abbaa aab
+55649616-7           ; 555
+ abaab aabaa bbaaa bbbbb bbbaa aaaab ababb bbaaa babba aabaa
+ babba bbbbb bbaba ababa abaaa abbaa aab
+55767688-7           ; 556
+ abaab aabaa bbaaa bbbbb bbbaa aaaab ababb bbaaa babba aabaa
+ babba bbbbb bbaba ababa abaaa abbaa aab
+55828960-7           ; 557
+ abaab aabaa bbaaa bbbbb bbbaa aaaab ababb bbaaa babba aabaa
+ babba bbbbb bbaba ababa abaaa abbaa aab
+55775212-7           ; 558
+ abaab aabaa bbaaa bbbbb bbbaa aaaab ababb bbaaa babba aabaa
+ babba bbbbb bbaba ababa abaaa abbaa aab
+55494520-7           ; 559
+ abaab aabaa bbaaa bbbbb bbbaa aaaab ababb bbaaa babba aabaa
+ babba bbbbb bbaba ababa abaaa abbaa aab
+55700676-7           ; 560
+ abaab aabaa bbaaa bbbbb bbbaa aaaab ababb bbaaa babba aabaa
+ babba bbbbb bbaba ababa abaaa abbaa aab
+55580868-7           ; 561
+ abaab aabaa bbaaa bbbbb bbbaa aaaab ababb bbaaa babba aabaa
+ babba bbbbb bbaba ababa abaaa abbaa aab
+55580992-7           ; 562
+ abaab aabaa bbaaa bbbbb bbbaa aaaab ababb bbaaa babba aabaa
+ babba bbbbb bbaba ababa abaaa abbaa aab
+55513508-7           ; 563
+ abaab aabaa bbaaa bbbbb bbbaa aaaab ababb bbaaa babba aabaa
+ babba bbbbb bbaba ababa abaaa abbaa aab
+55863428-7           ; 564
+ abaab aabaa bbaaa bbbbb bbbaa aaaab ababb bbaaa babba aabaa
+ babba bbbbb bbaba ababa abaah abbaa aab
+56262052-7           ; 565
+ abaab aabba bbaaa babbb abbaa aaaab ababb bbaaa babba aabaa
+ babba bbbbb bbaba ababa abaah bbbaa aab
+56503392-7           ; 566
+ abaab aabba baaaa babbb abbaa baaab ababb bbaaa babba aabaa
+ babba bbbbb bbaba ababa abaah bbbaa aab
+56435292-7           ; 567
+ abaab aabba baaaa babbb abbaa baaab ababb bbaaa babba aabaa
+ babba bbbbb bbaba ababa abaah bbbaa aab
+56518988-7           ; 568
+ abaab aabba baaaa babbb abbaa baaab ababb bbaaa babba aabaa
+ babba bbbbb bbaba ababa abaah bbbaa aab
+56772808-7           ; 569
+ abaab aabaa baaaa babbb abbaa baaab ababb bbaaa babba abbaa
+ babba bbbbb bbaba aaaba abaah bbbaa aab
+56595944-7           ; 570
+ abaab aabaa baaaa babbb abbaa baaab ababb bbaaa babba abbaa
+ babba bbbbb bbaba aaaba abaah bbbaa aab
+56745580-7           ; 571
+ abaab aabaa baaaa babbb abbaa baaab ababb bbaaa babba abbaa
+ babba bbbbb bbaba aaaba abaah bbbaa aab
+56925252-7           ; 572
+ abaab aabaa baaaa babbb abbaa baaab ababb bbaaa babba abbaa
+ babba bbbba bbaba aaaba ababh bbbaa aab
+56971320-7           ; 573
+ abaab aabaa baaaa babbb abbah baaab ababb bbaaa babba abbaa
+ babba bbbba bbaba aaaba ababh bbbaa aab
+56970200-7           ; 574
+ abaab aabaa baaaa babbb abbah baaab ababb bbaaa babba abbaa
+ babba bbbba bbaba aaaba ababh bbbaa aab
+57101368-7           ; 575
+ abaab aabaa baaaa babbb abbah baaab ababb bbaaa babba abbaa
+ babba bbbba bbaba aaaba ababh bbbaa aaa
+57105864-7           ; 576
+ abaab aabaa baaaa babbb abbah baaab ababb bbaaa babba abbaa
+ babba bbbba bbaba aaaba ababh bbbaa aaa
+57095528-7           ; 577
+ abaab aabaa baaaa babbb abbah baaab ababb bbaaa babba abbaa
+ babba bbbba bbaba aaaba ababh bbbaa aaa
+57046552-7           ; 578
+ abaab aabaa baaaa babbb abbah baaab ababb bbaaa babba abbaa
+ babba bbbba bbaba aaaba ababh bbbaa aaa
+57278396-7           ; 579
+ abaab aabaa baaaa baabb abbah baaab ababb bbaaa babba abbaa
+ babba bbbba bbaba aaaba abaah babaa aaa
+57882284-7           ; 580
+ abaab aabaa baaaa baabb abbah baaab ababb abaaa babba abbaa
+ babba bbbba bbaba aaaba bbaah babaa aab
+58053088-7           ; 581
+ abaab aabaa baaaa baabb abbah baaab ababb abaaa babba abbaa
+ babba bbbba bbaba aaaba bbaah babaa aab
+58189028-7           ; 582
+ abaab aabaa baaaa baabb abbah baaab ababb abaaa babba abbaa
+ babba bbbba bbaba aaaba bbaah babaa aab
+58247240-7           ; 583
+ abaab aabaa baaaa baabb abbah baaab ababb abaaa babba abbaa
+ babba bbbba bbaba aaaba bbaah babaa aab
+58142204-7           ; 584
+ abaab aabaa baaaa baabb abbah baaab ababb abaaa babba abbaa
+ babba bbbba bbaba aaaba bbaah babaa aab
+58389520-7           ; 585
+ abaab aabaa baaba baabb abaah baaab ababb abaaa babba abbaa
+ babba bbbba bbaba aaaba bbaah babaa aab
+58678584-7           ; 586
+ abaab aabaa baaba baabb abaah baaab ababb abaaa babba abbaa
+ babba bbbba bbaba aaaba bbaah babaa aab
+58647868-7           ; 587
+ abaab aabaa baaba baabb abaah baaab ababb abaaa babba abbaa
+ babba bbbba bbaba aaaba bbaah babaa aab
+58659004-7           ; 588
+ abaab aabaa baaba baabb abaah baaab ababb abaaa babba abbaa
+ babba bbbba bbaba aaaba bbaah babaa aab
+58767280-7           ; 589
+ abaab babaa baaba baabb abaah baaab ababb abaaa babba abbaa
+ babba bbbba bbaba aaaba bbaah babaa aab
+58765600-7           ; 590
+ abaab babaa baaba baabb abaah baaab ababb abaaa babba abbaa
+ babba bbbba bbaba aaaba bbaah babaa aab
+58993464-7           ; 591
+ abaab babaa baaba baabb abaah aaaab ababb abaaa babba abbaa
+ babba bbbba bbaba aaaba bbaah babaa aab
+60289256-7           ; 592
+ aaaab aabaa bbaba baaba abaab aaaab ababb bbaaa abbba abbab
+ bbbaa babba bbbba aaaba abaah bahaa aab
+60516320-7           ; 593
+ aaaab aabaa bbaba baaba abaab aaaab ababb bbaaa abbba abbab
+ bbbaa babba bbbba aaaba abaah bahab aab
+60620444-7           ; 594
+ aaaab aabaa bbaba baaba abaab aaaab ababb bbaaa abbba abbab
+ bbbaa babba bbbba aaaba abaah bahab aab
+60647932-7           ; 595
+ aaaab aabaa bbaaa baaba abaab aaaab ababb bbaaa abbba abbab
+ bbbaa babba bbbba aaaba abaah bahab aab
+60953408-7           ; 596
+ aaaab aabaa bbaaa baaba abaab aaaab ababb bbaaa abbba abbab
+ bbbaa babba bbbba aaaba abaah bahab aab
+60992576-7           ; 597
+ aaaab aabaa bbaaa baaba abaab aaaab ababb bbaaa abbba abbab
+ bbbaa babba bbbba ababa abaab bahab aab
+61092100-7           ; 598
+ aaaab aabaa bbaaa baaba abaab aaaab ababb bbaaa ababa abbab
+ bbbaa babba bbbba ababa abaab bahab aab
+61072468-7           ; 599
+ aaaab aabaa bbaaa baaba abaab aaaab ababb bbaaa ababa abbab
+ bbbaa babba bbbba ababa abaab bahab aab
+61110872-7           ; 600
+ aaaab habaa bbaaa baaba abaab aaaab ababb bbaaa ababa abbab
+ bbbaa babba bbbba ababa abaab bahab aab
+61352404-7           ; 601
+ aaaab habaa bbaab baaba abaab aaaab ababb bbaaa ababa abbbb
+ bbbaa babba bbbba ababa abaab bahab aab
+61282892-7           ; 602
+ aaaab habaa bbaab baaba abaab aaaab ababb bbaaa ababa abbbb
+ bbbaa babba bbbba ababa abaab bahab aab
+61454296-7           ; 603
+ aaaab habaa bbaab babba abaab aaaab abbbb baaaa aaaba abbbb
+ bbbaa babba bbbba ababa abaab bahab aab
+61494964-7           ; 604
+ aaaab aabaa bbaab babba abaab aaaab abbbb baaaa aaaba abbbb
+ bbbaa babba bbbba ababa abaab bahab aab
+61597504-7           ; 605
+ aaaab aabaa bbaab babba abaab aaaab abbbb baaaa aaaba abbbb
+ bbbaa babba bbbba ababa abaab bahab aab
+18277-8              ; 606
+ aaaba bbbba ab-ha bbbba bahbb baabb ababa baabb abbab bbhbb
+ ababb bbbab babba baaab baaba abbaa aab
+197104-8             ; 607
+ aaaba bbbba ab-aa bbbba bahbb baabb ababa baabb abbab bbbbb
+ ababb bbbab babba baaab baaba abbaa aab
+489405-8             ; 608
+ aaaba bbbba ab-aa bhbba baabb baabb abhba baabb abaab bbbbb
+ ababb bbbab aabba baaab baaba abbaa aab
+426803-8             ; 609
+ aaaba bbbba ab-aa bhbba baabb baabb abhba baabb abaab bbbbb
+ ababb bbbab -abba baaab baaba abbaa aab
+677440-8             ; 610
+ aaaba abbba ab-aa bhbba baabb baaab abhba baaab bbaab bbbbb
+ ababb bbbab aabba baaab baaba abbaa aab
+749673-8             ; 611
+ aaaba abbba ab-aa bhbba baabb baaab ababa baaab bbaab bbbbb
+ ababb bbbab aabba baaab baaba abbaa aab
+807232-8             ; 612
+ aaaba abbba ab-aa ahbba baabb baaab ababa baaab bbaab bbbbb
+ ababb bbbab aabba baaab baaba abbaa aab
+977931-8             ; 613
+ aaaba ababa ab-aa ahbba baabb baaab ababa baaab bbaab bbbbb
+ ababb bbbab aabba baaab baaba abaaa aab
+991213-8             ; 614
+ aaaba ababa ab-aa ahbba baabb baaab ababa baaab bbaab bbbbb
+ ababb bbbab aabba baaab baaba abaaa aab
+1068491-8            ; 615
+ ahaba ababa ab-aa ahbba baabb baabb ababa baaab bbaab bbbbb
+ ababb bbbab aabba baaab baaba abaaa aab
+1149704-8            ; 616
+ ahaba ababa ab-aa ahbba baabb baabb ababa baaab bbaab bbbbb
+ ababb bbbab aabaa baaab baaba abaaa aab
+2908496-8            ; 617
+ ababa baaba ab-bb aaaba babbb bbabb abbba aaaaa baaab ababa
+ abbab babaa bbaaa baaab abaaa bbbaa aaa
+15684096-8           ; 618
+ abaaa baaba aa-bb aaaba bbbbb bbabb abbba aabaa aaaab aaaaa
+ aabbb habaa bbaaa baaab abaaa bbbab aaa
+50811176-8           ; 619
+ abaaa baaba aa-bb aaaba bbbbb bbabb abbba aabaa aaaab aaaaa
+ -abbb habab bbaaa bbaab abaaa bbbab aaa
+10352792-0           ; 620
+ abbaa bbaab ab-bb baaba babbb baabb aabba aabaa baabb aaaaa
+ baaab aaaab bbaaa bbaaa aaaaa bbbaa aba
+55711252-8           ; 621
+ abbaa bbaab ab-bb baaba babbb baabb aabba aabaa baabb aaaaa
+ baaaa aaaab bbaaa bbaaa aaaaa bbbaa aba
+56056852-8           ; 622
+ abbaa bbbab ab-bb baaba babbb baabb aabba aabaa baabb aaaaa
+ baaaa aaaab bbaaa bbaaa aaaaa bbbaa aba
+56673656-8           ; 623
+ abbaa bbbab ab-bb baaba babbb bbabb aabba aabaa baabb aaaaa
+ baaaa aabab bbaaa bbaaa aaaaa bbbaa abb
+56877708-8           ; 624
+ abbaa bbbab ab-bb baaba babbb bbabb aabba aabaa bhabb aaaaa
+ baaaa aabab bbaaa bbaaa aaaaa bbbaa abb
+57099504-8           ; 625
+ abbaa bbbab ab-bb baaba babbb bbabb aabba aabaa bhabb aaaab
+ baaaa aabab bbaaa bbaah aaaaa abbaa abb
+57194264-8           ; 626
+ abbaa bbbab ab-bb baaaa babbb bbabb aabba aabaa bhabb aaaah
+ baaaa aabab bbaaa bbaah aaaaa abbaa abb
+57382036-8           ; 627
+ abbaa bbbab ab-bb baaaa babbb bbabb aabba aabaa baabb aaaah
+ baaaa aabab bbaaa bbaah aaaaa abbaa abb
+57428676-8           ; 628
+ abbaa bbbab ab-bb baaaa babbb bbabb aabba aabaa baabb aaaah
+ baaaa aabab bbaaa bbaab aaaaa abbaa abb
+57594496-8           ; 629
+ abbaa bbbab ab-bb baaaa aabba bbabb aabba aabba baabb aaaah
+ baaaa aabab bbaaa bbaab aaaaa abbaa abb
+58824728-8           ; 630
+ abaab bbbab bb-ba baaaa aabba ababb aabba babba baabb aaaah
+ baaaa aabab baaaa bbaab aaaaa abbaa abb
+59267080-8           ; 631
+ abaab bbbab bb-ba baaaa aabba ababb aabba babba baabb aaaah
+ baaba aabab aaaba bbbab aaaaa abhaa abb
+59490348-8           ; 632
+ abaab bbbab bb-ba baaaa aabba ababb aabba babba baabb aaaah
+ bbbba aabab aaaba bbbab aaaaa abhaa abb
+59591060-8           ; 633
+ abaab bbbab bb-ba baaaa aabba ababb aabba babba baabb aaaah
+ bbbba aabab aaaba bbaab aaaaa abhaa abb
+59708552-8           ; 634
+ abaab bbbab bb-ba baaaa aabba ababb aabba babba baabb aaaah
+ bbbba babab aaaba bbaab aaaaa abhaa abb
+59858704-8           ; 635
+ abaab bbbab bb-ba baaaa aabba ababb aabba babba baabb aaaah
+ bbbba babaa aaaba bbaab aaaaa abhaa abb
+59976736-8           ; 636
+ abaab bbbab bb-ba baaaa aabba ababb aabba babba baabb aa-ah
+ bbbba babaa aaaba bbabb aaaaa abhaa abb
+60032312-8           ; 637
+ abaab bbbab bb-ba baaab aabba ababb aabba babba baabb aahah
+ bbbba babaa aaaba bbabb aaaaa abhaa abb
+60046272-8           ; 638
+ abaab bbbab bb-ba baaab aabba ababb aabba babba baabb aa-ah
+ bbbba babaa aaaba bbabb aaaaa abhaa abb
+60130560-8           ; 639
+ abaab bbbab bb-ba baaab aabba ababb aabba babba baabb aaaah
+ bbbba babaa aaaba bbabb aaaaa abhaa abb
+60152376-8           ; 640
+ abaab bbbab bb-ba baaab aabba ababb aabba baaba baabb aaaah
+ bbbba babaa aaaba bbabb aaaaa abhaa abb
+60397256-8           ; 641
+ ababb bbbab bb-ba baaab abbba ababb aabba baaba baabb aaaah
+ bbbba babaa aaaba bbabb aaaaa abhaa abb
+60672472-8           ; 642
+ ababb bbbab bb-ba baaab abbba ababb aabba baaba baabb aaaah
+ bbbba babaa aaaba bbabh aaaaa abhaa abb
+62656452-8           ; 643
+ aaabb bbbab ba-aa bbaab abbba abaaa aabbb babba baaah aaaab
+ bbbba babaa aaaba bbabh aaaab abbab abb
+48774-9              ; 644
+ abbaa baabb bhbaa aabaa abbab baaba baaaa bbbha bbaab aaaab
+ abbab baaba aabba baabb baaba aaaba bba
+372732-9             ; 645
+ abbaa baabb bhbaa aabaa abbab baaba baaaa bbbha bbaab aaaab
+ abbab bbaba aabba baabb baaba aaaba bba
+1303738-9            ; 646
+ abbaa baabb bbbaa aabaa abbab baaba baaaa bbbaa baaab aaaab
+ abbaa ababa baaba bbabb aaabb baaba bba
+1751657-9            ; 647
+ abaaa baabb bbbaa aahaa abbab babbb baaaa bbbaa baaaa baaab
+ abbaa ababa baaba bbabb aaaba baaba bbb
+1836161-9            ; 648
+ abaaa baabb bbbaa aahaa bbbab babbb baaaa bbbaa baaaa baaab
+ abbaa ababa baaba bbabb aaaba baaba bbb
+1917818-9            ; 649
+ abaaa baabb bbbaa aahaa bbbab babbb baaaa bbbaa baaaa baaab
+ abbaa abhba baaba bbabb aaaba baaba bbb
+2110847-9            ; 650
+ abaaa baabb bbbaa abhab bbbab babbb baaaa bbbaa baaaa baaab
+ abbaa abhba baabb bbbbb aaaba baaba bbb
+2125163-9            ; 651
+ abaaa baabb bbbaa abhab bbbab babbb baaaa bbbaa baaaa baaab
+ abbaa abhba bbabb bbbbb aaaba baaba bbb
+2412506-9            ; 652
+ abaaa baabb bbbaa abhab bbbhb babbb baaaa bbbaa baaaa baaab
+ abbaa abhba bbabb bbbbb aaaba baaba bbb
+2595106-9            ; 653
+ abaaa baabb bbbaa abhab bbahb babbb baaaa bbbaa baaaa baaab
+ abbaa abhba bbabb bbbbb aaaba baaba bbb
+3361769-9            ; 654
+ aaaaa baabb abbba abaab baaab bbbbb baaba bbbaa baaaa baaab
+ bbbaa ababa bbabb bbbbb aaaba aaaba bab
+3441642-9            ; 655
+ aaaaa baabb abbba abaab baaab bbbbb baaba bbbaa baaaa bbaab
+ bbbaa ababa bbab- bbbbb aaaba aaaba bab
+3503299-9            ; 656
+ aaaaa baabb abbba aaaab baaab bbbbb baaba bbbaa baaaa bbaab
+ bbbaa ababa bbaba bbbbb aaaba haaba bab
+3531122-9            ; 657
+ aaaaa baabb abbba aaaab baaab bbbbb baaba bbbaa baaaa bbaab
+ bbbaa ababa bbaba bbbbb aaaba habba bab
+3827480-9            ; 658
+ aaaaa baabb abbba aahab baaab bbbbb babba bbbba baaaa bbaab
+ bbbaa ababa bbaba bbbab aaaba habba bab
+3952439-9            ; 659
+ aaaaa baabb abbba aahab baaab bbbbb babba bbbba baaaa bbaab
+ bbbaa ababa bbaba bbbab aaaaa -abba bab
+3988469-9            ; 660
+ aaaaa baabb abbba aahab baaab bbbbb babba bbbba baaaa bbaab
+ bbbaa ababa bbaba bbbab aaaab babba bab
+4132308-9            ; 661
+ aaaaa baabb aabba aaaab baabb bhbab babba bbbba baaaa bbaab
+ -bbaa ababa bbaba bbbab aaaab babba bab
+4114816-9            ; 662
+ aaaaa baabb aabba aaaab baabb bhbab babba bbbba baaaa bbaab
+ hbbaa ababa bbaba bbbab aaaab babba bab
+4715716-9            ; 663
+ aaaaa baabb aabba abaab bbaba bhbab babba bbbba baaaa bbaab
+ aabaa ababb baaba bbaab bbaab babbb bab
+5038678-9            ; 664
+ aaaaa baabb aabba abaab bbaba bhbab babba bbbba baaaa bbaab
+ aabaa ababb baaba bbaab bbbab bbbbb bab
+5400867-9            ; 665
+ baaaa baabb aabba abaab bbaba bhbab babba bbbba baaaa bbaab
+ aabaa ababb baaba bbaab bbbab bbbbb bab
+5838289-9            ; 666
+ bbaaa baabb aabba abaab bbaba bhbab babba bbbba baaaa bbaab
+ aabaa ababb baaba bbaab bbbaa bbbbb bab
+17050492-9           ; 667
+ abaaa baabb aabba bbaab bbaba bhbab babba bbbba baaaa bbaab
+ aabaa ababb baaba bbaab bbbaa bbbbb bab
+57808016-9           ; 668
+ hbaaa baabb aabba bbaab bbaba bbbab babba babba baaaa bbaab
+ aabaa ababb baaba bbaab bbbaa bbbbb bab
+58088604-9           ; 669
+ hbaaa baabb aabba baaab bbaba bbbab aabba babba baaaa bbaab
+ babaa ababb baaba bbaab bbbaa bbbbb bab
+59327656-9           ; 670
+ bbaaa baabb babba baaab bbaba bbbab aabba babba baaaa bbaab
+ babaa ababb baaba bbaab bbbaa bbbbb bab
+59436440-9           ; 671
+ bbaaa baabb babba baaab bbaba bbhab aabba babba baaaa bbaab
+ babaa ababb babba bbaab bbbaa bbbbb bab
+59830968-9           ; 672
+ bbaba baabb babba baaab bbaba bbhab aabba babba baaaa bbaab
+ babaa bbabb babba bbaab bbbaa bbbbb bab
+60417344-9           ; 673
+ bbaba baabb babba baaab bbabb bahab aabba babbh babaa bbaab
+ aabaa bbabb babba bbabb bbbaa bbbbb bab
+60488088-9           ; 674
+ bbaba baaba babba baaab bbabb bahab aabba babbh babaa bbaab
+ aabaa bbabb babba bbabb bbbaa bbbbb bab
+60746500-9           ; 675
+ bbaba baaba aabba baaab bbabb bahab aabba babbh babaa bbaab
+ aabaa bbabb babba bbabb bbbaa bbbbb bab
+60879336-9           ; 676
+ bbaba baaba aabba baaab bbabb aahaa aabba babbh babaa bbaab
+ aabaa bbabb babba bbabb bbbaa bbbbb bab
+61256528-9           ; 677
+ bbaba baaba aabba baaab bbaab aahaa aabba babbh babaa bbaab
+ aabaa bbaba babba bbabb bbbaa bbbbb bab
+61454792-9           ; 678
+ bbaba baaba aabba baaab bbaab aahaa aabba babbh babaa bbaab
+ aabaa bbaba babba bbabb bbbaa bbbbb hab
+61608312-9           ; 679
+ bbaba baaba aabba baaab bbaab aahaa aabba babbh babaa baaab
+ aabaa bbaba babba bbabb bbbaa bbbbb bab
+61700424-9           ; 680
+ bbaba baaba aabba baaab bbaab bahaa aabba babbh babaa baaab
+ aabaa bbaba babba bbabb bbbaa bbbbb bab
+61758236-9           ; 681
+ bbaba baaba aabba baaab bbaab bahba aabba babbh babaa baaab
+ aabaa bbaba babba bbabb bbbaa bbbbb bab
+61984696-9           ; 682
+ bbaba baaba aabba baaab bbaab bahba aabba babbh babaa baaab
+ aabaa bbaba babba bbaba bbbaa bbbbb bab
+62162316-9           ; 683
+ bbaba baaba aabbh baaab bbaab bahba aabba babbh babaa baaab
+ aabaa bbaba babba bbaba bbbaa bbbbb bab
+62248928-9           ; 684
+ bbaba baaba aabbh baaab bbaab bahba aabba babbh babaa baaab
+ aabaa bbaba babba bbaba bbaaa bbbbb bab
+62379976-9           ; 685
+ bbaba baaba aabbh baaab bbaab bahba aabba babbh babab baaab
+ aabaa bbaba babba bbaba bbaaa bbbbb bab
+62483060-9           ; 686
+ bbaba baaba aabbh baaab bbaab baaba aabba babbh babab baaab
+ aabaa bbaba babba bbaba bbaaa bbbbb bab
+62632748-9           ; 687
+ bbaba baaba aabbh baaab bbaab baaba aabba babbh babab baaab
+ aabaa bbaba babba bbaba bbaaa bbabb baa
+62766144-9           ; 688
+ bbaba baaba aabbh baaab bbaab baaba aabba babbh babab baaab
+ aabaa bbaba bahba bbaba abaaa ababb baa
+62897108-9           ; 689
+ ababa baaba aabbh baaab bbaab baaba aabba babbh babab baaab
+ aabaa bbaaa bahba bbaba abaaa ababb ba-
+62985912-9           ; 690
+ ababa baaba aabba baaab bbaab baaba aabba babbh baaab baaab
+ aabaa bbaaa baaba bbaba abaaa ababb ba-
+63010872-9           ; 691
+ ababa baaba aabba baaab bbaab baaba aabba babbh baaab baaab
+ aabaa bbaaa baaba bbaba abaaa ababb bah
+63211596-9           ; 692
+ ababa baaba aabba aaaab bbaab baab- aabba babbh baaab baaab
+ aabaa bbaha baaba hbaba abaaa ababb bah
+63302484-9           ; 693
+ ababa baaba aabba aaaab bbaab baabh aabba babbh baaab baaab
+ aabaa bbaha baaba hbaba abaaa ababb bah
+63445200-9           ; 694
+ ababa baaba aabba aaaab bbaaa baabh aabba babbh baaab baaab
+ aabaa bbaha aaaba hbaba abaaa ababb bah
+63537580-9           ; 695
+ ababa baaba aabah aaaab bbaaa baabh aabba babbh baaab bbaab
+ aabaa bbaha aaaba hbaba abaaa ababb bah
+63841640-9           ; 696
+ abaha baaba aabah aaaaa bbaaa baabh aabba babbh baaab bbaab
+ aabaa bbaha aaaba hbaba aaaaa ababb bah
+64089432-9           ; 697
+ abaha baaba aabah aahaa bbaaa baabh aabba babbh baaab bbaab
+ aabaa bbaba aaaba hbaba aaaaa ababb bah
+64293296-9           ; 698
+ abaha baaba aabah aabaa bbaaa baabh aabba babbh baaab bbaab
+ aabaa bbaba aaaba hbaba aaaaa ababb bah
+64794424-9           ; 699
+ abaaa baaba aabab babaa bbaaa baabh abbba babba baaab bbaab
+ habaa bbaba aaaaa hbbba aaaaa ababb bab
+64948032-9           ; 700
+ abbaa baaba aabab babaa bbaaa baabh abbba babaa baaab bbaab
+ habaa bbaba aaaaa hbbba aaaaa ababb bab
+64960580-9           ; 701
+ abbaa baaba aabab babaa baaaa baabh abbba babaa baaab bbaab
+ habaa bbaba aaaaa hbbba aaaaa ababb bab
+65052636-9           ; 702
+ abbaa baaba aabab babaa aaaaa baaba abbba babaa baaab bbaab
+ habaa bbaba aaaaa hbbba aaaaa ababb bab
+65062828-9           ; 703
+ abbaa baaba aabab babaa aaaaa baaba abbba babaa baaab hbaab
+ habaa bbaba aaaaa hbbba aaaaa ababb bab
+65152920-9           ; 704
+ abbaa baaba aabab habaa aaaaa baaba abbba babaa baaab hbaab
+ habaa bbaba aaaaa hbbba aaaaa ababb bab
+65286132-9           ; 705
+ abbaa baaba aabab habaa aaaaa baaba abbba babaa baabb hbaab
+ habaa bbaba aaaaa bbbba aaaab ababb bab
+65469248-9           ; 706
+ abbaa baaba aabab habaa aaaaa baaba abbba babba baabb hbaab
+ hbbaa ababa aaaaa bbbbh aaaab ababb bab
+65685760-9           ; 707
+ abbaa baaba aabab hhbaa aaaaa baaba abbba babba baabb hbaab
+ hbbaa ababa aaaaa bbbbh aaaab ababb bab
+65815200-9           ; 708
+ bbbaa baaba aabab hhbaa aahaa baaba abbbh babba baabb hbaab
+ hbaaa aaaba aaaaa bbbbh aaabb ababb bab
+65923688-9           ; 709
+ babaa baaba aabab hhbaa aahaa baaba abbbh babba baabb hbaab
+ hbaaa aabba aaaaa bbbbh aaabb ababb bab
+66074492-9           ; 710
+ babaa baabb aabab hbbaa aahaa baaba abbbh babaa baabb hbaab
+ hbaaa aabba aaaaa bbbbh aaabb ababb bab
+66165096-9           ; 711
+ babaa baabb aabab bbbaa aahaa baaba abbbh babaa baabb hbaab
+ hbaaa aabaa aaaaa bbbbh aaabb ababb bab
+66260384-9           ; 712
+ babaa baabb aabab bbbaa aahaa baaba abbbh babaa baabb hbaab
+ hbaaa aabaa aaaaa bbbbb aaabb ababb bab
+66398560-9           ; 713
+ babaa baabb aabab bbbaa aahaa baaba abbbh babaa baabb hbaab
+ hbaaa aabaa aaaab bbbbb aaabb ababb bab
+66518364-9           ; 714
+ baaaa baabb aaaab bhbaa aahaa baaba abbbh aabaa baabb hbaab
+ hbaaa babaa aaaab bbbbb aaabb ababb aab
+66561480-9           ; 715
+ baaah aaabb aaaab bbbaa aahaa baaba abbbh aabaa baabb hbaab
+ hbaaa babaa aaaab bbbbb aaabb ababb aab
+66710096-9           ; 716
+ baahh aaabb aaaab bbbaa aahaa baaba abbbb aabaa baabb bbaab
+ hbaaa babaa abaab bbbbb aaabb ababb aab
+66807708-9           ; 717
+ baahh aaabb aaaab bbbaa aahaa baaba abbbb aabaa baabb bbaab
+ hbaaa babaa ahaab bbbbb aaabb ababb aab
+66917748-9           ; 718
+ baaha aaabb aaaab bbbaa aahaa baaba abbbb aabaa baabb bbaab
+ hbaaa babha ahaab bbbbb aaaba ababb aab
+67232088-9           ; 719
+ baaha aaabb aaaab bbbaa aabaa baaba abbbb aabaa baabb abaab
+ hhaaa babha ahaab bbbbb aaaba ababb aab
+67309528-9           ; 720
+ baaha aaabb aaaab bbbaa aabaa baaba abbbb aabaa baabb abaab
+ hhaaa babha aaaab bbbbb aaaba ababb aab
+67605000-9           ; 721
+ baaha aaabb aaaab bbbaa aabaa baaba abbbb aabaa baabb abaab
+ -haaa babha aabab bbbbb baaba ababb aab
+242877-10            ; 722
+ bbaaa aaaba abaaa baaba babab aaaba babaa babbb baabb hbbba
+ babab abbbb abbbb abaab bbbab baaaa aha
+536147-10            ; 723
+ bbaaa aaaba abaaa baaba babab aaaba babaa babbb baabb hbbba
+ babab abbba abbbb abaab bbbab baaaa aha
+540742-10            ; 724
+ bbaaa aaaba abaaa baaba babab aaaba babaa babbb baabb hbbba
+ babab abbba abbbb abaab bbbab baaaa a-a
+1686258-10           ; 725
+ bhaaa aaaba abaaa baaah baaab aaaha babaa aaabb baabb bbbba
+ baaab aaaba bbbbb abbab bbbab baaaa aba
+1686493-10           ; 726
+ bhaaa ahaba abaaa baaah baaab aaaha babaa aaabb baabb bbbba
+ baaab aaaba bbbbb abbab bbbab baaaa aba
+2312252-10           ; 727
+ bhaab ahaab abaab baabb baaab aaaba babaa aaabb baabb bbaba
+ baabb baaba babba bbbab babaa baaaa aba
+2527299-10           ; 728
+ bhaab ahaab abbab bahbb baaab aaaba babaa aaahb baabb bbaba
+ baabb baaba babbb bbbab babaa baaaa bba
+4323992-10           ; 729
+ bbaab bhbab abbab bahaa aaaab aaaba haabb aaaha baabb bbbaa
+ bbbbb babba baabb bbbab aabba baaab bba
+7193989-10           ; 730
+ bbaab bhbab abbab bahaa aaaab aaaba -aabb aaaha baabb bbbaa
+ bbbbb babba baabb bbbab aabba baaab bba
+16615968-10          ; 731
+ bbaab bhbab abbab bahaa aaaab aaaba aaabb aaaha baabb bbbaa
+ bbbbb babba baabb bbbab aabba baaab bba
+16321639-10          ; 732
+ bbaab bhbab abbab ba-aa aaaab aaaba -aabb aaaha baabb bbbaa
+ bbbbb babba baabb bbbab aabba baaab bba
+6989477-10           ; 733
+ bbaab bhbab abbab ba-aa aaaab aaaba aaabb aaaha baabb bbbaa
+ bbbbb babba baabb bbbab aabba baaab bba
+15292380-10          ; 734
+ bbaab bhbab abbab baaaa aaaab aaaba aaabb aaaaa baabb bbbaa
+ bbbbb babba baabb bbbab aabba baaab bba
+6380151-10           ; 735
+ bbaab bhbab abbab baaaa aaaab aaaba aaabb aaaha baabb bbbaa
+ bbbbb babba baabb bbbab aabba baaab bba
+11189866-10          ; 736
+ bbaab bhbab abbab baaaa aaaab aaaba -aabb aaaha baabb bbbaa
+ bbbbb babba baabb bbbab aabba baaab bba
+58738936-10          ; 737
+ bhaab bhaab aabab baaaa aaaab aaaba baaab aaaha baabb bbaaa
+ bbbbb babba bbabb bbb-b aabba baaab bbb
+59476312-10          ; 738
+ bhaab bbaab aabbb baaab aaaab aaaba baaab aaaha baabb bbbaa
+ babbb babba bbabb bbbbb aabba baaab bab
+61002556-10          ; 739
+ baaab abaab aabbb baaab bahab babbb baaab bbhba baabb babaa
+ abbba babab abbab bbhbb baaba bbaab bab
+61658144-10          ; 740
+ bahab abaab abbbb baaab bahab babbb bbaab bbhba aaabb babaa
+ abbba baaab abbaa babbb baaba bbaab bah
+61914508-10          ; 741
+ bbhab abaab abbbb baaaa bahab babbb bbaab bbhba aaabb babaa
+ abbba baaab bbbaa babbb baaba bbaab bab
+62306016-10          ; 742
+ bbbab abaab abbab baaaa bahab babab bbaab abbba aaabb babaa
+ abbba bbaab bbbaa babbb baaba bbaab bah
+62352936-10          ; 743
+ bbbab abaab abbab baaaa bahab babab bbaab abbba aaabb babaa
+ abbba bbaab bbbaa babbb baaba bbaab baa
+62476832-10          ; 744
+ bbbab abaab abbab baaaa ba-ab babab bbaab abbba aaabb babaa
+ abbba bbaab bbbaa babbb baaba bbaaa baa
+62965500-10          ; 745
+ bbbbb abaab ab-ab aaaaa baaab babab bbaab abbba ababb aaaaa
+ abbba bbaab bbbaa babba baaba bbaaa haa
+63533668-10          ; 746
+ bbbbb abaab bb-ab aaaaa baaab babbb abaab bbbba ababb haaaa
+ abbba bbaab bbbaa baaba babba bbbaa aaa
+63662428-10          ; 747
+ bbbbb abaab bb-ab aaaaa baaab babbb abaab bbbba ababb baaab
+ abbba bbaab bbbaa baaba babba bbbaa aaa
+64441676-10          ; 748
+ bbbbb abaab bb-ab aabaa baaab babbb abaab bbbba abaab baaab
+ abbba abaaa bbbaa aaaba babaa bbbaa abb
+64251736-10          ; 749
+ bbbbb abaab bbaab aabaa baaab babbb abaab bbbba abaab baaab
+ abbba abaaa bbbaa aaaba babaa bbbaa abb
+19593316-0           ; 750
+ abhba baaba ab-ba bbaab babba baaab aabbb abaab ababa aabab
+ abaaa abbbb ababb aaaab bbbba aabbb bab
+3706408-11           ; 751
+ abhba haaba abbba bbaab babba baaab aabbb abaab ababa aabab
+ abaaa abbbb ababb aaaab bbbba aabbb bab
+4106782-11           ; 752
+ abhba haaba aabba bbaab babba haabb aabbb abaab abaaa aabab
+ abaaa abbbb ababb aaaab bbbba aabbb bab
+4629870-11           ; 753
+ abhba haaba aabba bbaab babba haabb aabbb abaab abaaa aabab
+ abbba abbbb bbabb aaaab bbbha aaabb bab
+4775141-11           ; 754
+ abbba haaba aabba bbaab babba haabb aabbb abaaa abaaa aabab
+ abbaa abbbb bbabb aaaaa bbbha aaabb bab
+5148394-11           ; 755
+ abbba haaba aabba bbaab babba haaab aabbb ab-aa abaaa aaaab
+ abbaa abbbb bbabb aaaaa bbaha aaabb bab
+5174417-11           ; 756
+ abbba haaba aabba bbaab babba haaab aabbb abbaa abaaa aaaab
+ abbaa abbbb bbabb aaaaa bbaha aaabb bab
+5279506-11           ; 757
+ abbba haaba aabba bbaba babba habbb aabbb abbaa abaaa aaaab
+ abbaa abbbb bbabb aaaaa bbaha aaabb bab
+5329635-11           ; 758
+ abbba haaba aabba bbaba babba aabbb abbbb abbaa abaaa aaaab
+ abbaa abbbb bbabb aaaaa bbaha aaabb bab
+5472482-11           ; 759
+ abhba haaba aabba bbaba babba aabbb abbbb abbaa abaaa aaaab
+ abbaa abbbb bbabb aaaaa bbaha aaabb bab
+5702819-11           ; 760
+ bbhba haaba aabba bbaba babba aabbb abbbb abbaa abaaa aaaab
+ abbaa abbbb bbabb aaaaa bbaha aaabb bab
+5955471-11           ; 761
+ bbhba haaba aabba bbaba babba aabbb abbbb abbaa abaaa aaaab
+ bbbaa abbbb bbabb aaaaa bbaha aaabb bab
+6497192-11           ; 762
+ bbhba aaaba aabba bbaba babba aabbb abbbb aabaa abaaa aahab
+ bbbaa abbbb bbabb aaaaa bbaha aaabb bab
+7105410-11           ; 763
+ bbhba aaaba aabba bbaba babba aabbb abbbb aabaa abaaa aahab
+ bbbaa abbbb bbabb aaaaa bba-a aaabb bab
+7485624-11           ; 764
+ bbhba aaaba aabbb bbaba babba aabbb abbbb aabaa abaaa aahab
+ bbbaa abbbb bbabb aaaaa bba-a aaabb bab
+7598793-11           ; 765
+ bbhba aaaba aabbb bbaba babba aabbb abbbb aabaa abaaa aahab
+ bbbaa abbbb bbabb aaaaa bbaha aaabb bab
+7857299-11           ; 766
+ bbhba aaaba aabbb bbaba babba aabbb abbbb aabaa abaaa aaaab
+ bbbaa abbbb bbabb aaaaa bbaha aaabb bab
+8357424-11           ; 767
+ bbhba aabba aabbb bbaba babba aabbb abbbb aabaa abaaa aaaab
+ bbbaa abbbb bbabb aaaaa bbaha aaabb bab
+23203400-11          ; 768
+ bbbba aabba aabbb bbaba babba aaabb bbbbb aabaa abaaa aaaab
+ bbbaa abbbb bbabb aaaaa bbaaa aaabb bab
+46408368-11          ; 769
+ bbbba aabba aabbb bbaba babbb aaabb bbabb aabaa abaaa aaaab
+ bbbaa bbbbb bbabb aaaaa bbaaa aaabb bab
+47008280-11          ; 770
+ bbbba aabba aabbb bbaba babbb aaabb bbabb aabaa abaaa aaaab
+ bbbaa bbbbb bbabb abaaa bbaaa aaabb bab
+47410780-11          ; 771
+ bbbba aabba aabbb bbaba babbb aaabb bbabb aabaa abaaa aaaab
+ babaa bbbbb bbabb abaaa bbaaa aaabb bab
+48283252-11          ; 772
+ bbbba aaaba aabbb bbaba babbb abaab abbbb aabaa abaaa aaaab
+ babaa bbbbb bbabb abaaa baaaa aaabb bab
+48586064-11          ; 773
+ bbbba aaaba aabbb bbaba babbb abaab abbbb aabaa abaaa aaaab
+ babab bbbbb bbabb abaaa baaaa aabbb bab
+48824920-11          ; 774
+ bbbba aaaba aabbb ababa babbb abaab abbbb aabaa abaaa aaaab
+ babab bbbbb bbabb abaaa baaaa aabbb bab
+48873576-11          ; 775
+ bbbba aaaba aabbb abaha babbb abaab abbbb aabaa abaaa aaaab
+ babab bbbbb bbabb abaaa baaaa aabbb bab
+49291740-11          ; 776
+ bbbba aaaba aabbb abaha babab abbab abbbb aabaa abaaa aaabb
+ babab bbbbb bbabb abaaa baaaa aabbb bab
+49757852-11          ; 777
+ bbbba aaabb aabbb abaha babab abbab abbbb aabba abaaa aaabb
+ babab bbbbb bbhbb abaab bbaaa aabbb bab
+49909656-11          ; 778
+ bbbba aaabb aabbb abaha babab bbbab abbbb aabba abaaa aaabb
+ babab bbbbb bbhbb baaab bbaaa aabbb bab
+50039296-11          ; 779
+ bbbba aaabb aabbb abahb babab bbbab abbbb aabbb abaaa aaabb
+ babab bbbbb bbhbb baaab bbaaa aabbb bab
+50277624-11          ; 780
+ bbbba aaabb aabbb abahb babab bbbab abbbb aabbb abaaa aaaab
+ babab bbbbb bbhbb baaab bbbaa babbb bab
+50322596-11          ; 781
+ bbbba aaaab aabbb abahb babab bbbab abbbb aabbb abaaa aaabb
+ babab bbbbb bbhbb baaab bbbaa babbb bab
+50386732-11          ; 782
+ bbbba aaaab aabbb abaab babab bbbab abbbb aabbb abaaa aaabb
+ babab bbbbb bbhbb baaab bbbaa babbb bab
+50447984-11          ; 783
+ bbbba aaaab habbb abaab aabab bbbab abbbb aabbb abaaa aaabb
+ babab bbbbb bbhbb baaab bbbaa babbb baa
+50536500-11          ; 784
+ bbbba aaaab habbb abaab aabab bbbab abbbb aabbb abaaa aaabb
+ aabab bbbbb bbhab baaab bbbaa babbb baa
+50583400-11          ; 785
+ bbbba aaaab babbb abaab aabab bbbab abbbb aabbb abaaa aaabb
+ aabab bbbbb bbhab baaab bbbaa babbb baa
+50658504-11          ; 786
+ bbbba aaaab babbb abaab aabab bbbab abbab aabbb abaaa aaabb
+ aabab bbbbb bbhab baaab bbbaa babbb baa
+50826944-11          ; 787
+ bbbba aaaab babbb abaab aabab bbbab abbab aabbb abaaa aaabb
+ aabab babbb bbhab baaab babaa babbb baa
+51058432-11          ; 788
+ bbbba aaaab babbb abaab aabab bbbab abbab aabbb abaaa aaabb
+ aahab babbb bbaab baaab babaa babbb bah
+51207404-11          ; 789
+ bbbba aaaaa babbb abaab aabab bbbab abbab babbb bbaaa aaabb
+ aahab babbb bbaab baaaa babaa babbb bah
+51306084-11          ; 790
+ bbbba aaaaa bbbbb abaab aabab bbbab abbab babbb bbaaa aaabb
+ aahab babbb bbaab bbaaa babaa babbb bah
+51419024-11          ; 791
+ bbbba ahaaa bbbbb abaab aabab bbbab abbab babbb bbaaa aaabb
+ aahab babbb hbaab bbbaa bahaa babbb bab
+51721096-11          ; 792
+ bbbaa aaaaa bbbba ababb aabbb bbbab abbab bbbbb bbaaa aaabb
+ aaaab babbb hbaab bbbaa bahaa babbb bab
+51885280-11          ; 793
+ bbbaa aaaaa bbbba ababb aabbb bbbab abbab bbbbb bbaaa aabbb
+ aaaab babbb hbaab bbbaa aahaa babbb bab
+51893640-11          ; 794
+ bbbaa aaaaa bbbba ababb aabbb bbbaa abbab bbbbb bbaaa aabbb
+ aaaab babbb hbaab bbbaa aahaa babbb bab
+51936800-11          ; 795
+ bbbab aaaaa bbbba ababb aabbb bbbaa abbab bbbbb bbaaa aabbb
+ aaaab babbb hbaab bbbaa aahaa babbb bab
+52175920-11          ; 796
+ bbbab aaaaa bbbbh ababb aabbb bbbaa abbab bbbbb bbaaa aabbb
+ aaaab babbb hbaab bbbaa aahaa babbb bab
+52282596-11          ; 797
+ bbbab aaaaa bbbbh ababb aabbb bbbaa abbab bbbbb bbaaa aabbb
+ aaaab babbb abaab bbbaa aahaa babbb bab
+52535836-11          ; 798
+ bbbab abaaa bbbbh ababb aabab bbbaa abbab bbbbb bhaaa aabbb
+ aaaab babba abaab bbhaa aahaa bbbbb bab
+52634724-11          ; 799
+ bbbab abaaa bbbah ababb aabab bbbaa abbab bbbbb bhaaa aabbb
+ aaaab babba abaab bbhaa aahaa bbbbb bab
+52768184-11          ; 800
+ bbhab abaaa bbbah ababb aabab bbbaa abbab bbbbb bhaaa aabbb
+ aaaab babba abaab bbhaa aahaa bbbbb bah
+52814672-11          ; 801
+ bbhab abaaa bbbah ababb aabab bbbaa abbab bbbbb bhbaa aabbb
+ aaaab babba abaab bbhaa aahaa bbbbb bah
+52849080-11          ; 802
+ bbhab abaaa bbbaa ababb aabab bbbaa abbab bbbbb bhbaa aabbb
+ aaaab babba abaab bbhaa aahaa bbbbb bah
+52958052-11          ; 803
+ bbhab abaaa bbbaa ababb aabab bbbaa abbab bbbbb bhbaa aabbb
+ aaaab babba abaab bbaaa aahaa bbbbb bah
+53090168-11          ; 804
+ bbhab abaaa bbbaa abbbb aabab bbbaa abbab bbbbb bhbba babbb
+ aaaab babba aaaab bbaaa aahaa bbbbb bah
+53184616-11          ; 805
+ bbhab ababa bbbaa abbbb aabab bbbaa abbab bbbbb bhbba babbb
+ aaaab babba aaaab bbaaa aahaa bbbbb bah
+53248408-11          ; 806
+ bbhab ababa bbbba abbbb aabab bbbaa abbab bbbbb bhbba babbb
+ aaaab babba aaaab bbaaa aahaa bbbbb bah
+53309080-11          ; 807
+ bbhab ababa bbbba abbbb aabab bbbaa abbab bbbbb bhbba babbb
+ baaab babba aaaab bbaaa aahaa bbbbb ba-
+6659-12              ; 808
+ abbba aaaab babba bbbbb abbaa aabab baabb aabab bbabb bbbbb
+ bhbab abbbb aaaaa bbaab abbbb bbaaa bab
+497852-12            ; 809
+ abbba aaaab babba bbbbb abbaa aabab baabb aabab bbabb bbbbb
+ bbbab abbbb aaaaa baaab abbbb bbaaa bab
+542525-12            ; 810
+ abbba aaaab babaa bbbbb abbaa aabab baabb aabab bbabb bbbbb
+ bbbab abbbb aaaaa baaab abbbb bbaaa bab
+741512-12            ; 811
+ bbbba aaaab babaa bbbbb abbaa aabab baabb aabab bbabb abbbb
+ bbbab aabbb aaaaa baaab abbbb bbaaa bab
+803228-12            ; 812
+ abbba aaaab bbbaa bbbbb abbaa aabab baabb aabab bbabb bbbbb
+ bbbab aabbb aaaaa baaab abbbb bbaaa bab
+891800-12            ; 813
+ abbba abaab bbbaa bbbbb abbaa aabab baabb aabab bbabb bbbbb
+ bbbab aabbb aaaaa baaab abbbb bbaaa bab
+1072636-12           ; 814
+ abbba hbaab bbbaa bbbbb abbaa aabab baabb aabab bbabb bbbbb
+ bbbab aabbb aaaaa baaab abbbb bbaaa bab
+1119616-12           ; 815
+ abbba hbaab bbbaa bbbbb abbaa aabab baabb aabab bbabb bbbbb
+ bbbab aabbb aaaaa bbaab abbbb bbaaa bab
+1424800-12           ; 816
+ abbba hbaaa bbbaa bbbbb abbaa abbab baabb aabab baabb bbbbb
+ bbbab abbbb aaaaa bbaaa abbbb abaaa bab
+1702457-12           ; 817
+ abbha hbaaa bbbaa bbbbb abbaa abbab baahb aabab baabb bbbbb
+ babab abbbb aaaaa bbaaa abbbb abaah bab
+1941275-12           ; 818
+ abbha hbaaa bbbaa bbbab abbaa abbab baaha aabbb baabb bbbbb
+ babab abbbb aaaaa bbaaa abbbb abaah bab
+1953863-12           ; 819
+ abbha hbaaa bbbaa bbbab abbaa abbab baaha aahbb baabb bbbbb
+ babab abbbb aaaaa bbaaa abbbb abaah bab
+2087551-12           ; 820
+ abbba hbaaa bbbaa bbbab abbaa abbab baaha aahbb baabb bbbbb
+ babab abbbb aaaaa bbaaa abbbb abaah bab
+2270606-12           ; 821
+ abbba hbaaa bbbaa babab abaaa abbab baaha aahbb baabb bbbbb
+ babab abbbb aaaaa bbaaa abbbb abaab bab
+2497794-12           ; 822
+ abbba hbaaa bbbaa babab aaaaa abbab ahaha aabbb baabb bbbbb
+ babab abbbb aaaba bbaaa abbbb abaab bab
+2729000-12           ; 823
+ abbba abaaa bbbaa bbbab aaaaa abbab bhaha babbb aaabb bbbbb
+ bbbab abbbb aaaba bbaab abbbb abaaa bab
+2715244-12           ; 824
+ abbba abaaa bbbaa bbbab aaaaa abbab b-aha babbb aaabb bbbbb
+ bbbab abbbb aaaba bbaab abbbb abaaa bab
+2736587-12           ; 825
+ abbba abaaa bbbaa bbbab aaaaa abbab b-aha babbb aaabb bbbbb
+ bbbab ahbbb aaaba bbaab abbbb abaaa bab
+2818178-12           ; 826
+ abbba abaaa bbbaa bbbab aaaaa abbab bbaha babbb aaabb bbbbb
+ bbbab abbbb aaaba bbaab ababb abaaa bab
+3041302-12           ; 827
+ abbba abaaa bbbaa bbbab aaaaa abbab bbaha babbb aaabb bbbbb
+ bbbbb abbab aaaba bbaab ababb abaaa bab
+3118138-12           ; 828
+ abbba abaaa bbbaa bbbab aaaaa abbab bbaha babbb baabb bbbbb
+ bbbbb abbab aaaba bbaab ababb abaaa bab
+3154960-12           ; 829
+ abbba abaaa bbbaa bbbab aaaaa abbab bbaha babbb baabb bbbbb
+ bbbbb abbab aaaaa bbaab ababb abaaa bab
+3472540-12           ; 830
+ abbba abaaa bbbaa bbbab aaaaa abbab bbaha babbb babbb bbbhb
+ bbbbb abaab aabaa bbaab bbabb abaaa bab
+3714671-12           ; 831
+ abbba abaaa bbbaa bbbab baaaa abbab bbaha babbb babbb bbhhb
+ bbbbb abaab aabaa bbaab bbabb abaaa bab
+3829634-12           ; 832
+ abbba abaaa bbbaa bbbab baaaa abbab bbaha babbb babbb bbhab
+ bbbbb abaab aabaa bbaab bbabb abaaa bab
+3844068-12           ; 833
+ abbba abaaa bbbaa bbbab baaaa abbab bbaha babbb babbb bbhab
+ bbbbb abaab aabaa bbaab bbaba abaaa bab
+3921388-12           ; 834
+ abbba bbaaa bbbaa bbbbb baaaa abbab bbaha babbb babbb bbhab
+ bbbbb abaab aabaa bbaab bbaba abaaa bab
+4680194-12           ; 835
+ abbba bbaaa bbbaa bbbbb baaah abbab bbaha babbb babbb bbhaa
+ bbbbb abaab aabaa bbaab bbaaa abaaa bab
+4397607-12           ; 836
+ abbba bbaaa bbbaa bbbbb baaah abaab bbaha babbb babbb bbhab
+ bbbbb abaab aabaa bbaab bbaaa abaaa bab
+6239549-12           ; 837
+ ababb bbaaa abbaa bbbbb baaah abbab bbbba babbb babbb bahab
+ bbbbb abaab aabaa bbbbb bbaaa abaaa bba
+11332752-0           ; 838
+ ababb bbaaa ab-aa bbbbb baaaa abbab bbbba babbb babbb ba-ab
+ bbbbb abaab aabaa bbbbb bbaaa abaaa bba
+7536683-0            ; 839
+ ababb bbaaa ab-aa bbbbb baaaa abbab bbbba babbb babbb baaab
+ bbbbb abaab aabaa bbbbb bbaaa abaaa bba
+7668558-0            ; 840
+ ababb bbaaa ab-aa bbbbb baaah abbab bbbba babbb babbb bahab
+ bbbbb abaab aabaa bbbbb bbaaa abaaa bba
+43615420-12          ; 841
+ ababb bbaaa aabaa bbbbb baaah abbab bbbba babbb babbb bahab
+ bbbbb abaab aabaa bbbbb bbaaa abaaa bba
+44551512-12          ; 842
+ ababb bbaaa aabaa bbbbb baaah abbab bbbba aabbb babbb bahab
+ bbbbb abaab aabaa bbbbb bbaaa abaaa bba
+44640272-12          ; 843
+ ababb bbaaa aabaa bbbbb baaah abbab bbbba aabbb babbb bahab
+ bbbbb abaab aabaa bbbbb baaaa abaaa bba
+44987792-12          ; 844
+ ababb bbaaa aabaa bbbbb baaah abbab bbbba babbb babbb bahab
+ bbbab abaab aabaa bbbbb baaaa abaaa bba
+45609412-12          ; 845
+ ababb bbaaa aabaa bbbbb baaah abbab bbbba babbb babbb bahaa
+ bbbab abaab aabaa bbbbb baaaa abaaa bba
+47269696-12          ; 846
+ ababb bbaaa aabaa bbbbb baaah abbab bbbaa babbb babba babaa
+ bbbab abaab aabab bbbab bbaaa abaaa bba
+47342720-12          ; 847
+ ababb bbaaa aaaab bbbbb baaah abbab bbbaa babbb babba babaa
+ bbbab abaab aabab bbbab bbaaa abaaa aba
+47845308-12          ; 848
+ ababb bbaaa aaaab bbbbb baaah abbab bbbaa aabbb babba babaa
+ bbbab abbab aabab abbab baaaa abaaa aba
+47976208-12          ; 849
+ ababb bbaaa aaaab bbbbb baaah abbab bbbaa habbb babba babaa
+ bbbab abbab aabab abbab baaaa abaaa aba
+48188704-12          ; 850
+ aaabb bbaha aaaab bbbbb baaah abbab bbbaa habbb babba babaa
+ bbbab abbab aabab abbab baaaa abaaa aba
+48207224-12          ; 851
+ aaabb bbaha aaaab bbbbb baabh abbab bbbaa habbb babba babaa
+ bbbab abbab aabab abbab baaaa abaaa aba
+48239308-12          ; 852
+ aaabb bbaha aaaab bbbbb baabh abbab bbbaa habbb babba babaa
+ bbbab abbab aabab abbab bbaaa abaaa aba
+48270976-12          ; 853
+ aaabb bbaha aaaab bbbbb baabh abbab bbbaa habbb babba aabaa
+ bbbab abbab aabab abbab bbaaa abaaa aba
+48358004-12          ; 854
+ aaabb bbaha aaaab bbbbb baabh abbab bbbaa habbb babba aabaa
+ bbbab abbhb aabab abbab bbaaa abaaa aba
+48376968-12          ; 855
+ aaabb bbaha aaaab bbbbb baabh abbab bbbaa habbb babba aabaa
+ bbbab abbhb aabab abbab bbbaa abaaa aba
+48399848-12          ; 856
+ aaabb bbaha aaaab bbbbb baabh abbab bbbaa habbb babba aabaa
+ bbbaa abbhb aabab abbab bbbaa abaaa aba
+48439360-12          ; 857
+ aaabb bbaha aaaab bbabb baabh abbab bbbaa habbb babba aabaa
+ bbbaa abbhb aabab abbab bbbaa abaaa aba
+48484472-12          ; 858
+ aaabb bbaha aaaab bbaab baabh abbab bbbaa habbb babba aabaa
+ bbbaa abbhb aabab abbab bbbaa abaaa aba
+61835468-12          ; 859
+ aaabb bbaha aa-ab bbaab baabh abbaa bbbaa habbb babba babaa
+ babaa abbab aabab abbab bbbaa abaaa aba
+62005976-12          ; 860
+ aaabb bbaba aa-ab bbaab baabh abbaa bbbaa babbb baaba babaa
+ babab abbab aabab abbab bbbaa abaaa aba
+62040100-12          ; 861
+ aaabb bbaba aa-ab bbaab baabh abbaa bbbaa babbb baaba babaa
+ babab abbab aabaa abbab bbbaa abaaa aba
+62247356-12          ; 862
+ aaabb bbaba aa-ab bbaab baabb abbaa bbbaa babbb baaba babaa
+ babab abbab aabaa abbab bbbaa abaaa aba
+62420952-12          ; 863
+ aaabb bbaba aa-ab bbaab baabb hbbaa bbbaa babbb baaba babaa
+ babab abbab aabaa abbaa bbbha abaaa aba
+62534652-12          ; 864
+ aaabb bbaba aa-ab bbbab aabbb bbaaa bbbaa babbb baaba babaa
+ babab abbaa aabah aabaa bbbha abaaa aba
+62577148-12          ; 865
+ aaabb bbaba aa-ab bbbbb aabbb bbaaa bbbaa babbb baaba babaa
+ babab abbaa aabah aabaa bbbha abaaa aba
