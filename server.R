@@ -5,8 +5,9 @@ shinyServer(function(input, output, session) {
 ##################################
   	geno <- reactive({
 		inFile <- input$file1
-		if (is.null(inFile))
-		return(NULL)
+		validate(
+		  need(input$file1 != "", "Upload a cross file to begin")
+		)
 		cross <- read.cross(
 			format = "csv",
 			file = inFile$datapath,
@@ -21,11 +22,10 @@ shinyServer(function(input, output, session) {
 	})
 
   	output$inputSummary <- renderPrint({
-  	  if (is.null(geno())) {
-  	    cat('No input data.')
-  	  } else {
-  	    summary(geno())
-  	  }
+  	  validate(
+  	    need(input$file1 != "", "Upload a cross file to begin")
+  	  )
+  	  summary(geno())
   	})
   	
 ##################################
@@ -53,18 +53,19 @@ output$selectorgenoImage <- renderUI({
 
 
 output$rf_plot <- renderPlot({
-	if (is.null(mstresult()))
-		return(NULL)
-	## A very crappy 'progressbar' for 5 secs.. 
-	progress <- shiny::Progress$new(session, min=1, max=5)
-	on.exit(progress$close())
-	progress$set(message = 'Calculation in progress')
-	for (i in 1:5) {
-		progress$set(value = i)
-		Sys.sleep(0.5)
-	}
-	rf.cross <- est.rf(mstresult())
-	heatMap(rf.cross)
+  validate(
+    need(input$file1 != "", "Upload a cross file to begin")
+  )
+	# ## A very crappy 'progressbar' for 5 secs.. 
+	# progress <- shiny::Progress$new(session, min=1, max=5)
+	# on.exit(progress$close())
+	# progress$set(message = 'Calculation in progress')
+	# for (i in 1:5) {
+	# 	progress$set(value = i)
+	# 	Sys.sleep(0.5)
+	# }
+	# rf.cross <- est.rf(mstresult())
+  heatMap(mstresult(), main = "")
 })
 
 output$genoImage <- renderPlot({
@@ -164,6 +165,19 @@ mstresult <- reactive({
   mymap <- pull.map(mapobject, as.table = T)
   mymap <- data.frame(marker = row.names(mymap), mymap)
   mymap$refgroup <- lapply(mymap$marker %>% as.character %>% strsplit(split = "-", fixed = T),"[",2) %>% as.numeric
+  mymap$bp <-lapply(mymap$marker %>% as.character %>% strsplit(split = "-", fixed = T),"[",1) %>% as.numeric
+  
+  ### Invert linkage groups if necessary
+  cor_genfys <- mymap %>% group_by(chr) %>% summarise(cor = cor(pos, bp))
+  invert <- filter(cor_genfys, cor < 0)
+  #Invert groups
+  if(nrow(invert) != 0){
+    for(i in 1:nrow(invert)){
+      invert_index <- which(mymap$chr == invert[i,]$chr)
+      max_pos <- mymap[invert_index ,]$pos %>% max
+      mymap[invert_index,]$pos <- (mymaps[invert_index,]$pos - max_pos)*-1
+    }
+  }
   ref_dictionary <- mymap %>% group_by(refgroup, chr) %>% summarise(a = n()) %>% group_by(chr) %>% top_n(wt = a,n = 1)
   subgroup_index <- which(duplicated(ref_dictionary$refgroup))
   ref_dictionary$refgroup[subgroup_index - 1] <- ref_dictionary$refgroup[subgroup_index - 1] + 0.1
@@ -172,7 +186,21 @@ mstresult <- reactive({
     LG_name <- which(names(mapobject$geno) == ref_dictionary$chr[i])
     names(mapobject$geno)[LG_name] <- ref_dictionary$refgroup[i]
   }
-  mapobject
+  mapobject  <- est.rf(mapobject)
+  ### Invert map direction
+  
+  ### Rearrange linkage groups order in cross object
+  chr_names_old <- names(mapobject$geno) 
+  chr_names_new <- names(mapobject$geno) %>% mixedsort()
+  mapobject2 <- mapobject
+  mapobject2$geno <- list()
+  ### Best piece of coding ever..
+  for(i in seq_along(mapobject$geno)){
+    k <- which(chr_names_new == chr_names_old[i])
+    mapobject2$geno[[k]] <- mapobject$geno[[i]]
+  }
+  names(mapobject2$geno) <- chr_names_new
+  mapobject2
 })
 
 ## Selectize selector to combine linkage groups
@@ -234,14 +262,14 @@ output$map_plot <- renderggiraph({
 	  if (!is.null(mstresult())) {
 	    list(
 	      selectInput("datatype", label = "Select data to export", 
-	                  choices = c("Genotype file","Genetic map","Segregation distortion"), 
+	                  choices = c("Genotype file","Genetic map","Segregation distortion","Recombination fractions"), 
 	                  selected = 1),
 	      downloadButton('downloadData', 'Save')
 	    )
 	  }
 	})
-	
-	output$DownloadData <- downloadHandler(
+
+		output$DownloadData <- downloadHandler(
 	  filename = function() {
 	    paste(input$Download, format(Sys.time(), "%a %b %d %X"), '.csv', sep='', col.names = NA)
 	  },
@@ -259,7 +287,11 @@ output$map_plot <- renderggiraph({
 	        content = function(file) {
 	          genodata <- mstresult() %>% pull.geno %>% as.data.frame
 	          row.names(genodata) <- mstresult()$pheno$RILs
-	          write.table(genodata, file, sep = ",", row.names = TRUE, col.names=NA)
+	          genodata[genodata == 1] <- "A"
+	          genodata[genodata == 2] <- "B"
+	          genodata <- cbind(Rils = rownames(genodata), genodata)
+	          row.names(genodata) <- NULL
+	          write.table(genodata, file, sep = ",", row.names = FALSE, col.names=NA)
 	          }
 	      )}  
 	  }
@@ -268,8 +300,10 @@ output$map_plot <- renderggiraph({
 	      downloadHandler(
 	        filename = function() {paste0('Genetic map_', format(Sys.time(), "%a %b %d %X"), '.csv') },
 	        content = function(file) {
-	          write.table(data.frame(marker = row.names(mstresult() %>% pull.map(as.table = T)), mstresult() %>% pull.map(as.table = T)) %>%
-	                        as.data.frame(), file, sep = ",", row.names = FALSE)
+	          mymap <- pull.map(mstresult(), as.table = T)
+	          mymap <- data.frame(marker = row.names(mymap), mymap)
+	          mymap$bp <-lapply(mymap$marker %>% as.character %>% strsplit(split = "-", fixed = T),"[",1) %>% as.numeric
+	          write.table(mymap, file, sep = ",", row.names = FALSE)
 	        }
 	      )}
 	  }
@@ -278,7 +312,20 @@ output$map_plot <- renderggiraph({
 	      downloadHandler(
 	        filename = function() {paste0('SegDist_', format(Sys.time(), "%a %b %d %X"), '.csv') },
 	        content = function(file) {
-	          write.table(mstresult() %>% geno.table, file, sep = ",", col.names = NA)
+	          segdist_data <- mstresult() %>% geno.table
+	          colnames(segdist_data)[3:4] <- c("A","B")
+	          write.table(segdist_data[,1:4], file, sep = ",", col.names = NA)
+	        }
+	      )}
+	  }
+	  if (input$datatype == 'Recombination fraction'){
+	    output$downloadData <- {
+	      downloadHandler(
+	        filename = function() {paste0('RecFraction_', format(Sys.time(), "%a %b %d %X"), '.csv') },
+	        content = function(file) {
+	          rf_data <- mstresult()$rf
+	          rf_data <- data.frame(row.names(rf_data), rf_data )
+	          write.table(rf, file, sep = ",", row.names = FALSE)
 	        }
 	      )}
 	  }

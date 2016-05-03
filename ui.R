@@ -71,8 +71,8 @@ shinyUI(
                     br(),
                     sliderInput('split',
                                  label = 'Clustering -log10(P)',
-                             min = 3, max = 8,
-                             value = 7, step = 0.1
+                             min = 2, max = 6,
+                             value = 4, step = 0.1
                     )
                    ),
                   mainPanel(
@@ -81,7 +81,8 @@ shinyUI(
                 )
                ),
                tabPanel("Recombination Frequency",
-                         plotOutput('rf_plot')
+                        helpText(h4("Pairwise recombination fractions and LOD scores", align = "center")),
+                         plotOutput('rf_plot', height = "800px")
                ),
                tabPanel("Manual Combine",
                         sidebarLayout(
