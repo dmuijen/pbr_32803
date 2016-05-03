@@ -175,7 +175,7 @@ mstresult <- reactive({
     for(i in 1:nrow(invert)){
       invert_index <- which(mymap$chr == invert[i,]$chr)
       max_pos <- mymap[invert_index ,]$pos %>% max
-      mymap[invert_index,]$pos <- (mymaps[invert_index,]$pos - max_pos)*-1
+      mymap[invert_index,]$pos <- (mymap[invert_index,]$pos - max_pos)*-1
     }
   }
   ref_dictionary <- mymap %>% group_by(refgroup, chr) %>% summarise(a = n()) %>% group_by(chr) %>% top_n(wt = a,n = 1)
@@ -219,7 +219,7 @@ output$map_plot <- renderggiraph({
   mymap <- pull.map(mstresult(), as.table = T)
   mymap <- data.frame(marker = row.names(mymap), mymap)
   mymap$chr <- mymap$chr %>% as.character %>% as.numeric()
-  mymaps <- mymap %>% arrange(chr)
+  mymap <- mymap %>% arrange(chr)
   mapplot <- ggplot(aes(x = factor(chr), y = pos, tooltip=marker, data_id=marker), data = mymap)  +
     geom_path(data = mymap, aes(x = factor(chr), y = pos, group = chr),size=4.5, lineend="round", col = colors()[284]) +
     theme_dark(base_size = 12)  + ylab("cM") +
