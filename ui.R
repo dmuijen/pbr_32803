@@ -1,3 +1,4 @@
+library(shiny)
 shinyUI(
   navbarPage("", inverse = TRUE, theme = shinytheme("cerulean"),
     tabPanel(div(h4("Upload data")),
@@ -84,13 +85,17 @@ shinyUI(
                         helpText(h4("Pairwise recombination fractions and LOD scores", align = "center")),
                          plotOutput('rf_plot', height = "800px")
                ),
-               tabPanel("Manual Combine",
+               tabPanel("Break/merge Linkage Groups",
                         sidebarLayout(
                           sidebarPanel(
-                            uiOutput("MapCombine")
+                            uiOutput("breakcombine"),
+                            uiOutput("LGCombine"),
+                            uiOutput("MarkCombine"),
+                            actionButton("button", "Go!")
                             ),
                           mainPanel(
-                            plotOutput('manual_map')
+                            # ggiraphOutput("map_plot", width="100%", height="800px")
+                            helpText("blabla")
                           )
                         )
                ),

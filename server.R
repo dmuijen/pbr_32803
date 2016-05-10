@@ -1,3 +1,4 @@
+library(shiny)
 shinyServer(function(input, output, session) {
   
 ##################################
@@ -122,7 +123,7 @@ alleleTable <- reactive({
     need(input$file1 != "", "Upload a cross file to begin"),
     need(input$markerSelect != "NULL" , "Please select a set of markers")
   )
-  table <- t(geno()$geno[[input$chromSelect]]$data[,input$markerSelect])
+  table <- t(geno()[[input$chromSelect]]$data[,input$markerSelect])
   colnames(table) <- seq(ncol(table))
   table[is.na(table)] <- "NA"
   table[which(table==1)] <- "A"
@@ -161,12 +162,16 @@ mstresult <- reactive({
   mapobject <- mstmap.cross(geno(), bychr = FALSE, dist.fun = input$mapping, 
                             trace = FALSE, id = "RILs",
                             p.value = 10^-input$split)
+  # observeEvent(input$button, {
+  #   mapobject <- breakCross(mapobject, split = list(input$LGCombine == input$MarkCombine))
+  # })
   # names(mapobject$geno) <- paste0("LG",seq_along(mapobject$geno))
   mymap <- pull.map(mapobject, as.table = T)
   mymap <- data.frame(marker = row.names(mymap), mymap)
   mymap$refgroup <- lapply(mymap$marker %>% as.character %>% strsplit(split = "-", fixed = T),"[",2) %>% as.numeric
   mymap$bp <-lapply(mymap$marker %>% as.character %>% strsplit(split = "-", fixed = T),"[",1) %>% as.numeric
   
+
   ### Invert linkage groups if necessary
   cor_genfys <- mymap %>% group_by(chr) %>% summarise(cor = cor(pos, bp))
   invert <- filter(cor_genfys, cor < 0)
@@ -186,7 +191,6 @@ mstresult <- reactive({
     LG_name <- which(names(mapobject$geno) == ref_dictionary$chr[i])
     names(mapobject$geno)[LG_name] <- ref_dictionary$refgroup[i]
   }
-  mapobject  <- est.rf(mapobject)
   ### Invert map direction
   
   ### Rearrange linkage groups order in cross object
@@ -200,14 +204,46 @@ mstresult <- reactive({
     mapobject2$geno[[k]] <- mapobject$geno[[i]]
   }
   names(mapobject2$geno) <- chr_names_new
+  mapobject2 <- est.rf(mapobject2)
   mapobject2
 })
 
-## Selectize selector to combine linkage groups
-output$MapCombine <- renderUI({
+#########################
+## Break or combine linkage groups
+##########################
+# v1 <- values
+# v1$a <- 2
+# isolate(a)
+# 
+# mstresult2 <- eventReactive(input$button, {
+# if(input$breakcombine == "Merge"){
+#   v1 <- values
+#   v1$mstresult <- breakCross(mstresult(), split = list(`12` = "61455904-3") )
+# }
+#   isolate(mstresult)
+# })
+# 
+# ### UI outputs
+output$breakcombine <- renderUI({
   if (is.null(mstresult()))
     return(NULL)
-  selectizeInput("MapCombine", "Manual combine", multiple = TRUE, names(mstresult()$geno) %>% as.list)
+  selectInput("breakcombine", "Break or merge?", multiple = FALSE, choices = c("Break","Merge"))
+})
+
+output$LGCombine <- renderUI({
+  if (is.null(mstresult()))
+    return(NULL)
+  selectizeInput("LGCombine", "Select linkage group(s)",
+                 multiple = FALSE, 
+                 choices = names(mstresult()$geno) %>% as.list)
+})
+
+output$MarkCombine <- renderUI({
+  if (is.null(mstresult()))
+    return(NULL)
+  selectizeInput("MarkCombine", "Select marker for split", 
+                 multiple = FALSE, 
+                 choices = colnames(mstresult()$geno[[input$LGCombine]]$data)) 
 })
 
 ## Plot of mst ordered data
@@ -259,14 +295,13 @@ output$map_plot <- renderggiraph({
 	  validate(
 	    need(mstresult() != "", "Run genetic map construction first")
 	  )
-	  if (!is.null(mstresult())) {
 	    list(
 	      selectInput("datatype", label = "Select data to export", 
 	                  choices = c("Genotype file","Genetic map","Segregation distortion","Recombination fractions"), 
 	                  selected = 1),
 	      downloadButton('downloadData', 'Save')
 	    )
-	  }
+
 	})
 
 		output$DownloadData <- downloadHandler(
@@ -291,7 +326,7 @@ output$map_plot <- renderggiraph({
 	          genodata[genodata == 2] <- "B"
 	          genodata <- cbind(Rils = rownames(genodata), genodata)
 	          row.names(genodata) <- NULL
-	          write.table(genodata, file, sep = ",", row.names = FALSE, col.names=NA)
+	          write.table(genodata, file, sep = ",", row.names = FALSE)
 	          }
 	      )}  
 	  }
@@ -314,18 +349,19 @@ output$map_plot <- renderggiraph({
 	        content = function(file) {
 	          segdist_data <- mstresult() %>% geno.table
 	          colnames(segdist_data)[3:4] <- c("A","B")
-	          write.table(segdist_data[,1:4], file, sep = ",", col.names = NA)
+	          segdist_data <- cbind(marker = rownames(segdist_data), segdist_data )
+	          write.table(segdist_data[,1:5], file, sep = ",", row.names = FALSE)
 	        }
 	      )}
 	  }
-	  if (input$datatype == 'Recombination fraction'){
+	  if (input$datatype == 'Recombination fractions'){
 	    output$downloadData <- {
 	      downloadHandler(
 	        filename = function() {paste0('RecFraction_', format(Sys.time(), "%a %b %d %X"), '.csv') },
 	        content = function(file) {
-	          rf_data <- mstresult()$rf
-	          rf_data <- data.frame(row.names(rf_data), rf_data )
-	          write.table(rf, file, sep = ",", row.names = FALSE)
+	          rf_data <- mstresult()$rf %>% as.data.frame()
+	          rf_data <- cbind(marker = row.names(rf_data), rf_data )
+	          write.table(rf_data, file, sep = ",", row.names = FALSE)
 	        }
 	      )}
 	  }

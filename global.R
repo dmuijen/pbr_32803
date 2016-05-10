@@ -1,5 +1,5 @@
-library(qtlcharts)
 library(qtl)
+library(shiny)
 library(markdown)
 library(ggplot2)
 library(qtl)      
