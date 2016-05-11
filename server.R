@@ -169,7 +169,11 @@ output$chromFacetPlot <- renderggiraph({
 output$chromInput <- renderPrint({input$chromInput})
 
 output$chromSlider <- renderUI({
-  sliderInput.custom(inputId="chromInput", label="Chromosome :", value=c(2,4), min=0, max=13, custom.ticks=c("1a","1b","2","3","4","5","6","7","8","9","10","11","12"))
+  if(input$mapactivator == 0){
+  sliderInput.custom(inputId="chromInput", label="Chromosome :", value=c(2,4), min=0, max=13, custom.ticks=names(geno()$geno))
+  } else {
+    sliderInput.custom(inputId="chromInput", label="Chromosome :", value=c(2,4), min=0, max=13, custom.ticks=names(mstresult()$geno))
+  }
 })
 
 output$chromSelect <- renderUI({
@@ -185,6 +189,7 @@ output$chromSelect <- renderUI({
     )
   }
 })
+
 
 output$markerSelect <- renderUI({
   if(input$mapactivator == 0){
