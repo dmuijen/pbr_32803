@@ -177,17 +177,17 @@ output$chromSlider <- renderUI({
 })
 
 output$chromSelect <- renderUI({
-  # if(input$mapactivator == 0){
+  if(input$mapactivator == 0){
   selectizeInput(inputId="chromSelect", 
                  label = "Select Chromosome", 
                  choices = names(geno()$geno)
   )
-  # } else {
-  #   selectizeInput(inputId="chromSelect", 
-  #                  label = "Select Chromosome", 
-  #                  choices = names(mstresult()$geno)
-  #   )
-  # }
+  } else {
+    selectizeInput(inputId="chromSelect",
+                   label = "Select Chromosome",
+                   choices = names(mstresult()$geno)
+    )
+  }
 })
 
 
