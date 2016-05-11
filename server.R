@@ -177,17 +177,17 @@ output$chromSlider <- renderUI({
 })
 
 output$chromSelect <- renderUI({
-  if(input$mapactivator == 0){
+  # if(input$mapactivator == 0){
   selectizeInput(inputId="chromSelect", 
                  label = "Select Chromosome", 
                  choices = names(geno()$geno)
   )
-  } else {
-    selectizeInput(inputId="chromSelect", 
-                   label = "Select Chromosome", 
-                   choices = names(mstresult()$geno)
-    )
-  }
+  # } else {
+  #   selectizeInput(inputId="chromSelect", 
+  #                  label = "Select Chromosome", 
+  #                  choices = names(mstresult()$geno)
+  #   )
+  # }
 })
 
 
@@ -214,15 +214,15 @@ alleleTable <- reactive({
   )
   
   if(input$mapactivator == 0){
-  table <- t(geno()[[input$chromSelect]]$data[,input$markerSelect])
+  table <- t(geno()$geno[[input$chromSelect]]$data[,input$markerSelect])
   } else {
-    table <- t(mstresult()[[input$chromSelect]]$data[,input$markerSelect])
+    table <- t(mstresult()$geno[[input$chromSelect]]$data[,input$markerSelect])
   }
   colnames(table) <- seq(ncol(table))
   table[is.na(table)] <- "NA"
   table[which(table==1)] <- "A"
   table[which(table==2)] <- "B"
-  # table[which(table==3)] <- "B"
+  table[which(table==3)] <- "B"
   return(table)
 })
 
