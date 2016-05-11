@@ -10,6 +10,7 @@ library(ggiraph)
 library(gtools)
 library(dplyr)
 library(DT)
+mstresult <- NULL
 # mydata <- read.cross(format = "csv",
 #            file = "data/cross.csv" ,
 #            genotypes = c("A","H","B"),

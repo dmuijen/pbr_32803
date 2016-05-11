@@ -38,6 +38,7 @@ output$raw_plot <- renderggiraph({
   validate(
     need(input$file1 != "", "Upload a cross file to begin")
   )
+  if(input$button == 0){
   mymap <- pull.map(geno(), as.table = T)
   mymap <- data.frame(marker = row.names(mymap), mymap)
   mapplot <- ggplot(aes(x = factor(chr), y = pos, tooltip=marker, data_id=marker), data = mymap)  +
@@ -46,10 +47,24 @@ output$raw_plot <- renderggiraph({
     xlab("Linkage Group") + scale_y_reverse() +
     geom_point_interactive(size=4.5, col="orange", shape = 95) 
   ggiraph(code = {print(mapplot)}, zoom_max = 2, tooltip_offx = 20, tooltip_offy = -10, hover_css = "fill:black;stroke-width:1px;stroke:wheat;cursor:pointer;alpha:1;")
-})
+  } else {
+    mymap <- pull.map(mstresult(), as.table = T)
+    mymap <- data.frame(marker = row.names(mymap), mymap)
+    mapplot <- ggplot(aes(x = factor(chr), y = pos, tooltip=marker, data_id=marker), data = mymap)  +
+      geom_path(data = mymap, aes(x = factor(chr), y = pos, group = chr),size=4.5, lineend="round", col = colors()[284]) +
+      theme_dark(base_size = 12)  + ylab("cM") +
+      xlab("Linkage Group") + scale_y_reverse() +
+      geom_point_interactive(size=4.5, col="orange", shape = 95)
+    ggiraph(code = {print(mapplot)}, zoom_max = 2, tooltip_offx = 20, tooltip_offy = -10, hover_css = "fill:black;stroke-width:1px;stroke:wheat;cursor:pointer;alpha:1;")
+  }
+  })
 
 output$selectorgenoImage <- renderUI({
+  if(input$button == 0){
   selectizeInput("genoImagesub", "Subset graphical genotype", multiple = TRUE, names(geno()$geno) %>% as.list)
+  } else {
+    selectizeInput("genoImagesub", "Subset graphical genotype", multiple = TRUE, names(mstresult()$geno) %>% as.list)
+  }
 })
 
 
@@ -57,33 +72,83 @@ output$rf_plot <- renderPlot({
   validate(
     need(input$file1 != "", "Upload a cross file to begin")
   )
-	# ## A very crappy 'progressbar' for 5 secs.. 
-	# progress <- shiny::Progress$new(session, min=1, max=5)
-	# on.exit(progress$close())
-	# progress$set(message = 'Calculation in progress')
-	# for (i in 1:5) {
-	# 	progress$set(value = i)
-	# 	Sys.sleep(0.5)
-	# }
-	# rf.cross <- est.rf(mstresult())
   heatMap(mstresult(), main = "")
 })
 
 output$genoImage <- renderPlot({
   if (is.null(geno))
     return(NULL)
+  if(input$button == 0){
   if (!is.null(input$genoImagesub)){
     geno.image(geno(), chr = input$genoImagesub)
   } else {
     geno.image(geno())
-    }
+  }
+  } else {   
+    if (!is.null(input$genoImagesub)){
+    geno.image(mstresult(), chr = input$genoImagesub)
+  } else {
+    geno.image(mstresult())
+  }
+  }
 })
 
-output$qc_plot <- renderPlot({
-	suppressWarnings(profileMark(mstresult(), stat.type = input$qcType, id =
-							"RILs", type = "a"))
+##############
+### Marker QC
+##############
+
+statmark <- reactive({
+  statMark(mstresult(), stat.type = c("marker","interval"), map.function = 'kosambi')
 })
 
+statgen <- reactive({
+  statGen(mstresult(), stat.type = c("xo","dxo"), id = "RILs", bychr = FALSE)
+})
+
+output$qcType1 <- renderUI({
+  if (is.null(mstresult()))
+    return(NULL)
+  selectInput("qcType1", "QC at marker or interval level", multiple = FALSE, choices = c("marker","interval"))
+})
+
+output$qc_plot1 <- renderPlot({
+  if (is.null(mstresult()))
+    return(NULL)
+  if(input$qcType1 == "marker"){
+    p <- ggplot(aes_string(x = "pos", y = input$qcType2), data = statmark()$marker)
+    p <- p + geom_line(lwd = 1.2) + theme_bw(base_size = 14) + facet_wrap(~chr) + xlab("Position (cM)")
+    print(p)
+  }
+  if(input$qcType1 == "interval"){
+    p <- ggplot(aes_string(x = "pos", y = input$qcType3), data = statmark()$interval)
+    p <- p + geom_line(lwd = 1.2) + theme_bw(base_size = 14) + facet_wrap(~chr) + xlab("Position (cM)")
+    print(p)
+  }
+})
+
+output$qc_plot2 <- renderPlot({
+  if (is.null(mstresult()))
+    return(NULL)
+  if(input$qcType4 == "xo"){
+    p <- ggplot(aes(x = index, y = xo), data = data.frame(index = attributes(statgen()$xo)$names, xo = statgen()$xo))
+    p <- p + geom_point(size = 1.2) + theme_bw(base_size = 10) + xlab("RIL number") + ylab("Nr.Crossovers") +
+      geom_text(aes(label=index),hjust=0, vjust=0) + scale_x_discrete(breaks=NULL)
+
+    print(p)
+
+  }
+  if(input$qcType4 == "dxo"){
+    p <- ggplot(aes(x = index, y = dxo), data = data.frame(index = attributes(statgen()$dxo)$names, dxo = statgen()$dxo))
+    p <- p + geom_point(size = 1.2) + theme_bw(base_size = 10)  + xlab("RIL number") + ylab("Nr.DoubleCrossovers") +
+      geom_text(aes(label=index),hjust=0.1, vjust=0.1) + scale_x_discrete(breaks=NULL)
+    print(p)
+  }
+})
+
+
+##############
+### Facet plot
+##############
 
 output$chromFacetPlot <- renderggiraph({
   if (is.null(input$chromInput[1]))
@@ -93,7 +158,11 @@ output$chromFacetPlot <- renderggiraph({
   )
   min <- as.numeric(input$chromInput[1])
   max <- as.numeric(input$chromInput[2])
+  if(input$button == 0){
   plot <- LGChrom.facetplot(posmap,min,max, cross = geno())
+  } else {
+    plot <- LGChrom.facetplot(posmap,min,max, cross = mstresult())
+  }
   ggiraph(code = {print(plot)}, zoom_max = 2, tooltip_offx = 20, tooltip_offy = -10, hover_css = "fill:black;stroke-width:1px;stroke:wheat;cursor:pointer;alpha:1;")
 })
 
@@ -104,18 +173,33 @@ output$chromSlider <- renderUI({
 })
 
 output$chromSelect <- renderUI({
+  if(input$button == 0){
   selectizeInput(inputId="chromSelect", 
                  label = "Select Chromosome", 
                  choices = names(geno()$geno)
   )
+  } else {
+    selectizeInput(inputId="chromSelect", 
+                   label = "Select Chromosome", 
+                   choices = names(mstresult()$geno)
+    )
+  }
 })
 
 output$markerSelect <- renderUI({
+  if(input$button == 0){
   selectizeInput(inputId="markerSelect", 
                  label = 'Select a marker to compare', 
                  choices = colnames(geno()$geno[[input$chromSelect]]$data), 
                  multiple = TRUE
   )
+  } else {
+    selectizeInput(inputId="markerSelect", 
+                   label = 'Select a marker to compare', 
+                   choices = colnames(mstresult()$geno[[input$chromSelect]]$data), 
+                   multiple = TRUE
+    )
+  }
 })
 
 alleleTable <- reactive({
@@ -123,7 +207,12 @@ alleleTable <- reactive({
     need(input$file1 != "", "Upload a cross file to begin"),
     need(input$markerSelect != "NULL" , "Please select a set of markers")
   )
+  
+  if(input$button == 0){
   table <- t(geno()[[input$chromSelect]]$data[,input$markerSelect])
+  } else {
+    table <- t(mstresult()[[input$chromSelect]]$data[,input$markerSelect])
+  }
   colnames(table) <- seq(ncol(table))
   table[is.na(table)] <- "NA"
   table[which(table==1)] <- "A"
@@ -156,7 +245,7 @@ output$genotable <- DT::renderDataTable(DT::datatable(alleleTable(),
 ###### Genetic map construction
 ##################################
 
-mstresult <- reactive({
+mstresult <- eventReactive(input$mapactivator,{
   if (is.null(geno()))
     return(NULL)
   mapobject <- mstmap.cross(geno(), bychr = FALSE, dist.fun = input$mapping, 
@@ -251,7 +340,6 @@ output$map_plot <- renderggiraph({
   validate(
     need(input$file1 != "", "Upload a cross file to begin")
   )
-  # plotMap(mstresult())
   mymap <- pull.map(mstresult(), as.table = T)
   mymap <- data.frame(marker = row.names(mymap), mymap)
   mymap$chr <- mymap$chr %>% as.character %>% as.numeric()
