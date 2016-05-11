@@ -106,13 +106,13 @@ statgen <- reactive({
 })
 
 output$qcType1 <- renderUI({
-  if (is.null(mstresult()))
+  if(input$button == 0)
     return(NULL)
   selectInput("qcType1", "QC at marker or interval level", multiple = FALSE, choices = c("marker","interval"))
 })
 
 output$qc_plot1 <- renderPlot({
-  if (is.null(mstresult()))
+  if(input$button == 0)
     return(NULL)
   if(input$qcType1 == "marker"){
     p <- ggplot(aes_string(x = "pos", y = input$qcType2), data = statmark()$marker)
@@ -127,7 +127,7 @@ output$qc_plot1 <- renderPlot({
 })
 
 output$qc_plot2 <- renderPlot({
-  if (is.null(mstresult()))
+  if(input$button == 0)
     return(NULL)
   if(input$qcType4 == "xo"){
     p <- ggplot(aes(x = index, y = xo), data = data.frame(index = attributes(statgen()$xo)$names, xo = statgen()$xo))
@@ -314,13 +314,13 @@ mstresult <- eventReactive(input$mapactivator,{
 # 
 # ### UI outputs
 output$breakcombine <- renderUI({
-  if (is.null(mstresult()))
+  if(input$button == 0)
     return(NULL)
   selectInput("breakcombine", "Break or merge?", multiple = FALSE, choices = c("Break","Merge"))
 })
 
 output$LGCombine <- renderUI({
-  if (is.null(mstresult()))
+  if(input$button == 0)
     return(NULL)
   selectizeInput("LGCombine", "Select linkage group(s)",
                  multiple = FALSE, 
@@ -328,7 +328,7 @@ output$LGCombine <- renderUI({
 })
 
 output$MarkCombine <- renderUI({
-  if (is.null(mstresult()))
+  if(input$button == 0)
     return(NULL)
   selectizeInput("MarkCombine", "Select marker for split", 
                  multiple = FALSE, 
