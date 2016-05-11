@@ -38,7 +38,7 @@ output$raw_plot <- renderggiraph({
   validate(
     need(input$file1 != "", "Upload a cross file to begin")
   )
-  if(input$button == 0){
+  if(input$mapactivator == 0){
   mymap <- pull.map(geno(), as.table = T)
   mymap <- data.frame(marker = row.names(mymap), mymap)
   mapplot <- ggplot(aes(x = factor(chr), y = pos, tooltip=marker, data_id=marker), data = mymap)  +
@@ -60,7 +60,7 @@ output$raw_plot <- renderggiraph({
   })
 
 output$selectorgenoImage <- renderUI({
-  if(input$button == 0){
+  if(input$mapactivator == 0){
   selectizeInput("genoImagesub", "Subset graphical genotype", multiple = TRUE, names(geno()$geno) %>% as.list)
   } else {
     selectizeInput("genoImagesub", "Subset graphical genotype", multiple = TRUE, names(mstresult()$geno) %>% as.list)
@@ -78,7 +78,7 @@ output$rf_plot <- renderPlot({
 output$genoImage <- renderPlot({
   if (is.null(geno))
     return(NULL)
-  if(input$button == 0){
+  if(input$mapactivator == 0){
   if (!is.null(input$genoImagesub)){
     geno.image(geno(), chr = input$genoImagesub)
   } else {
@@ -106,13 +106,13 @@ statgen <- reactive({
 })
 
 output$qcType1 <- renderUI({
-  if(input$button == 0)
+  if(input$mapactivator == 0)
     return(NULL)
   selectInput("qcType1", "QC at marker or interval level", multiple = FALSE, choices = c("marker","interval"))
 })
 
 output$qc_plot1 <- renderPlot({
-  if(input$button == 0)
+  if(input$mapactivator == 0)
     return(NULL)
   if(input$qcType1 == "marker"){
     p <- ggplot(aes_string(x = "pos", y = input$qcType2), data = statmark()$marker)
@@ -127,7 +127,7 @@ output$qc_plot1 <- renderPlot({
 })
 
 output$qc_plot2 <- renderPlot({
-  if(input$button == 0)
+  if(input$mapactivator == 0)
     return(NULL)
   if(input$qcType4 == "xo"){
     p <- ggplot(aes(x = index, y = xo), data = data.frame(index = attributes(statgen()$xo)$names, xo = statgen()$xo))
@@ -151,14 +151,14 @@ output$qc_plot2 <- renderPlot({
 ##############
 
 output$chromFacetPlot <- renderggiraph({
-  if (is.null(input$chromInput[1]))
+  if(is.null(input$chromInput[1]))
     return(NULL)
   validate(
     need(input$file1 != "", "Upload a cross file to begin")
   )
   min <- as.numeric(input$chromInput[1])
   max <- as.numeric(input$chromInput[2])
-  if(input$button == 0){
+  if(input$mapactivator == 0){
   plot <- LGChrom.facetplot(posmap,min,max, cross = geno())
   } else {
     plot <- LGChrom.facetplot(posmap,min,max, cross = mstresult())
@@ -173,7 +173,7 @@ output$chromSlider <- renderUI({
 })
 
 output$chromSelect <- renderUI({
-  if(input$button == 0){
+  if(input$mapactivator == 0){
   selectizeInput(inputId="chromSelect", 
                  label = "Select Chromosome", 
                  choices = names(geno()$geno)
@@ -187,7 +187,7 @@ output$chromSelect <- renderUI({
 })
 
 output$markerSelect <- renderUI({
-  if(input$button == 0){
+  if(input$mapactivator == 0){
   selectizeInput(inputId="markerSelect", 
                  label = 'Select a marker to compare', 
                  choices = colnames(geno()$geno[[input$chromSelect]]$data), 
@@ -208,7 +208,7 @@ alleleTable <- reactive({
     need(input$markerSelect != "NULL" , "Please select a set of markers")
   )
   
-  if(input$button == 0){
+  if(input$mapactivator == 0){
   table <- t(geno()[[input$chromSelect]]$data[,input$markerSelect])
   } else {
     table <- t(mstresult()[[input$chromSelect]]$data[,input$markerSelect])
@@ -251,7 +251,7 @@ mstresult <- eventReactive(input$mapactivator,{
   mapobject <- mstmap.cross(geno(), bychr = FALSE, dist.fun = input$mapping, 
                             trace = FALSE, id = "RILs",
                             p.value = 10^-input$split)
-  # observeEvent(input$button, {
+  # observeEvent(input$mapactivator, {
   #   mapobject <- breakCross(mapobject, split = list(input$LGCombine == input$MarkCombine))
   # })
   # names(mapobject$geno) <- paste0("LG",seq_along(mapobject$geno))
@@ -304,7 +304,7 @@ mstresult <- eventReactive(input$mapactivator,{
 # v1$a <- 2
 # isolate(a)
 # 
-# mstresult2 <- eventReactive(input$button, {
+# mstresult2 <- eventReactive(input$mapactivator, {
 # if(input$breakcombine == "Merge"){
 #   v1 <- values
 #   v1$mstresult <- breakCross(mstresult(), split = list(`12` = "61455904-3") )
@@ -314,13 +314,13 @@ mstresult <- eventReactive(input$mapactivator,{
 # 
 # ### UI outputs
 output$breakcombine <- renderUI({
-  if(input$button == 0)
+  if(input$mapactivator == 0)
     return(NULL)
   selectInput("breakcombine", "Break or merge?", multiple = FALSE, choices = c("Break","Merge"))
 })
 
 output$LGCombine <- renderUI({
-  if(input$button == 0)
+  if(input$mapactivator == 0)
     return(NULL)
   selectizeInput("LGCombine", "Select linkage group(s)",
                  multiple = FALSE, 
@@ -328,7 +328,7 @@ output$LGCombine <- renderUI({
 })
 
 output$MarkCombine <- renderUI({
-  if(input$button == 0)
+  if(input$mapactivator == 0)
     return(NULL)
   selectizeInput("MarkCombine", "Select marker for split", 
                  multiple = FALSE, 
