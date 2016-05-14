@@ -18,7 +18,7 @@ shinyServer(function(input, output, session) {
 			BC.gen = 0,
 			F.gen = 7
 		)
-		cross <- cross %>% convert2riself()
+# 		cross <- cross %>% convert2riself()
 	  cross
 	})
 
@@ -61,10 +61,12 @@ output$raw_plot <- renderggiraph({
 
 output$selectorgenoImage <- renderUI({
   if(input$mapactivator == 0){
-  selectizeInput("genoImagesub", "Subset graphical genotype", multiple = TRUE, names(geno()$geno) %>% as.list)
-  } else {
-    selectizeInput("genoImagesub", "Subset graphical genotype", multiple = TRUE, names(mstresult()$geno) %>% as.list)
+    opts <- names(geno()$geno) %>% as.list
   }
+  else {
+    opts <- names(mstresult()$geno) %>% as.list
+  }
+  selectizeInput("genoImagesub", "Subset graphical genotype", multiple = TRUE, choices = opts, selected = opts)
 })
 
 
@@ -75,22 +77,39 @@ output$rf_plot <- renderPlot({
   heatMap(mstresult(), main = "")
 })
 
-output$genoImage <- renderPlot({
+
+tablePlot <- eventReactive(input$startPlotTable,{
+  validate(
+    need(input$genoImagesub != "","Please select a set of chromosomes"))
+  
   if (is.null(geno))
     return(NULL)
+  
   if(input$mapactivator == 0){
+    table <- geno()$geno
+  } else {
+    table <- mstresult()$geno
+  }
+  
   if (!is.null(input$genoImagesub)){
-    geno.image(geno(), chr = input$genoImagesub)
-  } else {
-    geno.image(geno())
+    table <- lapply(input$genoImagesub, function(chr){
+      table <- melt(t(table[[chr]]$data))
+      table <- cbind(chr,table)
+    })
+    table <- as.data.frame(do.call(rbind, table))
+    table$value <- factor(table$value)
   }
-  } else {   
-    if (!is.null(input$genoImagesub)){
-    geno.image(mstresult(), chr = input$genoImagesub)
-  } else {
-    geno.image(mstresult())
-  }
-  }
+  
+  ggplot(table, aes(x=Var1,y=Var2, fill=value)) + 
+    geom_tile() + facet_grid(.~chr,scales="free") + 
+    theme_dark() + theme(axis.ticks.x=element_blank(),axis.text.x=element_blank()) + 
+    scale_y_discrete(expand = c(0, 0)) + 
+    labs(x="Markers",y="Individuals") + 
+    scale_fill_manual(values=c("#004CC7","#008A05","#C70D00"),na.value="white",labels=c("A","H","B"), guide_legend(title="Genotype"))  
+})
+
+output$genoImage <- renderPlot({
+  print(tablePlot())
 })
 
 ##############
@@ -221,7 +240,7 @@ alleleTable <- reactive({
   colnames(table) <- seq(ncol(table))
   table[is.na(table)] <- "NA"
   table[which(table==1)] <- "A"
-  table[which(table==2)] <- "B"
+  table[which(table==2)] <- "H"
   table[which(table==3)] <- "B"
   return(table)
 })
@@ -297,6 +316,7 @@ mstresult <- eventReactive(input$mapactivator,{
     k <- which(chr_names_new == chr_names_old[i])
     mapobject2$geno[[k]] <- mapobject$geno[[i]]
   }
+  
   names(mapobject2$geno) <- chr_names_new
   mapobject2 <- est.rf(mapobject2)
   mapobject2
