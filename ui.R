@@ -29,7 +29,8 @@ shinyUI(
               tabPanel("Graphical genotype",
                        sidebarLayout(
                          sidebarPanel(
-                           uiOutput("selectorgenoImage")
+                           uiOutput("selectorgenoImage"),
+                           actionButton("startPlotTable","Plot table")                           
                          ),
                          mainPanel(
                            plotOutput('genoImage'),

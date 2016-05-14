@@ -10,15 +10,17 @@ library(ggiraph)
 library(gtools)
 library(dplyr)
 library(DT)
+library(reshape2)
+
 mstresult <- NULL
-# mydata <- read.cross(format = "csv",
-#            file = "data/cross.csv" ,
-#            genotypes = c("A","H","B"),
-#            alleles = c("A","B"),
-#            estimate.map = FALSE,
-#            BC.gen = 0,
-#            F.gen = 7
-# )
+mydata <- read.cross(format = "csv",
+           file = "data/cross.csv" ,
+           genotypes = c("A","H","B"),
+           alleles = c("A","B"),
+           estimate.map = FALSE,
+           BC.gen = 0,
+           F.gen = 7
+)
 # mydata <- mydata %>% convert2riself()
 
 sliderInput.custom <- function(inputId="placeholder", label="placeholder", ticks=TRUE, value=c(0,0), min=0, max=0, custom.ticks=c("placeholder")){
