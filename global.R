@@ -18,16 +18,16 @@ mstresult <- NULL
 #            alleles = c("A","B"),
 #            estimate.map = FALSE,
 #            BC.gen = 0,
-#            F.gen = 7
+#            F.gen = 6
 # )
 # mydata <- mydata %>% convert2riself()
 
 sliderInput.custom <- function(inputId="placeholder", label="placeholder", ticks=TRUE, value=c(0,0), min=0, max=0, custom.ticks=c("placeholder")){
   args <- list(inputId=inputId, label=label, ticks=ticks, value=value, min=min, max=max)
   html <- do.call('sliderInput', args)
-  ##<MAD HACKS>
+  ##<MAD HACKS>##
   html$children[[2]]$attribs[['data-values']] <- paste(custom.ticks,collapse=',')
-  ##</MAD HACKS>
+  ##</MAD HACKS>##
   return(html)
 }
 
