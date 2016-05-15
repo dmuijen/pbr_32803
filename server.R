@@ -172,15 +172,14 @@ output$qc_plot1 <- renderPlot({
 output$qc_plot2 <- renderPlot({
   if(input$mapactivator == 0)
     return(NULL)
-  if(input$qcType4 == "xo"){
+  if(input$qcType4 == "number of crossovers"){
     p <- ggplot(aes(x = index, y = xo), data = data.frame(index = attributes(statgen()$xo)$names, xo = statgen()$xo))
     p <- p + geom_point(size = 1.2) + theme_bw(base_size = 10) + xlab("RIL number") + ylab("Nr.Crossovers") +
       geom_text(aes(label=index),hjust=0, vjust=0) + scale_x_discrete(breaks=NULL)
-
     print(p)
 
   }
-  if(input$qcType4 == "dxo"){
+  if(input$qcType4 == "number of double crossovers"){
     p <- ggplot(aes(x = index, y = dxo), data = data.frame(index = attributes(statgen()$dxo)$names, dxo = statgen()$dxo))
     p <- p + geom_point(size = 1.2) + theme_bw(base_size = 10)  + xlab("RIL number") + ylab("Nr.DoubleCrossovers") +
       geom_text(aes(label=index),hjust=0.1, vjust=0.1) + scale_x_discrete(breaks=NULL)
