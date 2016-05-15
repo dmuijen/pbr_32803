@@ -399,7 +399,8 @@ observeEvent(input$datatype, {
           genodata <- mstresult() %>% pull.geno %>% as.data.frame
           row.names(genodata) <- mstresult()$pheno$RILs
           genodata[genodata == 1] <- "A"
-          genodata[genodata == 2] <- "B"
+          genodata[genodata == 2] <- "H"
+          genodata[genodata == 3] <- "B"
           genodata <- cbind(Rils = rownames(genodata), genodata)
           row.names(genodata) <- NULL
           write.table(genodata, file, sep = ",", row.names = FALSE)
