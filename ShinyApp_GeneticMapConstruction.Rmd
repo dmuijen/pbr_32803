@@ -1,0 +1,51 @@
+---
+title: 'User Manual: Genetic map construction'
+author: "Dennis van Muijen & David Nieuwenhuijse"
+output:  
+  pdf_document:
+    number_sections: true
+---
+
+#Upload data
+The main tab "Upload data" is used to load a cross file using the "Choose File" button.
+The summary pane gives a summary of the cross file, including the number of samples, markers and chomosomes. Some processing is done immediately after the upload, which may take ~5 seconds. If everything is ok, a summary of the cross file is printed. 
+
+##Data Exploration
+The main tab "Data Exploration" contains four sub-tabs which can be used to visualize uploaded data or visualise your own generated data after you have created a genetic map.
+
+##Genetic map
+The subtab "Genetic Map" shows a plot of all marker locations on the respective chromosomes. You can hover over the marker indicaters to see what marker is represented by that indicator.You can zoom in on a set of markers by using the scrool wheel on you mouse and drag by left clicking. 
+
+##Graphical genotype
+The subtab "Graphical genotype" shows the graphical genotype of all markers on all chromosomes for all individuals. To generate the plot press the "Plot graphical genotype" button. Markers colored red and blue correspond to parent A and parent B respectively. White and green entries correspond respectively to missing values and heterozygous markers. 
+
+The entry field on the left enables you to select a specific chromosome. If you want to deselect one of your selected chromosomes click on the one you want to remove and press the backspace or delete key on your keyboard.
+
+##Recombination counting
+In the subtab "Recombination counting" you can select a set of markers to visualize their respective marker genotype per individual. The drop-down menu on the left allows you to specify the chromosome you want to visualize. The entry field below that allows you to select markers and remove them again using backspace.
+
+The columns of the table that appears on the right correspond to an individual plant and the rows represent the selected markers. Individuals in red are homozygous for genotype B and individuals in blue are homozygous in genotype A. Unavailable data points are indicated in gray and hetrozygous markers indicated in green.
+
+##Genomic vs. genetic distance
+The subtab "Genomic vs. genetic distance" plots the genetic position of a marker in centiMorgan (cM) according to the genome position in mega base pairs (Mbp = (mbp=bp/10^6)). The plots are separated by chromosome. You can select the range of chromosomes with the slider on the left. You can hover over the individual datapoints to see their marker name. You can also zoom in and drag the graph around with your scroll wheel and left mouse button.
+
+#Genetic Map
+The tab "Genetic Map" contains tools to create your own genetic map **do not click the "create map" button before you finish the questions about the provided cross file.**
+
+##Genetic map
+The subtab "Genetic map" is used to creat your own genetic map based on two mapping functions. You can choose the mapping function used for generating your map from the dropdown menu. The slider under the dropdown menu lets you set the clustering threshold. **When your click the create map button you will overwrite the results shown in the data exploration map. Map construction typically takes five seconds**. The created map on the right is similar to the one in the data exploration tab, apart from the fact that it shows your map, and not the pre-generated one. When you go back to the data exploration tab now, you can visualize your own map in the subtabs as described above.
+
+###Recombination Frequency
+The subtab "Recombination Frequency" shows a heatmap with the the upper half above the diagonal displays the pairwise recombination fractions and the lower half below the diagonal deplays the LOD (logarithm of odds) scores for linkage.
+
+##Marker level QC
+In the subtab "Marker level QC" there are two dropdown menus. The upper menu is used to select the level at which you want to visualize the QC, marker or interval level. The second dropdown menu is used to select the specific QC statistic to visualize in the plots on the right. The explanation of each of the specific QC statistics is displayed below the dropdown menu. Further details are found in the ASMap vignette (see blackboard).
+
+##Genotype level QC
+In the subtab "Genotype level QC" you can visualize the number of crossovers or double crossovers by selecting one of them in the dropdown menu on the left.
+
+#Export Results
+In this tab your can select the dataset you would like to export with the dropdown menu and click the "Save" button to save the file in ".csv" format on your computer. You can import ".csv" files in Excel to edit them manually. Don't forget to save the genotype and map files for the QTL mapping practical.
+
+#About
+Contains version number, author information and credits to used R packages.
