@@ -13,4 +13,4 @@ output:
 **Platform**: R Shiny               
 
 **Usage**:
-This tool is a web-browser based shiny application for interactive genetic map construction. Functions from the packages of the packages ASMap and qtl are used for map construction and Quality control. Visualisations are written in ggplot and ggiraph. Currently only the analysis of the F6 RIL population used for the Distance learning course is supported.
+This tool is a web-browser based shiny application for interactive genetic map construction. Functions of the packages ASMap and qtl are used for map construction and quality control. Visualisations are made with ggplot and ggiraph. Currently only the analysis of the F6 RIL population used for the course PBR_32803 (Distance Learning) is supported.
