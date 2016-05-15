@@ -1,37 +1,38 @@
 library(shiny)
 shinyServer(function(input, output, session) {
   
-##################################
-###### Upload data
-##################################
-  	geno <- reactive({
-		inFile <- input$file1
-		validate(
-		  need(input$file1 != "", "Upload a cross file to begin")
-		)
-		cross <- read.cross(
-			format = "csv",
-			file = inFile$datapath,
-			genotypes = c("A","H","B"),
-			alleles = c("A","B"),
-			estimate.map = FALSE,
-			BC.gen = 0,
-			F.gen = 7
-		)
-# 		cross <- cross %>% convert2riself()
-	  cross
-	})
-
-  	output$inputSummary <- renderPrint({
-  	  validate(
-  	    need(input$file1 != "", "Upload a cross file to begin")
-  	  )
-  	  summary(geno())
-  	})
-  	
-##################################
+  ##################################
+  ###### Upload data
+  ##################################
+  geno <- reactive({
+    inFile <- input$file1
+    validate(
+      need(input$file1 != "", "Upload a cross file to begin")
+    )
+    cross <- read.cross(
+      format = "csv",
+      file = inFile$datapath,
+      genotypes = c("A","H","B"),
+      alleles = c("A","B"),
+      estimate.map = FALSE,
+      BC.gen = 0,
+      F.gen = 6
+    )
+    # cross <- cross %>% convert2riself()
+    cross <- est.rf(cross)
+    cross
+  })
+  
+  output$inputSummary <- renderPrint({
+    validate(
+      need(input$file1 != "", "Upload a cross file to begin")
+    )
+    summary(geno())
+  })
+  
+###############################
 ###### Data exploration
-##################################
+###############################
 	
 ## Plot of raw data
 output$raw_plot <- renderggiraph({
@@ -61,22 +62,45 @@ output$raw_plot <- renderggiraph({
 
 output$selectorgenoImage <- renderUI({
   if(input$mapactivator == 0){
-    opts <- names(geno()$geno) %>% as.list
+    dataset <- geno() 
+  } else {
+    dataset <- mstresult()
   }
-  else {
-    opts <- names(mstresult()$geno) %>% as.list
-  }
-  selectizeInput("genoImagesub", "Subset graphical genotype", multiple = TRUE, choices = opts, selected = opts)
+  selectizeInput("genoImagesub", "Subset graphical genotype", multiple = TRUE, choices = names(dataset$geno) %>% as.list,
+                 selected = names(dataset$geno) %>% as.list)
 })
 
+output$selectorHeatmap <- renderUI({
+  if(input$mapactivator == 0){
+    dataset <- geno() 
+  } else {
+    dataset <- mstresult()
+  }
+  selectizeInput("selectorHeatmap", "Subset heatmap", multiple = TRUE, choices = names(dataset$geno) %>% as.list,
+                 selected = names(dataset$geno) %>% as.list)
+})
 
-output$rf_plot <- renderPlot({
+Heatmap <- eventReactive(input$actionheatmap,{
   validate(
-    need(input$file1 != "", "Upload a cross file to begin")
+    need(input$file1 != "", "Upload a cross file to begin"),
+    need(input$selectorHeatmap != "", "")
   )
-  heatMap(mstresult(), main = "")
+  if(input$mapactivator == 0){
+    heatMap(geno(), main = "", chr = input$selectorHeatmap)
+  } else {
+    heatMap(mstresult(), main = "", chr = input$selectorHeatmap)
+  }
 })
 
+output$mst <- reactive({
+  if (is.null(mstresult))
+    return(NULL)
+  print(mstresult())
+})
+
+output$Heatmap2 <-  renderPlot({
+  Heatmap()
+})
 
 tablePlot <- eventReactive(input$startPlotTable,{
   validate(
@@ -178,7 +202,7 @@ output$chromFacetPlot <- renderggiraph({
   min <- as.numeric(input$chromInput[1])
   max <- as.numeric(input$chromInput[2])
   if(input$mapactivator == 0){
-  plot <- LGChrom.facetplot(posmap,min,max, cross = geno())
+    plot <- LGChrom.facetplot(posmap,min,max, cross = geno())
   } else {
     plot <- LGChrom.facetplot(posmap,min,max, cross = mstresult())
   }
@@ -189,7 +213,7 @@ output$chromInput <- renderPrint({input$chromInput})
 
 output$chromSlider <- renderUI({
   if(input$mapactivator == 0){
-  sliderInput.custom(inputId="chromInput", label="Chromosome :", value=c(2,4), min=0, max=13, custom.ticks=names(geno()$geno))
+    sliderInput.custom(inputId="chromInput", label="Chromosome :", value=c(2,4), min=0, max=13, custom.ticks=names(geno()$geno))
   } else {
     sliderInput.custom(inputId="chromInput", label="Chromosome :", value=c(2,4), min=0, max=13, custom.ticks=names(mstresult()$geno))
   }
@@ -197,10 +221,10 @@ output$chromSlider <- renderUI({
 
 output$chromSelect <- renderUI({
   if(input$mapactivator == 0){
-  selectizeInput(inputId="chromSelect", 
-                 label = "Select Chromosome", 
-                 choices = names(geno()$geno)
-  )
+    selectizeInput(inputId="chromSelect", 
+                   label = "Select Chromosome", 
+                   choices = names(geno()$geno)
+    )
   } else {
     selectizeInput(inputId="chromSelect",
                    label = "Select Chromosome",
@@ -212,11 +236,11 @@ output$chromSelect <- renderUI({
 
 output$markerSelect <- renderUI({
   if(input$mapactivator == 0){
-  selectizeInput(inputId="markerSelect", 
-                 label = 'Select a marker to compare', 
-                 choices = colnames(geno()$geno[[input$chromSelect]]$data), 
-                 multiple = TRUE
-  )
+    selectizeInput(inputId="markerSelect", 
+                   label = 'Select a marker to compare', 
+                   choices = colnames(geno()$geno[[input$chromSelect]]$data), 
+                   multiple = TRUE
+    )
   } else {
     selectizeInput(inputId="markerSelect", 
                    label = 'Select a marker to compare', 
@@ -233,7 +257,7 @@ alleleTable <- reactive({
   )
   
   if(input$mapactivator == 0){
-  table <- t(geno()$geno[[input$chromSelect]]$data[,input$markerSelect])
+    table <- t(geno()$geno[[input$chromSelect]]$data[,input$markerSelect])
   } else {
     table <- t(mstresult()$geno[[input$chromSelect]]$data[,input$markerSelect])
   }
@@ -265,6 +289,7 @@ output$genotable <- DT::renderDataTable(DT::datatable(alleleTable(),
   )
 )
 
+
 ##################################
 ###### Genetic map construction
 ##################################
@@ -275,16 +300,11 @@ mstresult <- eventReactive(input$mapactivator,{
   mapobject <- mstmap.cross(geno(), bychr = FALSE, dist.fun = input$mapping, 
                             trace = FALSE, id = "RILs",
                             p.value = 10^-input$split)
-  # observeEvent(input$mapactivator, {
-  #   mapobject <- breakCross(mapobject, split = list(input$LGCombine == input$MarkCombine))
-  # })
-  # names(mapobject$geno) <- paste0("LG",seq_along(mapobject$geno))
   mymap <- pull.map(mapobject, as.table = T)
   mymap <- data.frame(marker = row.names(mymap), mymap)
   mymap$refgroup <- lapply(mymap$marker %>% as.character %>% strsplit(split = "-", fixed = T),"[",2) %>% as.numeric
   mymap$bp <-lapply(mymap$marker %>% as.character %>% strsplit(split = "-", fixed = T),"[",1) %>% as.numeric
   
-
   ### Invert linkage groups if necessary
   cor_genfys <- mymap %>% group_by(chr) %>% summarise(cor = cor(pos, bp))
   invert <- filter(cor_genfys, cor < 0)
@@ -296,6 +316,16 @@ mstresult <- eventReactive(input$mapactivator,{
       mymap[invert_index,]$pos <- (mymap[invert_index,]$pos - max_pos)*-1
     }
   }
+  the_map <- split(mymap[,3], mymap$chr %>% as.factor)
+  lgindex <- mymap$chr %>% as.factor %>% unique
+  class(the_map) <- "map"
+  for(i in seq_along(the_map)){
+    names(the_map[[i]]) <- filter(mymap, chr == lgindex[i])$marker
+    class(the_map[[i]]) <- "A"
+  }
+  mapobject <- replace.map(mapobject, the_map)
+  
+  ## Rename linkage groups
   ref_dictionary <- mymap %>% group_by(refgroup, chr) %>% summarise(a = n()) %>% group_by(chr) %>% top_n(wt = a,n = 1)
   subgroup_index <- which(duplicated(ref_dictionary$refgroup))
   ref_dictionary$refgroup[subgroup_index - 1] <- ref_dictionary$refgroup[subgroup_index - 1] + 0.1
@@ -304,9 +334,8 @@ mstresult <- eventReactive(input$mapactivator,{
     LG_name <- which(names(mapobject$geno) == ref_dictionary$chr[i])
     names(mapobject$geno)[LG_name] <- ref_dictionary$refgroup[i]
   }
-  ### Invert map direction
   
-  ### Rearrange linkage groups order in cross object
+  ### Rearrange linkage groups name order in cross object
   chr_names_old <- names(mapobject$geno) 
   chr_names_new <- names(mapobject$geno) %>% mixedsort()
   mapobject2 <- mapobject
@@ -316,50 +345,10 @@ mstresult <- eventReactive(input$mapactivator,{
     k <- which(chr_names_new == chr_names_old[i])
     mapobject2$geno[[k]] <- mapobject$geno[[i]]
   }
-  
   names(mapobject2$geno) <- chr_names_new
   mapobject2 <- est.rf(mapobject2)
   mapobject2
 })
-
-#########################
-## Break or combine linkage groups
-##########################
-# v1 <- values
-# v1$a <- 2
-# isolate(a)
-# 
-# mstresult2 <- eventReactive(input$mapactivator, {
-# if(input$breakcombine == "Merge"){
-#   v1 <- values
-#   v1$mstresult <- breakCross(mstresult(), split = list(`12` = "61455904-3") )
-# }
-#   isolate(mstresult)
-# })
-# 
-# ### UI outputs
-output$breakcombine <- renderUI({
-  if(input$mapactivator == 0)
-    return(NULL)
-  selectInput("breakcombine", "Break or merge?", multiple = FALSE, choices = c("Break","Merge"))
-})
-
-output$LGCombine <- renderUI({
-  if(input$mapactivator == 0)
-    return(NULL)
-  selectizeInput("LGCombine", "Select linkage group(s)",
-                 multiple = FALSE, 
-                 choices = names(mstresult()$geno) %>% as.list)
-})
-
-output$MarkCombine <- renderUI({
-  if(input$mapactivator == 0)
-    return(NULL)
-  selectizeInput("MarkCombine", "Select marker for split", 
-                 multiple = FALSE, 
-                 choices = colnames(mstresult()$geno[[input$LGCombine]]$data)) 
-})
-
 ## Plot of mst ordered data
 output$map_plot <- renderggiraph({
   validate(
@@ -377,109 +366,87 @@ output$map_plot <- renderggiraph({
   ggiraph(code = {print(mapplot)}, zoom_max = 2, tooltip_offx = 20, tooltip_offy = -10, hover_css = "fill:black;stroke-width:1px;stroke:wheat;cursor:pointer;alpha:1;")
 })
 
-  ####################
-	#####QTL Mapping####
-	####################
-	output$selectUI1 <- renderUI({ 
-	  if (is.null(geno()))
-	    return(NULL)
-	  selectInput("trait", "Select trait", names(geno()$pheno))
-	})
-	
-	s1 <- reactive({
-	  if (is.null(geno()))
-	    return(NULL)
-	  scanone(geno(), pheno.col = which(names(geno()$pheno)==input$trait))
-	})
-	
-	output$scanone <- renderPlot({
-	  validate(
-	    need(input$file1 != "", "Upload a cross file to begin")
-	  )
-	  plot(s1())
-	})
-	
-	########################
-	#####Export results ####
-	########################
+########################
+#####Export results ####
+########################
 
-	# Ui to save files
-	output$save <- renderUI({
-	  validate(
-	    need(mstresult() != "", "Run genetic map construction first")
-	  )
-	    list(
-	      selectInput("datatype", label = "Select data to export", 
-	                  choices = c("Genotype file","Genetic map","Segregation distortion","Recombination fractions"), 
-	                  selected = 1),
-	      downloadButton('downloadData', 'Save')
-	    )
+# Ui to save files
+output$save <- renderUI({
+  list(
+    selectInput("datatype", label = "Select data to export", 
+                choices = c("Genotype file","Genetic map","Segregation distortion","Recombination fractions"), 
+                selected = 1),
+    downloadButton('downloadData', 'Save')
+  )
+  
+})
 
-	})
+output$DownloadData <- downloadHandler(
+  filename = function() {
+    paste(input$Download, format(Sys.time(), "%a %b %d %X"), '.csv', sep='', col.names = NA)
+  },
+  content = function(con) {
+    write.csv(data, con)
+  }
+)
 
-		output$DownloadData <- downloadHandler(
-	  filename = function() {
-	    paste(input$Download, format(Sys.time(), "%a %b %d %X"), '.csv', sep='', col.names = NA)
-	  },
-	  content = function(con) {
-	    write.csv(data, con)
-	  }
-	)
-	
-	# Download file handler
-	observeEvent(input$datatype, {
-	  if (input$datatype == 'Genotype file'){
-	    output$downloadData <- {
-	      downloadHandler(
-	        filename = function() {paste0('Genotype_', format(Sys.time(), "%a %b %d %X"), '.csv') },
-	        content = function(file) {
-	          genodata <- mstresult() %>% pull.geno %>% as.data.frame
-	          row.names(genodata) <- mstresult()$pheno$RILs
-	          genodata[genodata == 1] <- "A"
-	          genodata[genodata == 2] <- "B"
-	          genodata <- cbind(Rils = rownames(genodata), genodata)
-	          row.names(genodata) <- NULL
-	          write.table(genodata, file, sep = ",", row.names = FALSE)
-	          }
-	      )}  
-	  }
-	  if (input$datatype == 'Genetic map'){
-	    output$downloadData <- {
-	      downloadHandler(
-	        filename = function() {paste0('Genetic map_', format(Sys.time(), "%a %b %d %X"), '.csv') },
-	        content = function(file) {
-	          mymap <- pull.map(mstresult(), as.table = T)
-	          mymap <- data.frame(marker = row.names(mymap), mymap)
-	          mymap$bp <-lapply(mymap$marker %>% as.character %>% strsplit(split = "-", fixed = T),"[",1) %>% as.numeric
-	          write.table(mymap, file, sep = ",", row.names = FALSE)
-	        }
-	      )}
-	  }
-	  if (input$datatype == 'Segregation distortion'){
-	    output$downloadData <- {
-	      downloadHandler(
-	        filename = function() {paste0('SegDist_', format(Sys.time(), "%a %b %d %X"), '.csv') },
-	        content = function(file) {
-	          segdist_data <- mstresult() %>% geno.table
-	          colnames(segdist_data)[3:4] <- c("A","B")
-	          segdist_data <- cbind(marker = rownames(segdist_data), segdist_data )
-	          write.table(segdist_data[,1:5], file, sep = ",", row.names = FALSE)
-	        }
-	      )}
-	  }
-	  if (input$datatype == 'Recombination fractions'){
-	    output$downloadData <- {
-	      downloadHandler(
-	        filename = function() {paste0('RecFraction_', format(Sys.time(), "%a %b %d %X"), '.csv') },
-	        content = function(file) {
-	          rf_data <- mstresult()$rf %>% as.data.frame()
-	          rf_data <- cbind(marker = row.names(rf_data), rf_data )
-	          write.table(rf_data, file, sep = ",", row.names = FALSE)
-	        }
-	      )}
-	  }
-	})
-	
+# Download file handler
+observeEvent(input$datatype, {
+  if (input$datatype == 'Genotype file'){
+    output$downloadData <- {
+      downloadHandler(
+        filename = function() {paste0('Genotype_', format(Sys.time(), "%a %b %d %X"), '.csv') },
+        content = function(file) {
+          genodata <- mstresult() %>% pull.geno %>% as.data.frame
+          row.names(genodata) <- mstresult()$pheno$RILs
+          genodata[genodata == 1] <- "A"
+          genodata[genodata == 2] <- "B"
+          genodata <- cbind(Rils = rownames(genodata), genodata)
+          row.names(genodata) <- NULL
+          write.table(genodata, file, sep = ",", row.names = FALSE)
+        }
+      )}
+  }
+  if (input$datatype == 'Genetic map'){
+    output$downloadData <- {
+      downloadHandler(
+        filename = function() {paste0('Genetic map_', format(Sys.time(), "%a %b %d %X"), '.csv') },
+        content = function(file) {
+          mymap <- pull.map(mstresult(), as.table = T)
+          mymap <- data.frame(marker = row.names(mymap), mymap)
+          mymap$bp <-lapply(mymap$marker %>% as.character %>% strsplit(split = "-", fixed = T),"[",1) %>% as.numeric
+          mymap <- mymap %>% arrange(chr,pos)
+          write.table(mymap, file, sep = ",", row.names = FALSE)
+        }
+      )}
+  }
+  if (input$datatype == 'Segregation distortion'){
+    output$downloadData <- {
+      downloadHandler(
+        filename = function() {paste0('SegDist_', format(Sys.time(), "%a %b %d %X"), '.csv') },
+        content = function(file) {
+          segdist_data <- mydata %>% geno.table
+          colnames(segdist_data)[3:4] <- c("A","B")
+          segdist_data <- cbind(marker = rownames(segdist_data), segdist_data )
+          map <- pull.map(mydata, as.table = T)
+          map <- cbind(marker = row.names(map),map)
+          result <- left_join(map[,c(1,3)], segdist_data, by = "marker") %>% arrange(chr,pos)
+          write.table(result[,1:6], file, sep = ",", row.names = FALSE)
+        }
+      )}
+  }
+  if (input$datatype == 'Recombination fractions'){
+    output$downloadData <- {
+      downloadHandler(
+        filename = function() {paste0('RecFraction_', format(Sys.time(), "%a %b %d %X"), '.csv') },
+        content = function(file) {
+          rf_data <- mstresult()$rf %>% as.data.frame()
+          rf_data <- cbind(marker = row.names(rf_data), rf_data )
+          write.table(rf_data, file, sep = ",", row.names = FALSE)
+        }
+      )}
+  }
+})
 })
 
 

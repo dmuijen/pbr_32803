@@ -11,16 +11,15 @@ library(gtools)
 library(dplyr)
 library(DT)
 library(reshape2)
-
 mstresult <- NULL
-mydata <- read.cross(format = "csv",
-           file = "data/cross.csv" ,
-           genotypes = c("A","H","B"),
-           alleles = c("A","B"),
-           estimate.map = FALSE,
-           BC.gen = 0,
-           F.gen = 7
-)
+# mydata <- read.cross(format = "csv",
+#            file = "data/cross.csv" ,
+#            genotypes = c("A","H","B"),
+#            alleles = c("A","B"),
+#            estimate.map = FALSE,
+#            BC.gen = 0,
+#            F.gen = 6
+# )
 # mydata <- mydata %>% convert2riself()
 
 sliderInput.custom <- function(inputId="placeholder", label="placeholder", ticks=TRUE, value=c(0,0), min=0, max=0, custom.ticks=c("placeholder")){
@@ -50,4 +49,3 @@ LGChrom.facetplot <- function(posmap, min, max, cross){
 posmap <- read.delim("genpos_cm_map.csv", sep=",", stringsAsFactors=F)
 posmap <- transform(posmap , LG.map = factor(LG.map, levels = mixedsort(posmap$LG.map, decreasing = T) %>% unique))
 posmap <- transform(posmap , Chrom = factor(Chrom, levels = mixedsort(posmap$Chrom) %>% unique))
-
