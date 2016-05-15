@@ -16,9 +16,10 @@ shinyServer(function(input, output, session) {
 			alleles = c("A","B"),
 			estimate.map = FALSE,
 			BC.gen = 0,
-			F.gen = 7
+			F.gen = 6
 		)
-# 		cross <- cross %>% convert2riself()
+		# cross <- cross %>% convert2riself()
+		cross <- est.rf(cross)
 	  cross
 	})
 
@@ -61,55 +62,60 @@ output$raw_plot <- renderggiraph({
 
 output$selectorgenoImage <- renderUI({
   if(input$mapactivator == 0){
-    opts <- names(geno()$geno) %>% as.list
-  }
-  else {
-    opts <- names(mstresult()$geno) %>% as.list
-  }
-  selectizeInput("genoImagesub", "Subset graphical genotype", multiple = TRUE, choices = opts, selected = opts)
-})
-
-
-output$rf_plot <- renderPlot({
-  validate(
-    need(input$file1 != "", "Upload a cross file to begin")
-  )
-  heatMap(mstresult(), main = "")
-})
-
-
-tablePlot <- eventReactive(input$startPlotTable,{
-  validate(
-    need(input$genoImagesub != "","Please select a set of chromosomes"))
-  
-  if (is.null(geno))
-    return(NULL)
-  
-  if(input$mapactivator == 0){
-    table <- geno()$geno
+  selectizeInput("genoImagesub", "Subset graphical genotype", multiple = TRUE, names(geno()$geno) %>% as.list)
   } else {
-    table <- mstresult()$geno
+    selectizeInput("genoImagesub", "Subset graphical genotype", multiple = TRUE, names(mstresult()$geno) %>% as.list)
   }
-  
-  if (!is.null(input$genoImagesub)){
-    table <- lapply(input$genoImagesub, function(chr){
-      table <- melt(t(table[[chr]]$data))
-      table <- cbind(chr,table)
-    })
-    table <- as.data.frame(do.call(rbind, table))
-    table$value <- factor(table$value)
+})
+
+output$selectorHeatmap <- renderUI({
+  if(input$mapactivator == 0){
+    selectizeInput("selectorHeatmap", "Subset heatmap", multiple = TRUE, choices = names(geno()$geno) %>% as.list,
+                   selected = names(geno()$geno) %>% as.list)
+  } else {
+    selectizeInput("selectorHeatmap", "Subset heatmap", multiple = TRUE, choices = names(mstresult()$geno) %>% as.list, 
+                   selected = names(mstresult()$geno) %>% as.list)
   }
+})
   
-  ggplot(table, aes(x=Var1,y=Var2, fill=value)) + 
-    geom_tile() + facet_grid(.~chr,scales="free") + 
-    theme_dark() + theme(axis.ticks.x=element_blank(),axis.text.x=element_blank()) + 
-    scale_y_discrete(expand = c(0, 0)) + 
-    labs(x="Markers",y="Individuals") + 
-    scale_fill_manual(values=c("#004CC7","#008A05","#C70D00"),na.value="white",labels=c("A","H","B"), guide_legend(title="Genotype"))  
+Heatmap <- eventReactive(input$actionheatmap,{
+  validate(
+    need(input$file1 != "", "Upload a cross file to begin"),
+    need(input$selectorHeatmap != "", "")
+  )
+    if(input$mapactivator == 0){
+    heatMap(geno(), main = "", chr = input$selectorHeatmap)
+  } else {
+    heatMap(mstresult(), main = "", chr = input$selectorHeatmap)
+  }
+})
+
+output$mst <- reactive({
+  if (is.null(mstresult))
+    return(NULL)
+  print(mstresult())
+})
+
+output$Heatmap2 <-  renderPlot({
+  Heatmap()
 })
 
 output$genoImage <- renderPlot({
-  print(tablePlot())
+  if (is.null(geno))
+    return(NULL)
+  if(input$mapactivator == 0){
+  if (!is.null(input$genoImagesub)){
+    geno.image(geno(), chr = input$genoImagesub)
+  } else {
+    geno.image(geno())
+  }
+  } else {   
+    if (!is.null(input$genoImagesub)){
+    geno.image(mstresult(), chr = input$genoImagesub)
+  } else {
+    geno.image(mstresult())
+  }
+  }
 })
 
 ##############
@@ -135,12 +141,14 @@ output$qc_plot1 <- renderPlot({
     return(NULL)
   if(input$qcType1 == "marker"){
     p <- ggplot(aes_string(x = "pos", y = input$qcType2), data = statmark()$marker)
-    p <- p + geom_line(lwd = 1.2) + theme_bw(base_size = 14) + facet_wrap(~chr) + xlab("Position (cM)")
+    p <- p + geom_line(lwd = 1.2, colour = 'orange') + theme_dark(base_size = 14) + 
+      facet_wrap(~chr) + xlab("Position (cM)")
     print(p)
   }
   if(input$qcType1 == "interval"){
     p <- ggplot(aes_string(x = "pos", y = input$qcType3), data = statmark()$interval)
-    p <- p + geom_line(lwd = 1.2) + theme_bw(base_size = 14) + facet_wrap(~chr) + xlab("Position (cM)")
+    p <- p + geom_line(lwd = 1.2, colour = 'orange') + theme_dark(base_size = 14) +
+      facet_wrap(~chr) + xlab("Position (cM)") 
     print(p)
   }
 })
@@ -148,18 +156,18 @@ output$qc_plot1 <- renderPlot({
 output$qc_plot2 <- renderPlot({
   if(input$mapactivator == 0)
     return(NULL)
-  if(input$qcType4 == "xo"){
+  if(input$qcType4 == "number of crossovers"){
     p <- ggplot(aes(x = index, y = xo), data = data.frame(index = attributes(statgen()$xo)$names, xo = statgen()$xo))
-    p <- p + geom_point(size = 1.2) + theme_bw(base_size = 10) + xlab("RIL number") + ylab("Nr.Crossovers") +
-      geom_text(aes(label=index),hjust=0, vjust=0) + scale_x_discrete(breaks=NULL)
+    p <- p + geom_point(size = 1.2, colour = 'orange')  + xlab("RIL number") + ylab("Nr.Crossovers") +
+      geom_text(aes(label=index),hjust=-0.3, vjust=-0.3, colour = 'white') + scale_x_discrete(breaks=NULL) + theme_dark(base_size = 14)
 
     print(p)
 
   }
-  if(input$qcType4 == "dxo"){
+  if(input$qcType4 == "number of double crossovers"){
     p <- ggplot(aes(x = index, y = dxo), data = data.frame(index = attributes(statgen()$dxo)$names, dxo = statgen()$dxo))
-    p <- p + geom_point(size = 1.2) + theme_bw(base_size = 10)  + xlab("RIL number") + ylab("Nr.DoubleCrossovers") +
-      geom_text(aes(label=index),hjust=0.1, vjust=0.1) + scale_x_discrete(breaks=NULL)
+    p <- p + geom_point(size = 1.2, colour = 'orange')  + xlab("RIL number") + ylab("Nr.DoubleCrossovers") +
+      geom_text(aes(label=index),hjust=-0.3, vjust=-0.3, colour = 'white') + scale_x_discrete(breaks=NULL) + theme_dark(base_size = 14)
     print(p)
   }
 })
@@ -240,7 +248,7 @@ alleleTable <- reactive({
   colnames(table) <- seq(ncol(table))
   table[is.na(table)] <- "NA"
   table[which(table==1)] <- "A"
-  table[which(table==2)] <- "H"
+  table[which(table==2)] <- "B"
   table[which(table==3)] <- "B"
   return(table)
 })
@@ -284,7 +292,6 @@ mstresult <- eventReactive(input$mapactivator,{
   mymap$refgroup <- lapply(mymap$marker %>% as.character %>% strsplit(split = "-", fixed = T),"[",2) %>% as.numeric
   mymap$bp <-lapply(mymap$marker %>% as.character %>% strsplit(split = "-", fixed = T),"[",1) %>% as.numeric
   
-
   ### Invert linkage groups if necessary
   cor_genfys <- mymap %>% group_by(chr) %>% summarise(cor = cor(pos, bp))
   invert <- filter(cor_genfys, cor < 0)
@@ -296,6 +303,15 @@ mstresult <- eventReactive(input$mapactivator,{
       mymap[invert_index,]$pos <- (mymap[invert_index,]$pos - max_pos)*-1
     }
   }
+  the_map <- split(mymap[,3], mymap$chr %>% as.factor)
+  lgindex <- mymap$chr %>% as.factor %>% unique
+  class(the_map) <- "map"
+  for(i in seq_along(the_map)){
+    names(the_map[[i]]) <- filter(mymap, chr == lgindex[i])$marker
+    class(the_map[[i]]) <- "A"
+  }
+  mapobject <- replace.map(mapobject, the_map)
+  ## Rename linkage groups
   ref_dictionary <- mymap %>% group_by(refgroup, chr) %>% summarise(a = n()) %>% group_by(chr) %>% top_n(wt = a,n = 1)
   subgroup_index <- which(duplicated(ref_dictionary$refgroup))
   ref_dictionary$refgroup[subgroup_index - 1] <- ref_dictionary$refgroup[subgroup_index - 1] + 0.1
@@ -304,9 +320,8 @@ mstresult <- eventReactive(input$mapactivator,{
     LG_name <- which(names(mapobject$geno) == ref_dictionary$chr[i])
     names(mapobject$geno)[LG_name] <- ref_dictionary$refgroup[i]
   }
-  ### Invert map direction
-  
-  ### Rearrange linkage groups order in cross object
+
+  ### Rearrange linkage groups name order in cross object
   chr_names_old <- names(mapobject$geno) 
   chr_names_new <- names(mapobject$geno) %>% mixedsort()
   mapobject2 <- mapobject
@@ -316,49 +331,11 @@ mstresult <- eventReactive(input$mapactivator,{
     k <- which(chr_names_new == chr_names_old[i])
     mapobject2$geno[[k]] <- mapobject$geno[[i]]
   }
-  
   names(mapobject2$geno) <- chr_names_new
   mapobject2 <- est.rf(mapobject2)
   mapobject2
 })
 
-#########################
-## Break or combine linkage groups
-##########################
-# v1 <- values
-# v1$a <- 2
-# isolate(a)
-# 
-# mstresult2 <- eventReactive(input$mapactivator, {
-# if(input$breakcombine == "Merge"){
-#   v1 <- values
-#   v1$mstresult <- breakCross(mstresult(), split = list(`12` = "61455904-3") )
-# }
-#   isolate(mstresult)
-# })
-# 
-# ### UI outputs
-output$breakcombine <- renderUI({
-  if(input$mapactivator == 0)
-    return(NULL)
-  selectInput("breakcombine", "Break or merge?", multiple = FALSE, choices = c("Break","Merge"))
-})
-
-output$LGCombine <- renderUI({
-  if(input$mapactivator == 0)
-    return(NULL)
-  selectizeInput("LGCombine", "Select linkage group(s)",
-                 multiple = FALSE, 
-                 choices = names(mstresult()$geno) %>% as.list)
-})
-
-output$MarkCombine <- renderUI({
-  if(input$mapactivator == 0)
-    return(NULL)
-  selectizeInput("MarkCombine", "Select marker for split", 
-                 multiple = FALSE, 
-                 choices = colnames(mstresult()$geno[[input$LGCombine]]$data)) 
-})
 
 ## Plot of mst ordered data
 output$map_plot <- renderggiraph({
@@ -405,9 +382,6 @@ output$map_plot <- renderggiraph({
 
 	# Ui to save files
 	output$save <- renderUI({
-	  validate(
-	    need(mstresult() != "", "Run genetic map construction first")
-	  )
 	    list(
 	      selectInput("datatype", label = "Select data to export", 
 	                  choices = c("Genotype file","Genetic map","Segregation distortion","Recombination fractions"), 
@@ -441,7 +415,7 @@ output$map_plot <- renderggiraph({
 	          row.names(genodata) <- NULL
 	          write.table(genodata, file, sep = ",", row.names = FALSE)
 	          }
-	      )}  
+	      )}
 	  }
 	  if (input$datatype == 'Genetic map'){
 	    output$downloadData <- {
@@ -451,6 +425,7 @@ output$map_plot <- renderggiraph({
 	          mymap <- pull.map(mstresult(), as.table = T)
 	          mymap <- data.frame(marker = row.names(mymap), mymap)
 	          mymap$bp <-lapply(mymap$marker %>% as.character %>% strsplit(split = "-", fixed = T),"[",1) %>% as.numeric
+	          mymap <- mymap %>% arrange(chr,pos)
 	          write.table(mymap, file, sep = ",", row.names = FALSE)
 	        }
 	      )}
@@ -460,11 +435,14 @@ output$map_plot <- renderggiraph({
 	      downloadHandler(
 	        filename = function() {paste0('SegDist_', format(Sys.time(), "%a %b %d %X"), '.csv') },
 	        content = function(file) {
-	          segdist_data <- mstresult() %>% geno.table
+	          segdist_data <- mydata %>% geno.table
 	          colnames(segdist_data)[3:4] <- c("A","B")
 	          segdist_data <- cbind(marker = rownames(segdist_data), segdist_data )
-	          write.table(segdist_data[,1:5], file, sep = ",", row.names = FALSE)
-	        }
+	          map <- pull.map(mydata, as.table = T)
+	          map <- cbind(marker = row.names(map),map)
+	          result <- left_join(map[,c(1,3)], segdist_data, by = "marker") %>% arrange(chr,pos)
+	          write.table(result[,1:6], file, sep = ",", row.names = FALSE)
+	          }
 	      )}
 	  }
 	  if (input$datatype == 'Recombination fractions'){
@@ -479,7 +457,6 @@ output$map_plot <- renderggiraph({
 	      )}
 	  }
 	})
-	
 })
 
 

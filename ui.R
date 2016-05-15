@@ -29,12 +29,11 @@ shinyUI(
               tabPanel("Graphical genotype",
                        sidebarLayout(
                          sidebarPanel(
-                           uiOutput("selectorgenoImage"),
-                           actionButton("startPlotTable","Plot graphical genotype")                           
+                           uiOutput("selectorgenoImage")
                          ),
                          mainPanel(
                            plotOutput('genoImage'),
-                           helpText("Graphical genotype representation - red corresponds to marker genotypes of parent A, blue to parent B, green to heterozygous markers, and white to missing genotypes")
+                           helpText("Graphical genotype representation - red corresponds to marker genotypes of parent A, blue to parent B, and white to missing or heterozygous genotype calls")
                          )
                        )
               ), 
@@ -73,8 +72,8 @@ shinyUI(
                     br(),
                     sliderInput('split',
                                  label = 'Clustering -log10(P)',
-                             min = 2, max = 6,
-                             value = 4, step = 0.1
+                             min = 3, max = 7,
+                             value = 6, step = 0.1
                     ),
                     actionButton("mapactivator", "Create map")
                    ),
@@ -84,46 +83,40 @@ shinyUI(
                 )
                ),
                tabPanel("Recombination Frequency",
-                        helpText(h4("Pairwise recombination fractions and LOD scores", align = "center")),
-                         plotOutput('rf_plot', height = "800px")
-               ),
-               # tabPanel("Break/merge Linkage Groups",
-               #          sidebarLayout(
-               #            sidebarPanel(
-               #              uiOutput("breakcombine"),
-               #              uiOutput("LGCombine"),
-               #              uiOutput("MarkCombine"),
-               #              actionButton("button", "Go!")
-               #              ),
-               #            mainPanel(
-               #              # ggiraphOutput("map_plot", width="100%", height="800px")
-               #              helpText("blabla")
-               #            )
-               #          )
-               # ),
+                        sidebarLayout(
+                          sidebarPanel(
+                            uiOutput("selectorHeatmap"),
+                            actionButton("actionheatmap", "Plot heatmap")
+                          ),
+                          mainPanel(
+                            helpText(h4("Pairwise recombination fractions and LOD scores for linkage", align = "center")),
+                            plotOutput('Heatmap2', height = "800px")
+                            )
+                        )
+               ), 
                tabPanel("Marker level QC",
                         sidebarLayout(
                           sidebarPanel(
-                            selectInput("qcType1", "QC at marker or interval level", 
-                                        multiple = FALSE, choices = c("marker","interval")),
                             conditionalPanel(condition = "input.qcType1 == 'marker'",
-                                             selectInput("qcType2", "Select QC plot", 
-                                                         multiple = FALSE, choices = c("neglog10P","missing","AA","BB")),
                                              h4("Marker statistics"),
                                              helpText("neglog10P = -log10 p-value from a test of segregation distortion"),
                                              helpText("missing = proportion of missing values"),
                                              helpText("AA = allele proportion of homozygous A allele"),
-                                             helpText("BB = allele proportion of homozygous B allele")
+                                             helpText("BB = allele proportion of homozygous B allele"),
+                                             selectInput("qcType1", "QC at marker or interval level", 
+                                                         multiple = FALSE, choices = c("marker","interval")),
+                                             selectInput("qcType2", "Select QC plot", 
+                                                         multiple = FALSE, choices = c("neglog10P","missing","AA","BB"))
                             ),
                             conditionalPanel(condition = "input.qcType1 == 'interval'",
-                                             selectInput("qcType3", "Select QC plot", 
-                                                         multiple = FALSE, choices = c("erf","lod","dist","mrf","recomb")),
                                              h4("Interval statistics"),
-                                             helpText("erf = estimated recombination fractions"),
-                                             helpText("lod = LOD score for the test of no linkage"),
+                                             helpText("erf = estimated recombination fraction"),
+                                             helpText("lod = LOD score for linkage"),
                                              helpText("dist = interval map distance"),
                                              helpText("mrf = map recombination fraction"),
-                                             helpText("recomb = number of recombinations.")
+                                             helpText("recomb = number of recombinations."),
+                                             selectInput("qcType3", "Select QC plot", 
+                                                         multiple = FALSE, choices = c("erf","lod","dist","mrf","recomb"))
                             )
                             ),
                           mainPanel(
@@ -134,11 +127,9 @@ shinyUI(
                tabPanel("Genotype level QC",
                         sidebarLayout(
                           sidebarPanel(
+                            h4("Genotype statistics"),
                             selectInput("qcType4", "QC genotype level", 
-                                        multiple = FALSE, choices = c("xo","dxo")),
-                                             h4("Genotype statistics"),
-                                             helpText("xo = number of crossovers"),
-                                             helpText("dxo = number of double crossovers")
+                                        multiple = FALSE, choices = c("number of crossovers","number of double crossovers"))
                             ),
                           mainPanel(
                             plotOutput('qc_plot2')
@@ -157,20 +148,20 @@ shinyUI(
         )
         )
     ),
-    tabPanel(div(h4("QTL mapping")),
-      sidebarLayout(
-        sidebarPanel(
-          selectInput('e2','Interval mapping',
-            choices = c("Interval mapping","Stepwise")
-          ),
-          htmlOutput("selectUI1")
-        ),
-        mainPanel(
-          # iplotScanone_output('scanone', width = "100%", height = "580")
-          plotOutput('scanone')
-        )
-      )
-    ),
+    # tabPanel(div(h4("QTL mapping")),
+    #   sidebarLayout(
+    #     sidebarPanel(
+    #       selectInput('e2','Interval mapping',
+    #         choices = c("Interval mapping","Stepwise")
+    #       ),
+    #       htmlOutput("selectUI1")
+    #     ),
+    #     mainPanel(
+    #       # iplotScanone_output('scanone', width = "100%", height = "580")
+    #       plotOutput('scanone')
+    #     )
+    #   )
+    # ),
     tabPanel(div(h4("About")),
              mainPanel(
                includeMarkdown("about.Rmd")
