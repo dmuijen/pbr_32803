@@ -6,6 +6,8 @@ output:
     number_sections: true
 ---
 
+**Important note: The shiny app disconnects after 30 minutes of no activity after which your data is lost. The app is hosted on a cloud server for which limited hours of running time are available.**
+
 #Upload data
 The main tab "Upload data" is used to load a cross file using the "Choose File" button.
 The summary pane gives a summary of the cross file, including the number of samples, markers and chomosomes. Some processing is done immediately after the upload, which may take ~5 seconds. If everything is ok, a summary of the cross file is printed. 

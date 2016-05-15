@@ -7,10 +7,10 @@ output:
 ---
 **Application**: Genetic map construction          
 **Created**: 05-2016                      
-**By**:Dennis van Muijen en David Nieuwenhuijse                
+**By**: Dennis van Muijen en David Nieuwenhuijse                
 **Version**: 0.1                   
 **Email**: dennis.vanmuijen@wur.nl, d.nieuwenhuijse@erasmusmc.nl               
 **Platform**: R Shiny               
 
 **Usage**
-This tool is a web-browser based shiny application for interactive genetic map construction. Map construction and Quality control functions of the package ASMap and qtl are used. Visualisations are written in ggplot and ggiraph. Currently only the analysis of the F6 RIL population used for the Distance learning course is supported.
+This tool is a web-browser based shiny application for interactive genetic map construction. Map construction and Quality control functions of the packages ASMap and qtl are used. Visualisations are written in ggplot and ggiraph. Currently only the analysis of the F6 RIL population used for the Distance learning course is supported.
