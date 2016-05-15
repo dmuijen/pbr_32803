@@ -30,11 +30,11 @@ shinyUI(
                        sidebarLayout(
                          sidebarPanel(
                            uiOutput("selectorgenoImage"),
-                           actionButton("startPlotTable","Plot table")                           
+                           actionButton("startPlotTable","Plot graphical genotype")                           
                          ),
                          mainPanel(
                            plotOutput('genoImage'),
-                           helpText("Graphical genotype representation - red corresponds to marker genotypes of parent A, blue to parent B, and white to missing or heterozygous genotype calls")
+                           helpText("Graphical genotype representation - red corresponds to marker genotypes of parent A, blue to parent B, green to heterozygous markers, and white to missing genotypes")
                          )
                        )
               ), 

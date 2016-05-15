@@ -1,7 +1,6 @@
 ---
 title: 'User Manual: Genetic map construction'
 author: "Dennis van Muijen & David Nieuwenhuijse"
-date: "Saturday, May 14, 2016"
 output:  
   pdf_document:
     number_sections: true
@@ -18,7 +17,7 @@ The main tab "Data Exploration" contains four sub-tabs which can be used to visu
 The subtab "Genetic Map" shows a plot of all marker locations on the respective chromosomes. You can hover over the marker indicaters to see what marker is represented by that indicator.You can zoom in on a set of markers by using the scrool wheel on you mouse and drag by left clicking. 
 
 ##Graphical genotype
-The subtab "Graphical genotype" shows the graphical genotype of all markers on all chromosomes for all individuals. To generate the plot press the "Plot table" button. Markers colored red and blue correspond to parent A and parent B respectively. White and green entries correspond respectively to missing values and heterozygous markers. 
+The subtab "Graphical genotype" shows the graphical genotype of all markers on all chromosomes for all individuals. To generate the plot press the "Plot graphical genotype" button. Markers colored red and blue correspond to parent A and parent B respectively. White and green entries correspond respectively to missing values and heterozygous markers. 
 
 The entry field on the left enables you to select a specific chromosome. If you want to deselect one of your selected chromosomes click on the one you want to remove and press the backspace or delete key on your keyboard.
 
