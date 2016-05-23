@@ -73,8 +73,8 @@ shinyUI(
                             br(),
                             sliderInput('split',
                                         label = 'Clustering -log10(P)',
-                                        min = 3, max = 7,
-                                        value = 6, step = 0.1
+                                        min = 2, max = 6,
+                                        value = 4, step = 0.1
                             ),
                             actionButton("mapactivator", "Create map")
                           ),
@@ -142,6 +142,9 @@ shinyUI(
     tabPanel(div(h4("Export Results")),
              sidebarLayout(
                sidebarPanel(
+                 helpText("If there issues opening in Excel, select the semicolon as delimiter"),
+                                  selectInput("sep_type", "Select delimiter",
+                             multiple = FALSE, choices = c(",",";")),
                  htmlOutput("save")
                ),
                mainPanel(

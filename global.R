@@ -11,6 +11,8 @@ library(gtools)
 library(dplyr)
 library(DT)
 library(reshape2)
+
+
 mstresult <- NULL
 # mydata <- read.cross(format = "csv",
 #            file = "data/cross.csv" ,
@@ -21,6 +23,8 @@ mstresult <- NULL
 #            F.gen = 6
 # )
 # mydata <- mydata %>% convert2riself()
+
+
 
 sliderInput.custom <- function(inputId="placeholder", label="placeholder", ticks=TRUE, value=c(0,0), min=0, max=0, custom.ticks=c("placeholder")){
   args <- list(inputId=inputId, label=label, ticks=ticks, value=value, min=min, max=max)

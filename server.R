@@ -123,13 +123,20 @@ tablePlot <- eventReactive(input$startPlotTable,{
     table <- as.data.frame(do.call(rbind, table))
     table$value <- factor(table$value)
   }
-  
+  if(input$mapactivator == 0){
+  cols <- c("#004CC7","#008A05","#C70D00")
+  labels <- c("A","H","B")
+  }
+  if(input$mapactivator != 0){
+    cols <- c("#004CC7","#C70D00")
+    labels <- c("A","B")
+  }
   ggplot(table, aes(x=Var1,y=Var2, fill=value)) + 
-    geom_tile() + facet_grid(.~chr,scales="free") + 
+    geom_tile() + facet_grid(.~chr,scales="free", space = "free_x") + 
     theme_dark() + theme(axis.ticks.x=element_blank(),axis.text.x=element_blank()) + 
     scale_y_discrete(expand = c(0, 0)) + 
     labs(x="Markers",y="Individuals") + 
-    scale_fill_manual(values=c("#004CC7","#008A05","#C70D00"),na.value="white",labels=c("A","H","B"), guide_legend(title="Genotype"))  
+    scale_fill_manual(values=cols,na.value="white",labels=labels, guide_legend(title="Genotype"))  
 })
 
 output$genoImage <- renderPlot({
@@ -159,12 +166,12 @@ output$qc_plot1 <- renderPlot({
     return(NULL)
   if(input$qcType1 == "marker"){
     p <- ggplot(aes_string(x = "pos", y = input$qcType2), data = statmark()$marker)
-    p <- p + geom_line(lwd = 1.2) + theme_bw(base_size = 14) + facet_wrap(~chr) + xlab("Position (cM)")
+    p <- p + geom_line(lwd = 1.2, col = "orange") + theme_dark(base_size = 14) + facet_wrap(~chr) + xlab("Position (cM)")
     print(p)
   }
   if(input$qcType1 == "interval"){
     p <- ggplot(aes_string(x = "pos", y = input$qcType3), data = statmark()$interval)
-    p <- p + geom_line(lwd = 1.2) + theme_bw(base_size = 14) + facet_wrap(~chr) + xlab("Position (cM)")
+    p <- p + geom_line(lwd = 1.2, col = "orange") + theme_dark(base_size = 14) + facet_wrap(~chr) + xlab("Position (cM)")
     print(p)
   }
 })
@@ -174,14 +181,14 @@ output$qc_plot2 <- renderPlot({
     return(NULL)
   if(input$qcType4 == "number of crossovers"){
     p <- ggplot(aes(x = index, y = xo), data = data.frame(index = attributes(statgen()$xo)$names, xo = statgen()$xo))
-    p <- p + geom_point(size = 1.2) + theme_bw(base_size = 10) + xlab("RIL number") + ylab("Nr.Crossovers") +
+    p <- p + geom_point(size = 1.2, col = 'orange') + theme_dark(base_size = 14) + xlab("RIL number") + ylab("Nr.Crossovers") +
       geom_text(aes(label=index),hjust=0, vjust=0) + scale_x_discrete(breaks=NULL)
     print(p)
 
   }
   if(input$qcType4 == "number of double crossovers"){
     p <- ggplot(aes(x = index, y = dxo), data = data.frame(index = attributes(statgen()$dxo)$names, dxo = statgen()$dxo))
-    p <- p + geom_point(size = 1.2) + theme_bw(base_size = 10)  + xlab("RIL number") + ylab("Nr.DoubleCrossovers") +
+    p <- p + geom_point(size = 1.2, col = 'orange') + theme_dark(base_size = 10)  + xlab("RIL number") + ylab("Nr.DoubleCrossovers") +
       geom_text(aes(label=index),hjust=0.1, vjust=0.1) + scale_x_discrete(breaks=NULL)
     print(p)
   }
@@ -252,13 +259,13 @@ output$markerSelect <- renderUI({
 alleleTable <- reactive({
   validate(
     need(input$file1 != "", "Upload a cross file to begin"),
-    need(input$markerSelect != "NULL" , "Please select a set of markers")
+    need(input$markerSelect != "" , "Please select a set of markers")
   )
   
   if(input$mapactivator == 0){
     table <- t(geno()$geno[[input$chromSelect]]$data[,input$markerSelect])
   } else {
-    table <- t(mstresult()$geno[[input$chromSelect]]$data[,input$markerSelect])
+    table <- t(geno()$geno[[input$chromSelect]]$data[,input$markerSelect])
   }
   colnames(table) <- seq(ncol(table))
   table[is.na(table)] <- "NA"
@@ -296,7 +303,8 @@ output$genotable <- DT::renderDataTable(DT::datatable(alleleTable(),
 mstresult <- eventReactive(input$mapactivator,{
   if (is.null(geno()))
     return(NULL)
-  mapobject <- mstmap.cross(geno(), bychr = FALSE, dist.fun = input$mapping, 
+  mycross <- convert2riself(geno())
+  mapobject <- mstmap.cross(mycross, bychr = FALSE, dist.fun = input$mapping, 
                             trace = FALSE, id = "RILs",
                             p.value = 10^-input$split)
   mymap <- pull.map(mapobject, as.table = T)
@@ -399,11 +407,14 @@ observeEvent(input$datatype, {
           genodata <- mstresult() %>% pull.geno %>% as.data.frame
           row.names(genodata) <- mstresult()$pheno$RILs
           genodata[genodata == 1] <- "A"
-          genodata[genodata == 2] <- "H"
-          genodata[genodata == 3] <- "B"
+          genodata[genodata == 2] <- "B"
+          # genodata[genodata == 3] <- "B"
           genodata <- cbind(Rils = rownames(genodata), genodata)
           row.names(genodata) <- NULL
-          write.table(genodata, file, sep = ",", row.names = FALSE)
+          sep <- input$sep_type
+          write.table(genodata, file, sep = sep, row.names = FALSE)
+          # write.xlsx(genodata, file, sheetName = "Sheet1", row.names = FALSE)
+          
         }
       )}
   }
@@ -416,7 +427,9 @@ observeEvent(input$datatype, {
           mymap <- data.frame(marker = row.names(mymap), mymap)
           mymap$bp <-lapply(mymap$marker %>% as.character %>% strsplit(split = "-", fixed = T),"[",1) %>% as.numeric
           mymap <- mymap %>% arrange(chr,pos)
-          write.table(mymap, file, sep = ",", row.names = FALSE)
+          sep <- input$sep_type
+          write.table(mymap, file, sep = sep, row.names = FALSE)
+          # write.xlsx(mymap, file, row.names = FALSE, sheetName = "Sheet1")
         }
       )}
   }
@@ -425,13 +438,17 @@ observeEvent(input$datatype, {
       downloadHandler(
         filename = function() {paste0('SegDist_', format(Sys.time(), "%a %b %d %X"), '.csv') },
         content = function(file) {
-          segdist_data <- mydata %>% geno.table
+          segdist_data <- mstresult() %>% geno.table
           colnames(segdist_data)[3:4] <- c("A","B")
           segdist_data <- cbind(marker = rownames(segdist_data), segdist_data )
-          map <- pull.map(mydata, as.table = T)
+          map <- pull.map(mstresult(), as.table = T)
           map <- cbind(marker = row.names(map),map)
-          result <- left_join(map[,c(1,3)], segdist_data, by = "marker") %>% arrange(chr,pos)
-          write.table(result[,1:6], file, sep = ",", row.names = FALSE)
+          result <- left_join(map[,c(1,3)], segdist_data, by = "marker") 
+          result$chr <- result$chr %>% as.character %>% as.numeric
+          result <- result %>% arrange(chr,pos)
+          sep <- input$sep_type
+          write.table(result[,1:6], file, sep = sep, row.names = FALSE) ## Why won't you die Excel?
+          # write.xlsx(result[,1:6], file = file, sheetName = "Sheet1", row.names = FALSE)
         }
       )}
   }
@@ -442,7 +459,9 @@ observeEvent(input$datatype, {
         content = function(file) {
           rf_data <- mstresult()$rf %>% as.data.frame()
           rf_data <- cbind(marker = row.names(rf_data), rf_data )
-          write.table(rf_data, file, sep = ",", row.names = FALSE)
+          sep <- input$sep_type
+          write.table(rf_data, file, sep = sep, row.names = FALSE)
+          # write.xlsx(rf_data, file, row.names = FALSE, sheetName = "Sheet1")
         }
       )}
   }
