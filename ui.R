@@ -20,7 +20,7 @@ shinyUI(
           )
       ),
     tabPanel(div(h4("Data exploration")),
-             tabsetPanel(
+             tabsetPanel(id = "mapvis",
               tabPanel("Genetic Map",
                wellPanel(
                ggiraphOutput('raw_plot', width = "100%", height = "600px")
@@ -62,7 +62,7 @@ shinyUI(
              )
     ),
     tabPanel(div(h4("Genetic map")),
-             tabsetPanel(
+             tabsetPanel(id = "mapcreate",
                tabPanel("Genetic map",
                         sidebarLayout(
                           sidebarPanel(
